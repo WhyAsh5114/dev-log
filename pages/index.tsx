@@ -16,12 +16,12 @@ export default function Home() {
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
         })}
-        className="text-5xl"
+        className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
       >
         Hi, welcome to WhyAsh&apos;s
       </Highlight>
-      <br /><br />
-      <div className="flex justify-center text-4xl font-mono text-white">
+      <div className="h-3 md:h-5 lg:h-7 xl:h-9"/>
+      <div className="flex justify-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-mono text-white">
         <Typewriter
           options={{
             strings: ['dev_life', 'blog', 'journal', 'projects'],
