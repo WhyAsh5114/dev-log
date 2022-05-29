@@ -6,7 +6,7 @@ export default function NavDrawer() {
   const [opened, setOpened] = useState(false);
 
   return (
-    <>
+    <div className="md:hidden">
       <Drawer
         opened={opened}
         onClose={() => setOpened(false)}
@@ -23,9 +23,9 @@ export default function NavDrawer() {
         </div>
       </Drawer>
 
-      <div className="flex w-full justify-center">
-        <Burger opened={false} onClick={() => setOpened(!opened)} className="md:h-0 md:invisible"/>
+      <div className="flex w-full justify-center mt-6">
+        <Burger opened={false} onClick={() => setOpened(!opened)} aria-label="Open Navigation"/>
       </div>
-    </>
+    </div>
   );
 }

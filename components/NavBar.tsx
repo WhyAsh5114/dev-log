@@ -3,7 +3,7 @@ import NavDrawer from "./NavDrawer";
 
 export function NavBar() {
   return (<>
-    <nav className="flex gap-2 py-3 h-0 invisible md:visible md:h-auto">
+    <nav className="hidden gap-2 py-3 md:flex" data-cy="desktop-navbar">
       <NavButton link="/">Home</NavButton>
       <NavButton link="/">Blog</NavButton>
       <NavButton link="/">Journal</NavButton>
