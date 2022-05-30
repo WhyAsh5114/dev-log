@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Burger, Drawer } from "@mantine/core";
-import NavButton from "./NavButton";
+import NavButtonGroup from "./NavButtonGroup";
 
 export default function NavDrawer() {
   const [opened, setOpened] = useState(false);
@@ -10,20 +10,15 @@ export default function NavDrawer() {
       <Drawer
         opened={opened}
         onClose={() => setOpened(false)}
-        padding="xl"
         size="sm"
         position="left"
       >
-        <div className="flex flex-col gap-5">
-          <NavButton link="/">Home</NavButton>
-          <NavButton link="/">Blog</NavButton>
-          <NavButton link="/">Journal</NavButton>
-          <NavButton link="/">Projects</NavButton>
-          <NavButton link="/">About</NavButton>
-        </div>
+        <nav className="flex flex-col gap-5">
+          <NavButtonGroup />
+        </nav>
       </Drawer>
 
-      <div className="flex w-full justify-center mt-6">
+      <div className="flex w-full justify-center my-1">
         <Burger opened={false} onClick={() => setOpened(!opened)} aria-label="Open Navigation"/>
       </div>
     </div>
