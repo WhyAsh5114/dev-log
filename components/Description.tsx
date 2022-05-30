@@ -5,8 +5,8 @@ import { CircleCheck } from "tabler-icons-react";
 export default function Description() {
   return (
   <div className='flex lg:flex-1 justify-center flex-col border-l-2 pl-3 h-min py-5'>
-    <Title className='w-full h-min text-xl md:text-2xl lg:text-3xl'>Hi, my name is Yash</Title>
-    <Text className='w-full pb-3 font-semibold text-md md:text-lg'>I am a full-stack developer, who is</Text>
+    <Title className='h-min text-xl md:text-2xl lg:text-3xl'>Hi, my name is Yash</Title>
+    <Text className='pb-3 font-semibold text-md md:text-lg'>I am a full-stack developer, who is</Text>
     <List>
       <DescriptionListItem text="Super excited about new technologies"/>
       <DescriptionListItem text="Ready to tackle challenges head on"/>
