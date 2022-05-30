@@ -9,7 +9,7 @@ export default function HomePage() {
     <NavBar />
 
     <div className='flex h-full items-center gap-2 flex-col md:flex-row justify-evenly' style={{backgroundImage: `url('/layered-waves-haikei.svg')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
-      <div className="flex flex-col lg:flex-1 justify-center">
+      <div className="flex flex-col justify-center mt-12 md:mt-4 lg:flex-[1.5]">
         <Highlight
           align="center"
           highlight={['WhyAsh\'s']}
