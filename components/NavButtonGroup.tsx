@@ -3,10 +3,10 @@ import { Book2, FilePencil, Home, InfoCircle, Notebook } from "tabler-icons-reac
 
 export default function NavButtonGroup() {
   return (<>
-    <NavButton link="/" icon={<Home />}>Home</NavButton>
-    <NavButton link="/" icon={<FilePencil />}>Blog</NavButton>
-    <NavButton link="/" icon={<Book2 />}>Journal</NavButton>
-    <NavButton link="/" icon={<Notebook />}>Projects</NavButton>
-    <NavButton link="/" icon={<InfoCircle />}>About</NavButton>
+    <NavButton link="/" icon={<Home />} hoverClass="hover:text-blue-400" data-cy="home-nav-button">Home</NavButton>
+    <NavButton link="/" icon={<FilePencil />} hoverClass="hover:text-orange-400" data-cy="blog-nav-button">Blog</NavButton>
+    <NavButton link="/" icon={<Book2 />} hoverClass="hover:text-yellow-400" data-cy="journal-nav-button">Journal</NavButton>
+    <NavButton link="/" icon={<Notebook />} hoverClass="hover:text-indigo-400" data-cy="projects-nav-button">Projects</NavButton>
+    <NavButton link="/" icon={<InfoCircle />} hoverClass="hover:text-blue-400" data-cy="about-nav-button">About</NavButton>
   </>);
 }
