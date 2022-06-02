@@ -15,7 +15,7 @@ describe('Navigation bar', () => {
         cy.get('[data-cy="desktop-navbar"]').should('have.css', 'display', 'none')
         cy.get('[data-cy="nav-drawer-button"]').click()
         cy.get('[data-cy="nav-drawer"] > [data-cy="home-nav-button"]').click()
-        cy.get('[data-cy="home-nav-button"]').should('not.be.visible')
+        cy.get('[data-cy="nav-drawer"]').should('not.be.visible')
     })
 })
 
