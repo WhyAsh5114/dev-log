@@ -1,7 +1,7 @@
 import { Highlight } from "@mantine/core";
 import Typewriter from 'typewriter-effect'
 
-export function WelcomeText() {
+export default function WelcomeText() {
   return (
   <div className="flex flex-col justify-center mt-12 md:mt-4 lg:flex-[1.5]">
     <Highlight 

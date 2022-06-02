@@ -1,7 +1,7 @@
-import { WelcomeText } from './../components/WelcomeText';
-import { NavBar } from './../components/NavBar';
+import WelcomeText from './../components/home/WelcomeText';
+import Description from '../components/home/Description';
+import { NavBar } from './../components/navigation/NavBar';
 import { Divider, Highlight } from "@mantine/core";
-import Description from '../components/Description';
 
 export default function HomePage() {
   return (<>
