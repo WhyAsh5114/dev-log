@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-// TODO START TESTING NOW, ENOUGH DEVELOPMENT, DO SOME TESTING FFS
-
 describe('Navigation bar', () => {
     beforeEach(() => {
         cy.visit('http://localhost:3000')
@@ -17,6 +15,7 @@ describe('Navigation bar', () => {
         cy.get('[data-cy="desktop-navbar"]').should('have.css', 'display', 'none')
         cy.get('[data-cy="nav-drawer-button"]').click()
         cy.get('[data-cy="nav-drawer"] > [data-cy="home-nav-button"]').click()
+        cy.get('[data-cy="home-nav-button"]').should('not.be.visible')
     })
 })
 
