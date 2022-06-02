@@ -14,12 +14,12 @@ interface props {
 export default function NavButton(props: props) {
   return (
     <Link href={props.link}>
-      <Button 
-        leftIcon={props.icon} 
-        variant="subtle" 
-        color="gray" 
-        className={`flex-1 transition-colors font-medium text-lg ${props.hoverClass}`} 
-        uppercase 
+      <Button
+        leftIcon={props.icon}
+        variant="subtle"
+        color="gray"
+        className={`flex-1 transition-colors font-medium text-lg ${props.hoverClass}`}
+        uppercase
         data-cy={props.data_cy}
         onClick={() => props.handleClick()}
       >
