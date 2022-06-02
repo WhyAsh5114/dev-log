@@ -16,13 +16,13 @@ export function NavBar() {
         size="sm"
         position="left"
       >
-        <nav className="flex flex-col gap-5">
+        <nav className="flex flex-col gap-5" data-cy="nav-drawer">
           <NavButtonGroup />
         </nav>
       </Drawer>
 
       <div className="flex w-full justify-center my-1">
-        <Burger opened={false} onClick={() => setOpened(!opened)} aria-label="Open Navigation"/>
+        <Burger data-cy="nav-drawer-button" opened={false} onClick={() => setOpened(!opened)} aria-label="Open Navigation"/>
       </div>
     </div>
   </>);
