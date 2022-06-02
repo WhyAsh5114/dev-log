@@ -7,7 +7,8 @@ export function NavBar() {
 
   return (<>
     <nav className="hidden gap-2 py-3 md:flex" data-cy="desktop-navbar">
-      <NavButtonGroup />
+      {/* When a desktop navbar, don't do anything on click, just redirect to link */}
+      <NavButtonGroup handleClick={() => {}} />
     </nav>
     <div className="md:hidden">
       <Drawer
@@ -17,7 +18,8 @@ export function NavBar() {
         position="left"
       >
         <nav className="flex flex-col gap-5" data-cy="nav-drawer">
-          <NavButtonGroup />
+          {/* When a phone nav-drawer, on click, close the drawer and then redirect */}
+          <NavButtonGroup handleClick={() => setOpened(false)} />
         </nav>
       </Drawer>
 

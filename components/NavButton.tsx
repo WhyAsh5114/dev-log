@@ -8,6 +8,7 @@ interface props {
   icon: ReactNode;
   hoverClass: string;
   data_cy: string;
+  handleClick: Function;
 }
 
 export default function NavButton(props: props) {
@@ -20,6 +21,7 @@ export default function NavButton(props: props) {
         className={`flex-1 transition-colors font-medium text-lg ${props.hoverClass}`} 
         uppercase 
         data-cy={props.data_cy}
+        onClick={() => props.handleClick()}
       >
         <Text>{props.children}</Text>
       </Button>
