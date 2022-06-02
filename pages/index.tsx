@@ -29,6 +29,7 @@ export default function HomePage() {
         backgroundRepeat: 'no-repeat', 
         backgroundSize: 'cover'
       }}
+      id="projects"
     >
       <div className='flex w-full md:w-9/12 float-right h-full flex-col justify-center px-8 gap-5'>
         <Highlight 
