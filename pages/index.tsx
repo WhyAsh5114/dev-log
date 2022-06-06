@@ -1,12 +1,31 @@
-import WelcomeText from "./../components/home/WelcomeText";
-import Description from "../components/home/Description";
-import ProjectComponent from "../components/ProjectComponent";
+import { Affix, Divider, Highlight, Transition, Button, Title, Text, List, ThemeIcon } from "@mantine/core";
+import { useWindowScroll } from '@mantine/hooks';
+import { ArrowUp, CircleCheck } from "tabler-icons-react";
 import { NavBar } from "./../components/navigation/NavBar";
-import { Divider, Highlight } from "@mantine/core";
+import Typewriter from "typewriter-effect";
+import ProjectComponent from "../components/ProjectComponent";
+import Data from "./../data/projects/next_token_viewer/next_token_viewer.mdx";
+
 
 export default function HomePage() {
+  const [scroll, scrollTo] = useWindowScroll();
+
   return (
     <>
+      <Affix position={{ bottom: 20, right: 20 }}>
+        <Transition transition="slide-up" mounted={scroll.y > 0}>
+          {(transitionStyles) => (
+            <Button
+              leftIcon={<ArrowUp />}
+              style={transitionStyles}
+              onClick={() => scrollTo({ y: 0 })}
+              className="bg-blue-500"
+            >
+              Home
+            </Button>
+          )}
+        </Transition>
+      </Affix>
       <div className="flex flex-col h-full">
         <NavBar />
         <div
@@ -25,15 +44,16 @@ export default function HomePage() {
       <Divider size={"sm"} color="indigo"></Divider>
 
       <div
-        className="h-full"
+        className="overflow-auto min-h-full flex place-items-center justify-center"
+        id="projects"
         style={{
           backgroundImage: `url('/layered-peaks-haikei.svg')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
+          backgroundAttachment: 'fixed'
         }}
-        id="projects"
       >
-        <div className="flex w-full md:w-9/12 float-right h-full flex-col justify-center px-8 gap-5">
+        <div className="flex w-full md:w-9/12 flex-col justify-center p-8 gap-5 ml-auto h-full">
           <Highlight
             highlight={["Projects"]}
             highlightStyles={(theme) => ({
@@ -45,15 +65,87 @@ export default function HomePage() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             })}
-            className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-right px-4"
+            className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold px-4 text-right"
           >
             My Projects
           </Highlight>
-          <div className="flex h-5/6 bg-zinc-800 rounded-3xl border-indigo-500 border-2">
-            <ProjectComponent />
+          <div className="flex bg-stone-800 rounded-lg border-indigo-500 border-2 flex-col gap-2 p-4 md:p-6 lg:p-8 xl:p-10">
+            <ProjectComponent MDX={Data} />
           </div>
         </div>
       </div>
     </>
+  );
+}
+
+
+function Description() {
+  return (
+    <div className="flex lg:flex-1 justify-center flex-col border-l-2 pl-3 h-min py-5">
+      <Title className="h-min text-xl md:text-2xl lg:text-3xl">
+        Hi, my name is Yash
+      </Title>
+      <Text className="pb-3 font-semibold text-md md:text-lg">
+        I am a full-stack developer, who is
+      </Text>
+      <List>
+        <DescriptionListItem text="Super excited about new technologies" />
+        <DescriptionListItem text="Ready to tackle challenges head on" />
+        <DescriptionListItem text="Always willing to learn" />
+      </List>
+    </div>
+  );
+}
+
+
+interface ListItemProps {
+  text: string;
+}
+function DescriptionListItem(props: ListItemProps) {
+  return (
+    <List.Item
+      className="text-md md:text-lg"
+      icon={
+        <ThemeIcon color="blue" size={24} radius="xl">
+          <CircleCheck size={20} />
+        </ThemeIcon>
+      }
+    >
+      {props.text}
+    </List.Item>
+  );
+}
+
+
+function WelcomeText() {
+  return (
+    <div className="flex flex-col justify-center mt-12 md:mt-4 lg:flex-[1.5]">
+      <Highlight
+        align="center"
+        highlight={["WhyAsh's"]}
+        highlightStyles={(theme) => ({
+          backgroundImage: theme.fn.linearGradient(
+            45,
+            theme.colors.cyan[5],
+            theme.colors.indigo[5]
+          ),
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        })}
+        className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold"
+      >
+        Welcome to WhyAsh&apos;s
+      </Highlight>
+      <div className="h-3 md:h-5 lg:h-7 xl:h-9" />
+      <div className="flex justify-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-mono text-white">
+        <Typewriter
+          options={{
+            strings: ["dev_life", "blog", "journal", "projects"],
+            autoStart: true,
+            loop: true,
+          }}
+        />
+      </div>
+    </div>
   );
 }
