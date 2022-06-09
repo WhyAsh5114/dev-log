@@ -51,7 +51,7 @@ export default function NavButtonGroup(props: props) {
         Projects
       </NavButton>
       <NavButton
-        link="/"
+        link="/about"
         icon={<InfoCircle />}
         hoverClass="hover:text-blue-400"
         data_cy="about-nav-button"
