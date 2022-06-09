@@ -3,9 +3,13 @@ import { useWindowScroll } from '@mantine/hooks';
 import { ArrowUp, CircleCheck } from "tabler-icons-react";
 import { NavBar } from "./../components/navigation/NavBar";
 import Typewriter from "typewriter-effect";
-import ProjectComponent from "../components/ProjectComponent";
-import Data from "./../data/projects/next_token_viewer/next_token_viewer.mdx";
+import Proj1 from "./../data/projects/next_cryptocurrencies_handbook.mdx";
+import Proj2 from "./../data/projects/dota2_rampage_tracker.mdx"
 
+const components = {
+  h1: (props: any) => <h2 className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl" {...props}/>,
+  p: (props: any) => <p className="text-sm md:text-base" {...props} />
+}
 
 export default function HomePage() {
   const [scroll, scrollTo] = useWindowScroll();
@@ -19,7 +23,7 @@ export default function HomePage() {
               leftIcon={<ArrowUp />}
               style={transitionStyles}
               onClick={() => scrollTo({ y: 0 })}
-              className="bg-blue-500"
+              className="bg-indigo-700"
             >
               Home
             </Button>
@@ -69,8 +73,12 @@ export default function HomePage() {
           >
             My Projects
           </Highlight>
-          <div className="flex bg-stone-800 rounded-lg border-indigo-500 border-2 flex-col gap-2 p-4 md:p-6 lg:p-8 xl:p-10">
-            <ProjectComponent MDX={Data} />
+          <div className="flex bg-stone-900 rounded-lg flex-col gap-2 p-4 md:p-6 lg:p-8 xl:p-10">
+            <Proj1 components={components} />
+          </div>
+          <Divider size='sm' color='indigo' className="rounded-full my-10" />
+          <div className="flex bg-stone-900 rounded-lg flex-col gap-2 p-4 md:p-6 lg:p-8 xl:p-10">
+            <Proj2 components={components} />
           </div>
         </div>
       </div>
