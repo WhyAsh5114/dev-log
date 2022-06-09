@@ -45,7 +45,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <Divider size={"sm"} color="indigo"></Divider>
+      <Divider size={"sm"} color="indigo" />
 
       <div
         className="overflow-auto min-h-full flex place-items-center justify-center"
@@ -57,7 +57,7 @@ export default function HomePage() {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="flex w-full md:w-9/12 flex-col justify-center p-8 gap-5 ml-auto h-full">
+        <div className="flex w-full md:w-9/12 flex-col justify-center p-8 gap-5 ml-auto h-full mb-5">
           <Highlight
             highlight={["Projects"]}
             highlightStyles={(theme) => ({
@@ -81,6 +81,13 @@ export default function HomePage() {
             <Proj2 components={components} />
           </div>
         </div>
+      </div>
+
+      <Divider size={"sm"} color="indigo" />
+
+      <div className="h-1/6 w-full flex items-center justify-center p-3 gap-2 flex-col bg-gray-900">
+        <Title order={2}>WhyAsh&apos;s Dev-Log</Title>
+        <Text>©️ Copyright 2022</Text>
       </div>
     </>
   );
