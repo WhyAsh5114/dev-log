@@ -1,0 +1,42 @@
+import ProjectHeader from "/components/projectComponents/Header"
+import Carousel from "/components/projectComponents/Carousel";
+import TechStack from "/components/projectComponents/TechStack"
+
+export const metadata = {
+  title: "Cryptocurrencies Handbook",
+  author: "Yash Kolekar",
+  images: [
+    "homepage.png",
+    "searching.png",
+    "contentpage.png",
+    "mobile_homepage.png",
+    "mobile_searching.png",
+    "mobile_contentpage.png",
+  ],
+  imageDir: "/projects/next_cryptocurrencies_handbook/",
+  github: "https://github.com/WhyAsh5114/next-cryptocurrencies-handbook",
+  website: "https://next-token-viewer.vercel.app/",
+  tech_stack: ["React", "Next", "TypeScript", "JavaScript", "Mantine"]
+};
+
+<ProjectHeader title={metadata.title} github={metadata.github} website={metadata.website} />
+
+---
+
+A web app built with **React** and **Next** which allows you
+to search for commonly used cryptocurrencies and get a simple description
+along with some tags, a logo, and the website link.
+
+<Carousel imageDir={metadata.imageDir} images={metadata.images} />
+
+I built this small app just to get used to NextJS and the React ecosystem,
+it uses the Mantine UI library for the components and TailwindCSS for general layout.
+There is a local TS file which contains the database object, and NextJS automatically
+builds all the routes according to that database object at build time, which allows for 
+fast load times as all the routes are pre rendered. The dynamic tokens page significantly
+reduces the amount of time needed to add a new coin to look at, generally I'd have to create
+an entire new HTML page, but with the power of React and Next, I can simply add an entry to the
+database with just the information, and all of it will be rendered automatically. The website
+is hosted on Vercel.
+
+<TechStack tech_stack={metadata.tech_stack} />

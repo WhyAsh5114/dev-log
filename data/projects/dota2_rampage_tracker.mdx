@@ -1,0 +1,35 @@
+import ProjectHeader from "/components/projectComponents/Header"
+import Carousel from "/components/projectComponents/Carousel";
+import TechStack from "/components/projectComponents/TechStack"
+
+export const metadata = {
+  title: "DOTA 2 Rampage Finder",
+  author: "Yash Kolekar",
+  images: [
+    "default.png",
+    "scanning.png",
+  ],
+  imageDir: "/projects/dota2_rampage_finder/",
+  github: "https://github.com/WhyAsh5114/Dota2-Rampage-Finder",
+  website: "",
+  tech_stack: ["Python", "Kivy", "Steam", "OpenDOTA"]
+};
+
+<ProjectHeader title={metadata.title} github={metadata.github} website={metadata.website} />
+
+---
+
+A desktop application built using **Python** and the **Kivy** framework which allows
+us to find the previous *game IDs* in which *rampages* (an in game achievement) were 
+achieved, using the **Steam API** and the **OpenDOTA API**.
+
+<Carousel imageDir={metadata.imageDir} images={metadata.images} />
+
+A Reddit user wanted to find their last games in which they achieved a rampage (an in game achievement),
+unfortunately this data wasn't directly available in the game-client, so I tried to help them by 
+creating an app which goes through all games available on the user's account and checks if they 
+had any rampages, if they did, the Game ID would get added to a list and be displayed. When making this
+app I learned a lot about APIs, API keys, rate limiting, filtering and parsing. Python isn't meant for 
+making Desktop apps, but there is a decent framework: Kivy, which served my use case for this small project.
+
+<TechStack tech_stack={metadata.tech_stack} />
