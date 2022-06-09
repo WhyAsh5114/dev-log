@@ -57,7 +57,7 @@ export default function HomePage() {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="flex w-full md:w-9/12 flex-col justify-center p-8 gap-5 ml-auto h-full mb-5">
+        <div className="flex w-full md:w-2/3 flex-col justify-center p-8 gap-5 ml-auto h-full mb-5 mr-0 md:mr-6 lg:mr-12 xl:mr-20 mt-3">
           <Highlight
             highlight={["Projects"]}
             highlightStyles={(theme) => ({
