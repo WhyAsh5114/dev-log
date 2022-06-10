@@ -11,7 +11,7 @@ export default function TechStack({ tech_stack }: props) {
         {tech_stack.map((tech, idx) => (
           <Tooltip key={idx} label={tech} radius='xl' withArrow>
             <Image
-              src={`/techstack/${tech.toLowerCase()}.png`}
+              src={`/techstack/${tech.toLowerCase()}.webp`}
               alt={tech}
               width={100}
               style={{ marginLeft: "auto", marginRight: "auto" }}
