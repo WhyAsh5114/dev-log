@@ -33,6 +33,7 @@ export default function Carousel({ images, imageDir }: carouselProps) {
             alt={`${img}`}
             layout="fill"
             objectFit="contain"
+            priority={idx == 0}
           />
         </SwiperSlide>
       ))}
