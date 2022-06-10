@@ -1,4 +1,5 @@
-import { Image, Tooltip } from "@mantine/core";
+import { Tooltip } from "@mantine/core";
+import Image from "next/image"
 
 interface props {
   tech_stack: string[];
@@ -14,6 +15,7 @@ export default function TechStack({ tech_stack }: props) {
               src={`/techstack/${tech.toLowerCase()}.webp`}
               alt={tech}
               width={100}
+              height={100}
               style={{ marginLeft: "auto", marginRight: "auto" }}
             />
           </Tooltip>
