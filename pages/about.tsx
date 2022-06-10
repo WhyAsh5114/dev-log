@@ -109,6 +109,7 @@ export default function About() {
                   href="mailto:whyash5114@gmail.com"
                   className="flex justify-center bg-red-500 rounded-full p-1.5"
                   style={styles.l1}
+                  aria-label="Mail"
                 >
                   <Mail size={35} color="white" />
                 </a>
@@ -118,6 +119,7 @@ export default function About() {
                   rel="noreferrer"
                   className="flex justify-center bg-cyan-600 rounded-full p-1.5"
                   style={styles.l2}
+                  aria-label="LinkedIn Profile"
                 >
                   <BrandLinkedin size={35} color="white" />
                 </a>
@@ -127,6 +129,7 @@ export default function About() {
                   rel="noreferrer"
                   className="flex justify-center bg-blue-500 rounded-full p-1.5"
                   style={styles.l3}
+                  aria-label="Twitter Profile"
                 >
                   <BrandTwitter color="white" size={35} />
                 </a>
@@ -136,6 +139,7 @@ export default function About() {
                   rel="noreferrer"
                   className="flex justify-center bg-white rounded-full p-1.5"
                   style={styles.l4}
+                  aria-label="GitHub Profile"
                 >
                   <BrandGithub size={35} color="black" />
                 </a>
