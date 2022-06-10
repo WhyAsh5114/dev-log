@@ -15,15 +15,29 @@ export default function ProjectHeader({ title, github, website }: headerProps) {
       </h2>
       <div className="flex gap-2 h-fit flex-col md:flex-row md:gap-5">
         <div className="bg-indigo-500 rounded-full p-1.5 cursor-pointer">
-          <a href={github} target="_blank" rel="noreferrer noopener">
+          <a
+            href={github}
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="GitHub Link"
+          >
             <BrandGithub className="h-5 md:h-6" color="white" />
           </a>
         </div>
-        <div className={`bg-blue-500 rounded-full p-1.5 cursor-pointer ${website !== "" ? "" : "hidden"}`}>
-          <a href={website} target="_blank" rel="noreferrer noopener">
-            <LinkIcon className="h-5 md:h-6" color="white" />
-          </a>
-        </div>
+        {website !== "" ? (
+          <div className={`bg-blue-500 rounded-full p-1.5 cursor-pointer`}>
+            <a
+              href={website}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Website Link"
+            >
+              <LinkIcon className="h-5 md:h-6" color="white" />
+            </a>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
