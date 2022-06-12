@@ -29,12 +29,12 @@ export default function About() {
             },
             t2: {
               transition: "slide-right",
-              duration: duration + 500,
+              duration: duration + 250,
               timingFunction: "ease-out",
             },
             d: {
               transition: "slide-right",
-              duration: duration + 500,
+              duration: duration + 250,
               timingFunction: "ease-out",
             },
             l1: {
