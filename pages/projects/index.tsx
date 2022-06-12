@@ -71,7 +71,7 @@ export default function Projects({ metadata }: props) {
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 })}
-                className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-5"
+                className="text-3xl lg:text-4xl xl:text-5xl font-semibold mb-5"
                 style={styles.t}
               >
                 My Projects
