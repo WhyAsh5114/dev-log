@@ -22,7 +22,6 @@ export default function App(props: AppProps) {
         withNormalizeCSS
         theme={{
           colorScheme: "dark",
-          fontFamily: ["Open sans", "sans-serif"],
         }}
       >
         <Component {...pageProps} />
