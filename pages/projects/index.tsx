@@ -7,22 +7,10 @@ import { useEffect, useState } from "react";
 import { NavBar } from "../../components/navigation/NavBar";
 
 interface props {
-  metadata: meta[];
+  projectsMetadata: projectMetadata[];
 }
 
-interface meta {
-  file_name: string;
-  title: string;
-  description: string;
-  author: string;
-  images: string[];
-  imageDir: string;
-  github: string;
-  website: string;
-  tech_stack: string[];
-}
-
-export default function Projects({ metadata }: props) {
+export default function Projects({ projectsMetadata }: props) {
   let [loaded, setLoaded] = useState(false);
   useEffect(() => {
     setLoaded(true);
@@ -77,7 +65,7 @@ export default function Projects({ metadata }: props) {
                 My Projects
               </Highlight>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                {metadata.map((projectData) => (
+                {projectsMetadata.map((projectData) => (
                   <Link key={projectData.title} href={`/projects/${projectData.file_name}`}>
                     <div
                       className="px-4 py-5 md:px-6 md:py-7 lg:px-8 lg:py-10 grid grid-cols-3 gap-3 border-2 border-indigo-400 rounded-3xl place-items-center bg-zinc-900 hover:bg-zinc-800 hover:border-white hover:text-white transition-colors cursor-pointer"
@@ -112,7 +100,7 @@ export async function getStaticProps() {
   const dir = path.resolve("./data/projects");
   const projects = fs.readdirSync(dir);
 
-  const metadata: meta[] = await Promise.all(
+  const projectsMetadata: projectMetadata[] = await Promise.all(
     projects.map(async (project) => {
       let data =  (await import(`./../../data/projects/${project}`)).metadata;
       data.file_name = project;
@@ -120,5 +108,5 @@ export async function getStaticProps() {
     })
   );
 
-  return { props: { metadata } };
+  return { props: { projectsMetadata } };
 }
