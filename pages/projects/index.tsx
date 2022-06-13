@@ -46,7 +46,7 @@ export default function Projects({ metadata }: props) {
       }}
     >
       {(styles) => (
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full" data-cy="project-page-container">
           <NavBar />
           <div
             className="flex flex-col h-full"

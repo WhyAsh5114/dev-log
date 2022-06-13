@@ -21,7 +21,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-full" data-cy="home-page-container">
         <NavBar />
         <Transition mounted={loaded} transition="fade" duration={500}>
           {(styles) => <div
