@@ -1,10 +1,11 @@
-import { Divider, GroupedTransition, Text, Title } from "@mantine/core";
+import { Button, Divider, GroupedTransition, Text, Title } from "@mantine/core";
 import { NavBar } from "../components/navigation/NavBar";
 import {
   Mail,
   BrandLinkedin,
   BrandTwitter,
   BrandGithub,
+  Download,
 } from "tabler-icons-react";
 import { useEffect, useState } from "react";
 
@@ -91,7 +92,7 @@ export default function About() {
                 >
                   Full stack developer
                 </Title>
-                <Text className="text-md lg:text-lg" style={styles.d}>
+                <Text className="text-sm md:text-md lg:text-lg" style={styles.d}>
                   A developer who is always learning new things out of pure
                   interest and curiosity. I know plenty about web development,
                   blockchain, smart contracts and problem solving. I have been
@@ -104,10 +105,10 @@ export default function About() {
                 className="w-2/3 lg:w-1/2 my-5"
                 style={styles.d}
               />
-              <address className="w-2/3 lg:w-1/2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+              <address className="w-2/3 lg:w-1/2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5">
                 <a
                   href="mailto:whyash5114@gmail.com"
-                  className="flex justify-center bg-red-500 rounded-full p-1.5"
+                  className="flex justify-center bg-red-500 rounded-full p-1.5 hover:bg-red-600 transition-colors"
                   style={styles.l1}
                   aria-label="Mail"
                 >
@@ -117,7 +118,7 @@ export default function About() {
                   href="https://www.linkedin.com/in/whyash5114/"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex justify-center bg-cyan-600 rounded-full p-1.5"
+                  className="flex justify-center bg-cyan-600 rounded-full p-1.5 hover:bg-cyan-700 transition-colors"
                   style={styles.l2}
                   aria-label="LinkedIn Profile"
                 >
@@ -127,7 +128,7 @@ export default function About() {
                   href="https://www.twitter.com/whyash5114/"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex justify-center bg-blue-500 rounded-full p-1.5"
+                  className="flex justify-center bg-blue-500 rounded-full p-1.5 hover:bg-blue-600 transition-colors"
                   style={styles.l3}
                   aria-label="Twitter Profile"
                 >
@@ -137,7 +138,7 @@ export default function About() {
                   href="https://www.github.com/WhyAsh5114"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex justify-center bg-white rounded-full p-1.5"
+                  className="flex justify-center bg-white rounded-full p-1.5 hover:bg-gray-300 transition-colors"
                   style={styles.l4}
                   aria-label="GitHub Profile"
                 >
@@ -148,9 +149,9 @@ export default function About() {
                 className="flex justify-center w-2/3 lg:w-1/2"
                 style={styles.r}
               >
-                <button className="mt-10 text-white font-bold border bg-white bg-opacity-10 text-lg px-8 py-2 rounded-md">
+                <Button className="mt-10 text-white font-bold text-lg px-8 bg-teal-600 rounded-full" leftIcon={<Download />}>
                   Resume
-                </button>
+                </Button>
               </div>
             </div>
           )}
