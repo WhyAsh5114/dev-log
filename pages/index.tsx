@@ -1,7 +1,6 @@
 import {
   Highlight,
   Title,
-  Text,
   List,
   ThemeIcon,
   GroupedTransition,
@@ -67,12 +66,13 @@ function Description() {
           >
             Hi, my name is Yash
           </Title>
-          <Text
+          <Title
+            order={2}
             style={styles.t}
             className="pb-3 font-semibold text-md md:text-lg"
           >
             I am a full-stack developer, who is
-          </Text>
+          </Title>
           <List>
             <DescriptionListItem
               style={styles.l1}
@@ -108,7 +108,7 @@ function DescriptionListItem(props: ListItemProps) {
         </ThemeIcon>
       }
     >
-      {props.text}
+      <p>{props.text}</p>
     </List.Item>
   );
 }
