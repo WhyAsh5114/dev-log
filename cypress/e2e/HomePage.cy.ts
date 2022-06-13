@@ -14,3 +14,5 @@ describe('Home page', () => {
         cy.get("p").should('contain.text', 'Always willing to learn').should('be.visible')
     })
 })
+
+export {}

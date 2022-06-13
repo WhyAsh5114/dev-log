@@ -59,3 +59,5 @@ describe('Navigation bar on desktop', () => {
         cy.url().should('eq', 'http://localhost:3000/')
     })
 })
+
+export {}
