@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import path from "path";
 import { useEffect, useState } from "react";
-import { NavBar } from "../../components/navigation/NavBar";
+import NavBar from "../../components/navigation/NavBar";
 
 interface props {
   projectsMetadata: projectMetadata[];
@@ -40,7 +40,7 @@ export default function Projects({ projectsMetadata }: props) {
             className="flex flex-col h-full"
             style={Object.assign(
               {
-                backgroundImage: 'url("/polygon-scatter-haikei.svg")',
+                backgroundImage: 'url("/project-background.svg")',
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
               },

@@ -1,5 +1,5 @@
 import { Button, Divider, GroupedTransition, Text, Title } from "@mantine/core";
-import { NavBar } from "../components/navigation/NavBar";
+import NavBar from "../components/navigation/NavBar";
 import {
   Mail,
   BrandLinkedin,
@@ -74,7 +74,7 @@ export default function About() {
             className="flex flex-col h-full justify-center pl-6 lg:pl-12"
             style={Object.assign(
               {
-                backgroundImage: `url('/layered-steps-haikei.svg')`,
+                backgroundImage: `url('/about-background.svg')`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
               },

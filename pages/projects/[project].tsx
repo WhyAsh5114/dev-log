@@ -9,7 +9,7 @@ import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useEffect, useMemo, useState } from "react";
-import { NavBar } from "../../components/navigation/NavBar";
+import NavBar from "../../components/navigation/NavBar";
 import { GroupedTransition } from "@mantine/core";
 
 const components = {
@@ -49,7 +49,7 @@ export default function Project({ project }: { project: string }) {
             id="projects"
             style={Object.assign(
               {
-                backgroundImage: `url('/layered-peaks-haikei.svg')`,
+                backgroundImage: `url('/projects-background.svg')`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundAttachment: "fixed",

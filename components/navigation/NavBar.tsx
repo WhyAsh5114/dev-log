@@ -2,7 +2,7 @@ import { Burger, Drawer } from "@mantine/core";
 import { useState } from "react";
 import NavButtonGroup from "./NavButtonGroup";
 
-export function NavBar() {
+export default function NavBar() {
   const [opened, setOpened] = useState(false);
 
   return (

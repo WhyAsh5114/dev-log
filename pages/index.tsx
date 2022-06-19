@@ -7,7 +7,7 @@ import {
   Transition,
 } from "@mantine/core";
 import { CircleCheck } from "tabler-icons-react";
-import { NavBar } from "./../components/navigation/NavBar";
+import NavBar from "./../components/navigation/NavBar";
 import Typewriter from "typewriter-effect";
 import { useEffect, useState } from "react";
 
@@ -26,7 +26,7 @@ export default function HomePage() {
           {(styles) => <div
             className="flex h-full items-center gap-2 flex-col md:flex-row justify-evenly"
             style={Object.assign({
-              backgroundImage: `url('/layered-waves-haikei.svg')`,
+              backgroundImage: `url('/home-background.svg')`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
             }, styles)}

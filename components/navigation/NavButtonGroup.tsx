@@ -24,7 +24,7 @@ export default function NavButtonGroup(props: props) {
         Home
       </NavButton>
       <NavButton
-        link="/"
+        link="/blog"
         icon={<FilePencil />}
         hoverClass="hover:text-orange-400"
         data_cy="blog-nav-button"
