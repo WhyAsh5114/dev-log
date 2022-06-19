@@ -29,7 +29,7 @@ export default function About() {
           },
           t2: {
             transition: "slide-right",
-            duration: duration + 250,
+            duration: duration,
             timingFunction: "ease-out",
           },
           d: {
@@ -66,6 +66,11 @@ export default function About() {
             transition: "fade",
             duration,
             timingFunction: "ease-out",
+          },
+          line: {
+            transition: "fade",
+            duration: 1000,
+            timingFunction: "ease-in",
           },
         }}
       >
@@ -105,7 +110,7 @@ export default function About() {
             <Divider
               color="white"
               className="w-2/3 lg:w-1/2 my-5"
-              style={styles.d}
+              style={styles.line}
             />
             <address className="w-2/3 lg:w-1/2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5">
               <a
