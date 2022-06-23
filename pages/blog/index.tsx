@@ -1,14 +1,20 @@
-import { GroupedTransition, Highlight } from "@mantine/core";
+import { Divider, GroupedTransition, Highlight, Text } from "@mantine/core";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import NavBar from "../../components/navigation/NavBar";
+import path from "path";
 
-export default function Blog() {
+import fs from "fs";
+
+interface props {
+  blogMetadata: blogMetadata[];
+}
+
+export default function Blog({ blogMetadata }: props) {
   let [loaded, setLoaded] = useState(false);
   useEffect(() => {
     setLoaded(true);
   }, []);
-
-  // TODO: Image file name refactoring
 
   return (
     <GroupedTransition
@@ -59,7 +65,32 @@ export default function Blog() {
                 My Blog
               </Highlight>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
+                {blogMetadata.map((blogData) => (
+                  <Link
+                    key={blogData.title}
+                    href={`/blog/${blogData.file_name}`}
+                  >
+                    <div
+                      className="px-4 py-4 md:px-6 md:py-6 lg:px-8 lg:py-8 border-2 border-orange-400 rounded-3xl bg-zinc-900 hover:bg-zinc-800 hover:border-white hover:text-white transition-colors cursor-pointer"
+                      style={styles.p}
+                    >
+                      <div className="col-span-2 grid gap-1 md:gap-2 lg:gap-3 w-full">
+                        <h3 className="font-bold text-xl md:text-2xl">
+                          {blogData.title}
+                        </h3>
+                        <Text>{blogData.description}</Text>
+                      </div>
+                      <Divider className="mt-3 mb-4" size={"xs"} color="gray" />
+                      <div className="grid grid-flow-col-dense grid-rows-2 md:grid-rows-1 lg:grid-rows-2 xl:grid-rows-1 place-content-start gap-5">
+                        {blogData.tags.map((tag) => (
+                          <p key={tag} className="text-black font-bold py-0.5 bg-gray-200 px-3 rounded-full w-fit">
+                            #{tag}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -67,4 +98,19 @@ export default function Blog() {
       )}
     </GroupedTransition>
   );
+}
+
+export async function getStaticProps() {
+  const dir = path.resolve("./data/blog");
+  const blogs = fs.readdirSync(dir);
+
+  const blogMetadata: projectMetadata[] = await Promise.all(
+    blogs.map(async (blog) => {
+      let data = (await import(`./../../data/blog/${blog}`)).metadata;
+      data.file_name = blog;
+      return data;
+    })
+  );
+
+  return { props: { blogMetadata } };
 }
