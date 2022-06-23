@@ -71,7 +71,7 @@ export default function Projects({ projectsMetadata }: props) {
                       className="px-4 py-5 md:px-6 md:py-7 lg:px-8 lg:py-10 grid grid-cols-3 gap-3 border-2 border-indigo-400 rounded-3xl place-items-center bg-zinc-900 hover:bg-zinc-800 hover:border-white hover:text-white transition-colors cursor-pointer"
                       style={styles.p}
                     >
-                      <div className="col-span-2 grid gap-1 md:gap-2 lg:gap-3">
+                      <div className="col-span-2 grid gap-1 md:gap-2 lg:gap-3 w-full">
                         <h3 className="font-bold text-xl md:text-2xl">{projectData.title}</h3>
                         <Text>{projectData.description}</Text>
                       </div>
