@@ -152,17 +152,6 @@ export default function About() {
                 <BrandGithub size={35} color="black" />
               </a>
             </address>
-            <div
-              className="flex justify-center w-2/3 lg:w-1/2"
-              style={styles.r}
-            >
-              <Button
-                className="mt-10 text-white font-bold text-lg px-8 bg-teal-600 rounded-full"
-                leftIcon={<Download />}
-              >
-                Resume
-              </Button>
-            </div>
           </div>
         )}
       </GroupedTransition>
