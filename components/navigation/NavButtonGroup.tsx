@@ -33,15 +33,6 @@ export default function NavButtonGroup(props: props) {
         Blog
       </NavButton>
       <NavButton
-        link="/"
-        icon={<Book2 />}
-        hoverClass="hover:text-yellow-400"
-        data_cy="journal-nav-button"
-        handleClick={props.handleClick}
-      >
-        Journal
-      </NavButton>
-      <NavButton
         link="/projects"
         icon={<Notebook />}
         hoverClass="hover:text-indigo-400"
