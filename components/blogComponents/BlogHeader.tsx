@@ -11,7 +11,7 @@ export default function BlogHeader({ title, tags }: blogHeaderProps) {
       <h2 className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl flex-1 text-white h-fit">
         {title}
       </h2>
-      <div className="flex gap-5 my-3">
+      <div className="flex gap-5 my-2">
         {tags.map((tag) => (
           <p
             key={tag}
@@ -21,7 +21,7 @@ export default function BlogHeader({ title, tags }: blogHeaderProps) {
           </p>
         ))}
       </div>
-      <Divider color={"white"} orientation="horizontal" className="mt-2" />
+      <Divider color={"white"} orientation="horizontal" className="my-0.5" />
     </>
   );
 }
