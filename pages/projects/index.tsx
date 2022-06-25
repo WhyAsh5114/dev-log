@@ -40,8 +40,7 @@ export default function Projects({ projectsMetadata }: props) {
             className="flex flex-col h-full"
             style={Object.assign(
               {
-                backgroundImage: 'url("/project-background.svg")',
-                backgroundRepeat: "no-repeat",
+                background: 'url("/project-background.svg") right',
                 backgroundSize: "cover",
               },
               styles.i

@@ -40,8 +40,7 @@ export default function Blog({ blogMetadata }: props) {
             className="flex flex-col h-full"
             style={Object.assign(
               {
-                backgroundImage: 'url("/blog-background.svg")',
-                backgroundRepeat: "no-repeat",
+                background: 'url("/blog-background.svg") right',
                 backgroundSize: "cover",
               },
               styles.i
