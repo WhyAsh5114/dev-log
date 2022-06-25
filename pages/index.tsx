@@ -153,7 +153,7 @@ function WelcomeText() {
           >
             <Typewriter
               options={{
-                strings: ["dev_life", "blog", "journal", "projects"],
+                strings: ["dev_life", "blog", "projects"],
                 autoStart: true,
                 loop: true,
               }}
