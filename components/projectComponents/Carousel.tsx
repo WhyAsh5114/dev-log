@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination, Navigation, Lazy } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -20,10 +20,10 @@ export default function Carousel({ images, imageDir }: carouselProps) {
       }}
       navigation={true}
       autoplay={{
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false,
       }}
-      modules={[Autoplay, Pagination, Navigation]}
+      modules={[Lazy, Autoplay, Pagination, Navigation]}
       className="border-stone-600 my-2 bg-stone-800 border-2 w-full h-96"
     >
       {images.map((img, idx) => (
