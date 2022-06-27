@@ -1,11 +1,24 @@
 import { defineConfig } from "cypress";
+import fs from "fs";
 
 export default defineConfig({
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
+    baseUrl: "http://localhost:3000",
     setupNodeEvents(on, config) {
-      return require("./cypress/plugins/index.js")(on, config);
+      on("task", {
+        async "getProjects"() {
+          const projects = fs.readdirSync("/data/projects");
+          const projectsMetadata: projectMetadata[] = await Promise.all(
+            projects.map(async (project) => {
+              let data = (await import(`./../../data/projects/${project}`)).metadata;
+              data.file_name = project;
+              return data;
+            })
+          );
+
+          return projectsMetadata;
+        }
+      })
     },
   },
 
