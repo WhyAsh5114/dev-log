@@ -15,6 +15,7 @@ export default function App(props: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
         <meta name="description" content="WhyAsh5114's dev-log and portfolio" />
+        <link rel="icon" href="/favicon.png" type="image/x-icon" />
       </Head>
 
       <MantineProvider
