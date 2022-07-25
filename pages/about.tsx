@@ -5,9 +5,9 @@ import {
   BrandLinkedin,
   BrandTwitter,
   BrandGithub,
-  Download,
 } from "tabler-icons-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function About() {
   const duration = 500;
@@ -76,7 +76,7 @@ export default function About() {
       >
         {(styles) => (
           <div
-            className="flex flex-col h-full justify-center pl-6 lg:pl-12"
+            className="flex flex-col h-full justify-center pl-5 lg:pl-12"
             style={Object.assign(
               {
                 backgroundImage: `url('/about-background.svg')`,
@@ -86,15 +86,36 @@ export default function About() {
               styles.i
             )}
           >
-            <div className="flex flex-col gap-2 md:gap-3 lg:gap-4 w-2/3 lg:w-1/2">
+            <div className="flex flex-col gap-2 md:gap-3 w-2/3 lg:w-1/2">
+              <Image
+                src="/favicon.png"
+                alt="profile_pic"
+                width={75}
+                height={75}
+                layout="fixed"
+                className="rounded-full"
+              />
+              <Divider
+                color="white"
+                className="w-full my-4"
+                style={styles.line}
+              />
+              <div className="flex flex-col justify-center md:flex-row md:items-center md:justify-start md:gap-8">
+                <Title
+                  className="text-3xl md:text-4xl text-white w-fit inline"
+                  style={styles.t1}
+                >
+                  Yash Kolekar
+                </Title>
+                <Title
+                  className="text-gray-300 text-xl font-normal font-mono -mt-1"
+                  style={styles.t1}
+                >
+                  (WhyAsh5114)
+                </Title>
+              </div>
               <Title
-                className="text-3xl md:text-4xl lg:text-5xl text-white"
-                style={styles.t1}
-              >
-                Yash Kolekar
-              </Title>
-              <Title
-                className="text-2xl md:text-3xl lg:text-4xl"
+                className="text-2xl md:text-3xl"
                 style={styles.t2}
               >
                 Full stack developer
@@ -109,7 +130,7 @@ export default function About() {
             </div>
             <Divider
               color="white"
-              className="w-2/3 lg:w-1/2 my-5"
+              className="w-2/3 lg:w-1/2 my-7"
               style={styles.line}
             />
             <address className="w-2/3 lg:w-1/2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5">

@@ -17,7 +17,7 @@ const components = {
     />
   ),
   p: (props: any) => <p className="text-sm md:text-base" {...props} />,
-  BlogHeader,
+  BlogHeader
 };
 
 export default function Blog({ blog }: { blog: string }) {
