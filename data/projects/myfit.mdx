@@ -1,0 +1,36 @@
+export const metadata = {
+  title: "MyFit (In progress)",
+  description: "A full stack webapp for fitness tracking",
+  author: "Yash Kolekar",
+  images: [
+    "homepage.png",
+    "loginpage.png"
+  ],
+  imageDir: "/projects/myfit/",
+  github: "https://github.com/WhyAsh5114/MyFit",
+  website: "",
+  tech_stack: ["Svelte", "Redis", "TypeScript", "TailwindCSS", "Playwright"]
+};
+
+<ProjectHeader title={metadata.title} github={metadata.github} website={metadata.website} />
+
+---
+
+A web app built with **Svelte** and **SvelteKit** which tracks a vast array of fitness
+metrics like workouts, splits, nutrition and sleep. 
+
+<Carousel imageDir={metadata.imageDir} images={metadata.images} />
+
+I built this app because there was no other app which allowed me to track so many metrics
+at the same time and graph them to show meaningful relations between them. There's nutrition,
+sleep, workouts, steps, protein intake, heart rate, cardio, and others which do impact one's
+daily performance, tracking them might help find issues with the current approach or advantages
+of the current approach, like lack of sleep might sound obvious but when you see the plots of 
+daily workout volume and sleep quality graphed against each other, you realize how important it is.
+This app will take quite some time to finish as there are a lot of features and I have to keep up 
+with the updates to SvelteKit as it's in beta and there are a few bugs; one super annoying bug that 
+I have to workaround right now is session management, I can't navigate smoothly between login and other
+pages because of it which ruins the experience, but the bug is marked as important on the SvelteKit repo
+and should be fixed soon. *fingers crossed*
+
+<TechStack tech_stack={metadata.tech_stack} />
