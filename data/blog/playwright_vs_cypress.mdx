@@ -1,0 +1,34 @@
+export const metadata = {
+  title: "Playwright versus Cypress",
+  description: "Just started using Playwright, feels really nice",
+  author: "Yash Kolekar",
+  tags: ["testing", "comparison", "frameworks"],
+  date: "25/07/2022",
+};
+
+<BlogHeader title={metadata.title} tags={metadata.tags} />
+
+Testing software is a must; often, I've made changes and broken something unknowingly, making it extra annoying to trace
+down what went wrong. Testing helps avoid all that and is also oddly pleasing; those green checkmarks appearing one by
+one feel oddly comforting. There are several ways of testing software: integration testing, component testing, end-to-end
+testing, unit testing, etc. All of them have their use cases, for example, component testing is a great idea for testing
+a component library or your custom components, and end-to-end testing is good at checking how a user uses an application.
+I prefer to use a mix of e2e and component testing.
+
+I used to stay away from testing, but now I always test my code. Sometimes I write tests before starting to code! (known
+as Test Driven Development, TDD). It has helped me a lot by catching bugs in time and knowing what caused them. A few months
+ago, I used to rely on the Cypress framework to test my app, but now SvelteKit recommends Playwright during project creation.
+I hadn't heard of Playwright before, so I thought to try it out; it was surprisingly good.
+
+It was simple, lightweight, and fast, lightning fast! It performed tests in parallel, utilizing all cores of the CPU. Since
+I had a Ryzen 5 3600, 6-core CPU, it completed tests incredibly faster than Cypress. I could also use node modules right
+inside my test files; without having to create separate tasks. Although it was a bit challenging to move from a GUI-based
+testing framework to a CLI one, it was well worth the effort. It also had native tooling with VS-Code; I could run tests
+directly from my IDE. The tooling nailed it for me; I wasn't going to look back.
+
+<div className="flex w-full justify-center my-2 border">
+  <img src="/blogs/testing.png" width="500" />
+</div>
+
+Cypress made testing fun and enjoyed its time as a solo competitor. But as Playwright from Microsoft steps into the arena with
+insanely attractive features and advantages, Cypress will have to step up its game.
