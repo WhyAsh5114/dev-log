@@ -1,0 +1,30 @@
+export const metadata = {
+  title: "Python Runtime Comparer",
+  description: "Compares the runtime of different programs across identical inputs and outputs",
+  author: "Yash Kolekar",
+  images: [
+    "default.webp",
+    "scanning.webp",
+  ],
+  imageDir: "/projects/python_runtime_comparer/",
+  github: "https://github.com/WhyAsh5114/Python-Runtime-Comparer",
+  website: "",
+  tech_stack: ["Python", "Kivy"]
+};
+
+<ProjectHeader title={metadata.title} github={metadata.github} website={metadata.website} />
+
+---
+
+A desktop application built using **Python** and the **Kivy** framework which allows
+us to compare the runtimes of different programs across identical inputs and outputs
+
+<Carousel imageDir={metadata.imageDir} images={metadata.images} />
+
+## Features
+1. Compares the **runtime** and of different programs across identical inputs and outputs
+2. **Graphs** the runtime over different sized inputs using **matplotlib**
+3. Finds out particular tests which consistently occur in worst case or best case through **statistics**
+4. Can choose multiple **solver** files, **input** files, and **output** files, through a GUI
+
+<TechStack tech_stack={metadata.tech_stack} />
