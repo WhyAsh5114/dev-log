@@ -9,5 +9,10 @@ I used **MDX** so that I could quickly make new blog posts and project posts wit
 
 ### It contains:
 - Projects related to programming
+![image](https://github.com/WhyAsh5114/dev-log/assets/71895020/148f1441-a950-4818-8866-c9e8f1679cec)
+
 - Socials (Twitter, GitHub, LinkedIn)
+![image](https://github.com/WhyAsh5114/dev-log/assets/71895020/695342d3-f070-49f6-8110-18ab3f19f2ed)
+
 - Some blog posts
+![image](https://github.com/WhyAsh5114/dev-log/assets/71895020/632fee81-07bb-4ab8-8fd1-41df304e7e56)
