@@ -71,12 +71,12 @@ function Header() {
           </SheetHeader>
           <Separator className="my-2" />
           <div className="grid">
-            <NavLinks />
+            <NavLinks className="justify-start" />
           </div>
         </SheetContent>
       </Sheet>
       <h1 className="font-bold text-xl px-4">Dev-Log</h1>
-      <div className={"hidden lg:contents"}>
+      <div className={"hidden lg:grid grid-cols-4"}>
         <NavLinks />
       </div>
       <ModeToggle />
@@ -84,21 +84,17 @@ function Header() {
   );
 }
 
-function NavLinks() {
-  return (
-    <>
-      <Button className="justify-start" variant="link">
-        <Link href="/">Home</Link>
-      </Button>
-      <Button className="justify-start" variant="link">
-        <Link href="/projects">Projects</Link>
-      </Button>
-      <Button className="justify-start" variant="link">
-        <Link href="/experiences">Experiences</Link>
-      </Button>
-      <Button className="justify-start" variant="link">
-        <Link href="/about">About</Link>
-      </Button>
-    </>
-  );
+function NavLinks({ className }: { className?: string }) {
+  const links: { text: string; href: string }[] = [
+    { text: "Home", href: "/" },
+    { text: "Projects", href: "/projects" },
+    { text: "Experiences", href: "/experiences" },
+    { text: "About", href: "/about" },
+  ];
+
+  return links.map(({ href, text }) => (
+    <Button key={text} className={className} variant="link">
+      <Link href={href}>{text}</Link>
+    </Button>
+  ));
 }
