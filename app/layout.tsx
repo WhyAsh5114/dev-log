@@ -1,10 +1,21 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { ModeToggle } from "@/components/ModeToggle";
-import { Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Link from "next/link";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dev Log",
@@ -36,8 +47,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <DesktopHeader />
-          <MobileHeader />
+          <Header />
           {children}
         </ThemeProvider>
       </body>
@@ -45,28 +55,50 @@ export default function RootLayout({
   );
 }
 
-function DesktopHeader() {
+function Header() {
   return (
-    <header className="sticky top-0 lg:flex gap-2 items-center p-2 border-b bg-background/75 backdrop-blur-sm hidden">
-      <h1 className="font-bold text-xl">Dev-Log</h1>
-      <Button className="ml-8" variant="link">
-        Home
-      </Button>
-      <Button variant="link">Projects</Button>
-      <Button variant="link">Experience</Button>
-      <Button variant="link" className="mr-auto">
-        About
-      </Button>
+    <header className="sticky top-0 flex gap-2 items-center p-2 border-b bg-background/75 backdrop-blur-md">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="ghost" size="icon" className="lg:hidden">
+            <Menu />
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left">
+          <SheetHeader>
+            <SheetTitle>Dev-Log</SheetTitle>
+            <SheetDescription>WhyAsh5114&apos;s dev log</SheetDescription>
+          </SheetHeader>
+          <Separator className="my-2" />
+          <div className="grid">
+            <NavLinks />
+          </div>
+        </SheetContent>
+      </Sheet>
+      <h1 className="font-bold text-xl px-4">Dev-Log</h1>
+      <div className={"hidden lg:contents"}>
+        <NavLinks />
+      </div>
       <ModeToggle />
     </header>
   );
 }
 
-function MobileHeader() {
+function NavLinks() {
   return (
-    <header className="sticky top-0 flex lg:hidden gap-2 items-center p-2 border-b bg-background/75 backdrop-blur-sm">
-      <h1 className="font-bold text-xl mr-auto">Dev-Log</h1>
-      <ModeToggle />
-    </header>
+    <>
+      <Button className="justify-start" variant="link">
+        <Link href="/">Home</Link>
+      </Button>
+      <Button className="justify-start" variant="link">
+        <Link href="/projects">Projects</Link>
+      </Button>
+      <Button className="justify-start" variant="link">
+        <Link href="/experience">Experience</Link>
+      </Button>
+      <Button className="justify-start" variant="link">
+        <Link href="/about">About</Link>
+      </Button>
+    </>
   );
 }
