@@ -14,8 +14,9 @@ import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link";
+import NavLinks from "./components/NavLinks";
 import "./globals.css";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Dev Log",
@@ -75,26 +76,13 @@ function Header() {
           </div>
         </SheetContent>
       </Sheet>
-      <h1 className="font-bold text-xl px-4">Dev-Log</h1>
-      <div className={"hidden lg:grid grid-cols-4"}>
+      <h1 className="font-bold text-xl px-4">
+        <Link href="/">Dev-Log</Link>
+      </h1>
+      <div className={"hidden lg:flex gap-1"}>
         <NavLinks />
       </div>
       <ModeToggle />
     </header>
   );
-}
-
-function NavLinks({ className }: { className?: string }) {
-  const links: { text: string; href: string }[] = [
-    { text: "Home", href: "/" },
-    { text: "Projects", href: "/projects" },
-    { text: "Experiences", href: "/experiences" },
-    { text: "About", href: "/about" },
-  ];
-
-  return links.map(({ href, text }) => (
-    <Button key={text} className={className} variant="link">
-      <Link href={href}>{text}</Link>
-    </Button>
-  ));
 }
