@@ -5,7 +5,13 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function NavLinks({ className }: { className?: string }) {
+export default function NavLinks({
+  className,
+  onClick,
+}: {
+  className?: string;
+  onClick?: () => void;
+}) {
   const pathname = usePathname();
 
   const links: { text: string; href: string }[] = [
@@ -19,8 +25,11 @@ export default function NavLinks({ className }: { className?: string }) {
       key={text}
       className={cn(className, {
         "text-muted-foreground": !pathname.startsWith(href),
+        underline: pathname.startsWith(href),
       })}
+      onClick={onClick}
       variant="link"
+      asChild
     >
       <Link href={href}>{text}</Link>
     </Button>
