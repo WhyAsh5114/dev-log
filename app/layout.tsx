@@ -94,7 +94,7 @@ function NavLinks() {
         <Link href="/projects">Projects</Link>
       </Button>
       <Button className="justify-start" variant="link">
-        <Link href="/experience">Experience</Link>
+        <Link href="/experiences">Experiences</Link>
       </Button>
       <Button className="justify-start" variant="link">
         <Link href="/about">About</Link>
