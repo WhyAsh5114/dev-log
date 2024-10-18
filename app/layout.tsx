@@ -46,7 +46,7 @@ export default function RootLayout({
 
 function Header() {
   return (
-    <header className="sticky top-0 flex items-center p-2 pt-4 bg-background/75 backdrop-blur-md max-w-screen-sm mx-auto">
+    <header className="sticky top-0 flex items-center p-2 bg-background/75 backdrop-blur-md max-w-screen-sm mx-auto">
       <NavLinks className="font-semibold" />
       <ModeToggle />
     </header>
