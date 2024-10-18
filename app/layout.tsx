@@ -5,8 +5,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NavLinks from "./components/NavLinks";
 import "./globals.css";
-import Link from "next/link";
-import MobileSheet from "./components/MobileSheet";
 
 export const metadata: Metadata = {
   title: "Dev Log",
@@ -39,7 +37,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="max-w-screen-lg mx-auto p-4">{children}</main>
+          <main className="max-w-screen-sm mx-auto pt-8 p-4">{children}</main>
         </ThemeProvider>
       </body>
     </html>
@@ -48,14 +46,8 @@ export default function RootLayout({
 
 function Header() {
   return (
-    <header className="sticky top-0 flex gap-2 items-center p-2 border-b bg-background/75 backdrop-blur-md">
-      <MobileSheet />
-      <h1 className="font-bold text-xl px-4">
-        <Link href="/">Dev-Log</Link>
-      </h1>
-      <div className={"hidden lg:flex gap-1"}>
-        <NavLinks />
-      </div>
+    <header className="sticky top-0 flex items-center p-2 bg-background/75 backdrop-blur-md max-w-screen-sm mx-auto">
+      <NavLinks />
       <ModeToggle />
     </header>
   );
