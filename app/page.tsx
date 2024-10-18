@@ -4,27 +4,60 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { TypographyH1 } from "@/components/ui/typographyH1";
+import { TypographyH2 } from "@/components/ui/typographyH2";
+import { TypographyH3 } from "@/components/ui/typographyH3";
+import { TypographyP } from "@/components/ui/typographyP";
+import Image from "next/image";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import LinkedIn from "~icons/mdi/linkedin";
 
+import JavaScript from "~icons/devicon/javascript";
+import NextJS from "~icons/devicon/nextjs";
+import NodeJS from "~icons/devicon/nodejs";
+import PostgreSQL from "~icons/devicon/postgresql";
+import Prisma from "~icons/devicon/prisma";
+import Python from "~icons/devicon/python";
+import React from "~icons/devicon/react";
+import Svelte from "~icons/devicon/svelte";
+import TailwindCSS from "~icons/devicon/tailwindcss";
+import TypeScript from "~icons/devicon/typescript";
+
 export default function Home() {
   return (
     <>
-      <div className={cn("flex flex-col gap-3")}>
-        <p className={cn("text-2xl font-extrabold")}>
-          Hi, I&apos;m WhyAsh5114 👋
-        </p>
-        <p className="leading-relaxed">
+      <div className="flex flex-col">
+        <TypographyH1>Hi, I&apos;m WhyAsh5114 👋</TypographyH1>
+        <TypographyP>
           I&apos;m a passionate full-stack web developer, who likes to build
-          quality open-source web apps for everyone! My primary tech stack is
-          TypeScript, React, NextJS, TailwindCSS, PostgreSQL, and Prisma. I also
-          dabble in other stuff like Python and Svelte.
-        </p>
-        <div className="grid sm:grid-cols-2 gap-1.5 my-2">
+          quality open-source web apps for everyone!
+        </TypographyP>
+        <TypographyP>
+          My primary tech stack is TypeScript, React, NextJS, TailwindCSS,
+          PostgreSQL, and Prisma. I also dabble in other stuff like Python and
+          Svelte.
+        </TypographyP>
+
+        <div className="grid sm:grid-cols-2 gap-1.5 my-8">
+          <ScrollArea className="w-full rounded-xl border sm:col-span-2 shadow-sm">
+            <div className="flex gap-4 p-4">
+              <TypeScript className="basis-8 h-8 shrink-0 w-8" />
+              <JavaScript className="basis-8 h-8 shrink-0 w-8" />
+              <React className="basis-8 h-8 shrink-0 w-8" />
+              <NextJS className="basis-8 h-8 shrink-0 w-8" />
+              <TailwindCSS className="basis-8 h-8 shrink-0 w-8" />
+              <PostgreSQL className="basis-8 h-8 shrink-0 w-8" />
+              <Prisma className="basis-8 h-8 shrink-0 w-8" />
+              <Svelte className="basis-8 h-8 shrink-0 w-8" />
+              <Python className="basis-8 h-8 shrink-0 w-8" />
+              <NodeJS className="basis-8 h-8 shrink-0 w-8" />
+            </div>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
           <Link href="https://github.com/WhyAsh5114">
-            <Card className="bg-muted">
+            <Card>
               <CardHeader className="flex-row justify-between">
                 <div className="flex flex-col gap-2">
                   <CardTitle>GitHub</CardTitle>
@@ -35,7 +68,7 @@ export default function Home() {
             </Card>
           </Link>
           <Link href="https://www.linkedin.com/in/whyash5114/">
-            <Card className="bg-muted">
+            <Card>
               <CardHeader className="flex-row justify-between">
                 <div className="flex flex-col gap-2">
                   <CardTitle>LinkedIn</CardTitle>
@@ -46,6 +79,16 @@ export default function Home() {
             </Card>
           </Link>
         </div>
+        <TypographyH2>Featured</TypographyH2>
+        <TypographyH3>MyFit</TypographyH3>
+        {/* FireShip CSS grid with lots of images */}
+        <Image
+          src="/MicrocycleVolumeDistributionChart.webp"
+          width={240}
+          height={186}
+          alt="chart"
+          className="m-4 mx-auto"
+        />
       </div>
     </>
   );
