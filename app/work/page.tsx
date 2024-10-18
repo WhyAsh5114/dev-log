@@ -1,9 +1,9 @@
 import { TypographyH1 } from "@/components/ui/typographyH1";
 
-export default function Experiences() {
+export default function Work() {
   return (
     <>
-      <TypographyH1>Experiences</TypographyH1>
+      <TypographyH1>Work</TypographyH1>
     </>
   );
 }

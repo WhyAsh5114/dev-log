@@ -14,7 +14,7 @@ export default function NavLinks({
   const links: { text: string; href: string }[] = [
     { text: "Home", href: "/" },
     { text: "Projects", href: "/projects" },
-    { text: "Experiences", href: "/experiences" },
+    { text: "Work", href: "/work" },
   ];
 
   return links.map(({ href, text }) => (
