@@ -14,3 +14,11 @@ export default async function Page(props: PropsType) {
 
   return <ProjectComponent project={project} headingLevel="h1" />;
 }
+
+export async function generateStaticParams() {
+  const projectNames = allProjects.map(({ name }) => name);
+
+  return projectNames.map((name) => ({
+    projectName: name,
+  }));
+}
