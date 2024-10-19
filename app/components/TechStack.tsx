@@ -36,6 +36,7 @@ const allTechnologies = [
   { name: "Git", icon: <Git /> },
 ] as const;
 
+export type Technology = (typeof allTechnologies)[number]["name"];
 type PropsType = { techStack?: (typeof allTechnologies)[number]["name"][] };
 
 export default function TechStack({ techStack }: PropsType) {

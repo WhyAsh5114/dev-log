@@ -4,18 +4,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { TypographyH1 } from "@/components/ui/typographyH1";
 import { TypographyH2 } from "@/components/ui/typographyH2";
-import { TypographyH3 } from "@/components/ui/typographyH3";
 import { TypographyP } from "@/components/ui/typographyP";
-import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import LinkedIn from "~icons/mdi/linkedin";
-import GitHubStars from "./components/GitHubStars";
-import ProjectImages from "./components/ProjectImages";
 import TechStack from "./components/TechStack";
+import ProjectComponent from "./projects/components/ProjectComponent";
+import { allProjects } from "./projects/data";
 
 export default function Home() {
   return (
@@ -58,42 +55,7 @@ export default function Home() {
           </Link>
         </div>
         <TypographyH2>Featured</TypographyH2>
-        <TypographyH3>
-          <div className="flex items-center gap-4">
-            <span className="mr-auto">MyFit</span>
-            <GitHubStars repoName="MyFit" />
-            <Link href="https://github.com/WhyAsh5114/MyFit">
-              <GitHub />
-            </Link>
-            <Link href="https://my-fit-v3.vercel.app">
-              <ExternalLink />
-            </Link>
-          </div>
-        </TypographyH3>
-        <ScrollArea className="h-72 border rounded-md my-2 shadow-sm">
-          <ProjectImages />
-          <ScrollBar orientation="horizontal" />
-        </ScrollArea>
-        <TechStack
-          techStack={[
-            "TypeScript",
-            "Svelte",
-            "PostgreSQL",
-            "Prisma",
-            "tRPC",
-            "Playwright",
-            "TailwindCSS",
-            "Docker",
-            "GitHub Actions",
-          ]}
-        />
-        <TypographyP>
-          A web-based workout tracking application designed to help users track
-          their workouts, monitor progression, and optimize their training. The
-          app supports detailed logging of reps, load, and RIR across weeks,
-          with complex progression formulas built in to help users progressively
-          overload their exercises.
-        </TypographyP>
+        <ProjectComponent project={allProjects[0]} />
       </div>
     </>
   );
