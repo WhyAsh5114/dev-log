@@ -14,7 +14,7 @@ export const allProjects: Project[] = [
     name: "MyFit",
     repoName: "MyFit",
     description:
-      "Open-source workout tracker inspired by the RP Hypertrophy App",
+      "Open-source workout tracker inspired by the RP Hypertrophy App.",
     text: `A web-based workout tracking application designed to help users track
           their workouts, monitor progression, and optimize their training. The
           app supports detailed logging of reps, load, and RIR across weeks,
@@ -32,6 +32,30 @@ export const allProjects: Project[] = [
       "GitHub Actions",
     ],
     link: "https://my-fit-v3.vercel.app",
+  },
+  {
+    name: "Skill Swap",
+    repoName: "skill-swap",
+    description: `Social platform where users connect, chat, and exchange skills, 
+                  with file sharing.`,
+    text: `Skill Swap is a social media platform designed to facilitate skill exchange between 
+          users. Each user lists skills they offer and skills they want, allowing others to 
+          connect through a built-in connection request system. The platform enables real-time 
+          chatting and file sharing, making collaboration seamless. Built using modern technologies 
+          like NextJS and React for a dynamic frontend, and Prisma for efficient database management, 
+          Skill Swap aims to create a community-driven experience for learning and skill development.`,
+    techStack: ["TypeScript", "React", "NextJS", "PostgreSQL", "Prisma"],
+    link: "https://skill-swap-ebon.vercel.app",
+  },
+  {
+    name: "Cryptocurrencies Handbook",
+    description:
+      "React and Next.js web app for searching commonly used cryptocurrencies.",
+    text: `A web app built with React and Next which allows you to search for commonly used cryptocurrencies 
+          and get a simple description along with some tags, a logo, and the website link.`,
+    techStack: ["TypeScript", "React", "NextJS"],
+    link: "https://next-cryptocurrencies-handbook.vercel.app",
+    repoName: "next-cryptocurrencies-handbook",
   },
   {
     name: "DOTA 2 Rampage Finder",
