@@ -7,6 +7,7 @@ export type Project = {
   text: string;
   techStack: Technology[];
   link?: string;
+  featured?: boolean;
 };
 
 export const allProjects: Project[] = [
@@ -32,20 +33,7 @@ export const allProjects: Project[] = [
       "GitHub Actions",
     ],
     link: "https://my-fit-v3.vercel.app",
-  },
-  {
-    name: "Skill Swap",
-    repoName: "skill-swap",
-    description: `Social platform where users connect, chat, and exchange skills, 
-                  with file sharing.`,
-    text: `Skill Swap is a social media platform designed to facilitate skill exchange between 
-          users. Each user lists skills they offer and skills they want, allowing others to 
-          connect through a built-in connection request system. The platform enables real-time 
-          chatting and file sharing, making collaboration seamless. Built using modern technologies 
-          like NextJS and React for a dynamic frontend, and Prisma for efficient database management, 
-          Skill Swap aims to create a community-driven experience for learning and skill development.`,
-    techStack: ["TypeScript", "React", "NextJS", "PostgreSQL", "Prisma"],
-    link: "https://skill-swap-ebon.vercel.app",
+    featured: true,
   },
   {
     name: "Dev Log (this)",
@@ -61,7 +49,24 @@ export const allProjects: Project[] = [
           minimal JavaScript load.`,
     techStack: ["TypeScript", "NextJS", "React", "TailwindCSS"],
     link: "https://dev-log-whyash5114.vercel.app",
+    featured: true,
   },
+  {
+    name: "Skill Swap",
+    repoName: "skill-swap",
+    description: `Social platform where users connect, chat, and exchange skills, 
+                  with file sharing.`,
+    text: `Skill Swap is a social media platform designed to facilitate skill exchange between 
+          users. Each user lists skills they offer and skills they want, allowing others to 
+          connect through a built-in connection request system. The platform enables real-time 
+          chatting and file sharing, making collaboration seamless. Built using modern technologies 
+          like NextJS and React for a dynamic frontend, and Prisma for efficient database management, 
+          Skill Swap aims to create a community-driven experience for learning and skill development.`,
+    techStack: ["TypeScript", "React", "NextJS", "PostgreSQL", "Prisma"],
+    link: "https://skill-swap-ebon.vercel.app",
+    featured: true,
+  },
+  // TODO: add hr-tech and web-streaming-platform
   {
     name: "Python Runtime Comparer",
     repoName: "Python-Runtime-Comparer",

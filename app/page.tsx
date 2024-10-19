@@ -55,7 +55,15 @@ export default function Home() {
           </Link>
         </div>
         <TypographyH2>Featured</TypographyH2>
-        <ProjectComponent headingLevel="h3" project={allProjects[0]} />
+        <div className="space-y-12">
+          {allProjects
+            .filter(({ featured }) => featured)
+            .map((project) => (
+              <div>
+                <ProjectComponent headingLevel="h3" project={project} />
+              </div>
+            ))}
+        </div>
       </div>
     </>
   );
