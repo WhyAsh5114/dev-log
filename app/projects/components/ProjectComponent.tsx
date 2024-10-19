@@ -40,7 +40,7 @@ export default function ProjectComponent({ project, headingLevel }: PropsType) {
         </div>
       </Heading>
       <ScrollArea className="h-72 border rounded-md my-2 shadow-sm">
-        <ProjectImages />
+        <ProjectImages projectName={project.name} />
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
       <TechStack techStack={project.techStack} />

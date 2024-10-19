@@ -1,5 +1,14 @@
 import { cn } from "@/lib/utils";
+import { readdirSync } from "fs";
 import Image from "next/image";
+import sizeOf from "image-size";
+
+type PropsType = { projectName: string };
+type ImageDimensions = {
+  filename: string;
+  width: number;
+  height: number;
+};
 
 function generateAltText(filename: string) {
   const nameWithoutExtension = filename
@@ -17,28 +26,35 @@ function parseRowCol(spanString?: string) {
   const rowMatch = spanString.match(/row-span-(\d+)/);
   const colMatch = spanString.match(/col-span-(\d+)/);
 
-  if (rowMatch) {
-    rows = parseInt(rowMatch[1], 10);
-  }
-  if (colMatch) {
-    cols = parseInt(colMatch[1], 10);
-  }
+  if (rowMatch) rows = parseInt(rowMatch[1], 10);
+  if (colMatch) cols = parseInt(colMatch[1], 10);
 
   return { rows, cols };
 }
 
-export default function ProjectImages() {
-  const projectName = "MyFit";
+function calculateRowSpan(
+  images: ImageDimensions[]
+): { filename: string; className: string }[] {
+  const aspectRatios = images.map(({ width, height }) => height / width);
+  const minAspectRatio = Math.min(...aspectRatios);
+  return aspectRatios.map((aspectRatio, ratioIdx) => ({
+    className: `row-span-${Math.ceil(aspectRatio / minAspectRatio)}`,
+    filename: images[ratioIdx].filename,
+  }));
+}
 
-  const images: { filename: string; className?: string }[] = [
-    { filename: "ViewMesocycle.webp", className: "row-span-2" },
-    { filename: "AddExercise.webp", className: "row-span-3" },
-    { filename: "ExerciseHistory.webp", className: "row-span-3" },
-    { filename: "MuscleGroupVolumeDistributionChart.webp" },
-    { filename: "MicrocycleVolumeDistributionChart.webp" },
-    { filename: "SetIncreaseAmount.webp" },
-    { filename: "WorkoutExercise.webp" },
-  ];
+export default function ProjectImages({ projectName }: PropsType) {
+  const imageFiles = readdirSync(`public/projects/${projectName}/dark`);
+
+  const images = calculateRowSpan(
+    imageFiles.map((imageFile) => ({
+      ...(sizeOf(`public/projects/${projectName}/dark/${imageFile}`) as {
+        width: number;
+        height: number;
+      }),
+      filename: imageFile,
+    }))
+  );
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 justify-center min-w-96 p-2">
