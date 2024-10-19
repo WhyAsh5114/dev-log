@@ -9,24 +9,12 @@ import { TypographyH1 } from "@/components/ui/typographyH1";
 import { TypographyH2 } from "@/components/ui/typographyH2";
 import { TypographyH3 } from "@/components/ui/typographyH3";
 import { TypographyP } from "@/components/ui/typographyP";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import LinkedIn from "~icons/mdi/linkedin";
-
-import Docker from "~icons/devicon/docker";
-import Git from "~icons/devicon/git";
-import JavaScript from "~icons/devicon/javascript";
-import Linux from "~icons/devicon/linux";
-import NextJS from "~icons/devicon/nextjs";
-import NodeJS from "~icons/devicon/nodejs";
-import PostgreSQL from "~icons/devicon/postgresql";
-import Prisma from "~icons/devicon/prisma";
-import Python from "~icons/devicon/python";
-import React from "~icons/devicon/react";
-import Svelte from "~icons/devicon/svelte";
-import TailwindCSS from "~icons/devicon/tailwindcss";
-import TypeScript from "~icons/devicon/typescript";
 import ProjectImages from "./components/ProjectImages";
+import TechStack from "./components/TechStack";
 
 export default function Home() {
   return (
@@ -44,24 +32,7 @@ export default function Home() {
         </TypographyP>
 
         <div className="grid sm:grid-cols-2 gap-1.5 my-8">
-          <ScrollArea className="w-full rounded-xl border sm:col-span-2 shadow-sm">
-            <div className="flex gap-4 p-4">
-              <TypeScript className="basis-8 h-8 shrink-0 w-8" />
-              <JavaScript className="basis-8 h-8 shrink-0 w-8" />
-              <React className="basis-8 h-8 shrink-0 w-8" />
-              <NextJS className="basis-8 h-8 shrink-0 w-8" />
-              <TailwindCSS className="basis-8 h-8 shrink-0 w-8" />
-              <PostgreSQL className="basis-8 h-8 shrink-0 w-8" />
-              <Prisma className="basis-8 h-8 shrink-0 w-8" />
-              <Svelte className="basis-8 h-8 shrink-0 w-8" />
-              <Python className="basis-8 h-8 shrink-0 w-8" />
-              <NodeJS className="basis-8 h-8 shrink-0 w-8" />
-              <Linux className="basis-8 h-8 shrink-0 w-8" />
-              <Docker className="basis-8 h-8 shrink-0 w-8" />
-              <Git className="basis-8 h-8 shrink-0 w-8" />
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+          <TechStack />
           <Link href="https://github.com/WhyAsh5114">
             <Card>
               <CardHeader className="flex-row justify-between">
@@ -86,11 +57,34 @@ export default function Home() {
           </Link>
         </div>
         <TypographyH2>Featured</TypographyH2>
-        <TypographyH3>MyFit</TypographyH3>
-        <ScrollArea className="h-72 border rounded-md mt-2 shadow-sm">
+        <TypographyH3>
+          <div className="flex items-center gap-4">
+            <span className="mr-auto">MyFit</span>
+            <Link href="https://github.com/WhyAsh5114/MyFit">
+              <GitHub />
+            </Link>
+            <Link href="https://my-fit-v3.vercel.app">
+              <ExternalLink />
+            </Link>
+          </div>
+        </TypographyH3>
+        <ScrollArea className="h-72 border rounded-md my-2 shadow-sm">
           <ProjectImages />
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
+        <TechStack
+          techStack={[
+            "TypeScript",
+            "Svelte",
+            "PostgreSQL",
+            "Prisma",
+            "tRPC",
+            "Playwright",
+            "TailwindCSS",
+            "Docker",
+            "GitHub Actions",
+          ]}
+        />
         <TypographyP>
           A web-based workout tracking application designed to help users track
           their workouts, monitor progression, and optimize their training. The
