@@ -16,6 +16,7 @@ import TRPC from "~icons/devicon/trpc";
 import TypeScript from "~icons/devicon/typescript";
 import Playwright from "~icons/devicon/playwright";
 import GithubActions from "~icons/devicon/githubactions";
+import Kivy from "~icons/file-icons/kivy";
 
 const allTechnologies = [
   { name: "TypeScript", icon: <TypeScript /> },
@@ -34,6 +35,7 @@ const allTechnologies = [
   { name: "Linux", icon: <Linux /> },
   { name: "Docker", icon: <Docker /> },
   { name: "Git", icon: <Git /> },
+  { name: "Kivy", icon: <Kivy /> },
 ] as const;
 
 export type Technology = (typeof allTechnologies)[number]["name"];
