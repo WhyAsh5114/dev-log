@@ -55,7 +55,11 @@ export default function ProjectImages({ projectName }: PropsType) {
 
   const images = calculateRowSpan(
     imageFiles.map((imageFile) => ({
-      ...(sizeOf(`public/projects/${projectName}/dark/${imageFile}`) as {
+      ...(sizeOf(
+        `public/projects/${projectName}${
+          modeBasedScreenshotsAvailable ? `/dark/` : "/"
+        }${imageFile}`
+      ) as {
         width: number;
         height: number;
       }),
@@ -63,12 +67,29 @@ export default function ProjectImages({ projectName }: PropsType) {
     }))
   );
 
+  if (!modeBasedScreenshotsAvailable) {
+    return (
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 justify-center min-w-96 p-2">
+        {images.map(({ filename, className }, idx) => (
+          <Image
+            key={`${idx}`}
+            src={`/projects/${projectName}/${filename}`}
+            alt={generateAltText(filename)}
+            width={parseRowCol(className).cols * 240}
+            height={parseRowCol(className).rows * 240}
+            className={cn("rounded-md border", className)}
+          />
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 justify-center min-w-96 p-2">
-      {images.map(({ filename, className }, idx) => (
+      {images.map(({ filename, className }) => (
         <>
           <Image
-            key={`${idx}-dark`}
+            key={`${filename}-dark`}
             src={`/projects/${projectName}/dark/${filename}`}
             alt={generateAltText(filename)}
             width={parseRowCol(className).cols * 240}
@@ -76,7 +97,7 @@ export default function ProjectImages({ projectName }: PropsType) {
             className={cn("rounded-md border hidden dark:block", className)}
           />
           <Image
-            key={`${idx}-light`}
+            key={`${filename}-light`}
             src={`/projects/${projectName}/light/${filename}`}
             alt={generateAltText(filename)}
             width={parseRowCol(className).cols * 240}
