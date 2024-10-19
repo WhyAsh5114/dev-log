@@ -27,6 +27,7 @@ import TypeScript from "~icons/devicon/typescript";
 import Linux from "~icons/devicon/linux";
 import Docker from "~icons/devicon/docker";
 import Git from "~icons/devicon/git";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -87,43 +88,74 @@ export default function Home() {
         </div>
         <TypographyH2>Featured</TypographyH2>
         <TypographyH3>MyFit</TypographyH3>
-        <ScrollArea className="h-72">
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 place-items-center min-w-96">
-            <Image
-              src="/MicrocycleVolumeDistributionChart.webp"
-              alt="Microcycle Volume Distribution Chart"
-              width={240}
-              height={240}
-            />
-            <Image
-              src="/ViewMesocycle.png"
-              alt="View Mesocycle"
-              width={240}
-              height={480}
-              className="row-span-2"
-            />
-            <Image
-              src="/MicrocycleVolumeDistributionChart.webp"
-              alt="Microcycle Volume Distribution Chart"
-              width={240}
-              height={240}
-            />
-            <Image
-              src="/MicrocycleVolumeDistributionChart.webp"
-              alt="Microcycle Volume Distribution Chart"
-              width={240}
-              height={240}
-            />
-            <Image
-              src="/MicrocycleVolumeDistributionChart.webp"
-              alt="Microcycle Volume Distribution Chart"
-              width={240}
-              height={240}
-            />
-          </div>
+        <ScrollArea className="h-72 border rounded-md mt-2">
+          <Images />
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
+        <TypographyP>
+          A web-based workout tracking application designed to help users track
+          their workouts, monitor progression, and optimize their training. The
+          app supports detailed logging of reps, load, and RIR across weeks,
+          with complex progression formulas built in to help users progressively
+          overload their exercises.
+        </TypographyP>
       </div>
     </>
+  );
+}
+
+function Images() {
+  function generateAltText(filename: string) {
+    const nameWithoutExtension = filename
+      .replace(/^\//, "")
+      .replace(/\.[^/.]+$/, "");
+    const readableText = nameWithoutExtension.replace(
+      /([a-z])([A-Z])/g,
+      "$1 $2"
+    );
+    return readableText;
+  }
+
+  function parseRowCol(spanString?: string) {
+    let rows = 1;
+    let cols = 1;
+    if (!spanString) return { rows, cols };
+
+    const rowMatch = spanString.match(/row-span-(\d+)/);
+    const colMatch = spanString.match(/col-span-(\d+)/);
+
+    if (rowMatch) {
+      rows = parseInt(rowMatch[1], 10);
+    }
+    if (colMatch) {
+      cols = parseInt(colMatch[1], 10);
+    }
+
+    return { rows, cols };
+  }
+
+  const images: { filename: string; className?: string }[] = [
+    { filename: "/ViewMesocycle.webp", className: "row-span-2" },
+    { filename: "/AddExercise.webp", className: "row-span-3" },
+    { filename: "/ExerciseHistory.webp", className: "row-span-3" },
+    { filename: "/MuscleGroupVolumeDistributionChart.webp" },
+    { filename: "/MicrocycleVolumeDistributionChart.webp" },
+    { filename: "/SetIncreaseAmount.webp" },
+    { filename: "/WorkoutExercise.webp" },
+  ];
+
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 justify-center min-w-96 p-2">
+      {images.map(({ filename, className }, idx) => (
+        <Image
+          key={idx}
+          src={filename}
+          alt={generateAltText(filename)}
+          width={parseRowCol(className).cols * 240}
+          height={parseRowCol(className).rows * 240}
+          className={cn("rounded-md border", className)}
+        />
+      ))}
+    </div>
   );
 }
