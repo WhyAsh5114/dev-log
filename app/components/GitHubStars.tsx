@@ -13,7 +13,7 @@ export default function GitHubStars({ repoName }: { repoName: string }) {
     );
   });
 
-  if (stars === undefined || stars < 2) {
+  if (stars === undefined) {
     return <Skeleton className="w-14 h-5 border" />;
   }
 
