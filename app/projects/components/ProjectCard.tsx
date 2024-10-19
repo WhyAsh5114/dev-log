@@ -33,7 +33,9 @@ export default function ProjectCard({ project }: { project: Project }) {
               <ExternalLink />
             </Link>
           )}
-          <Button size="sm">View more</Button>
+          <Button size="sm" asChild>
+            <Link href={`/projects/${project.name}`}>View more</Link>
+          </Button>
         </CardFooter>
       </Card>
     </>
