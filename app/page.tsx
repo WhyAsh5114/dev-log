@@ -24,6 +24,9 @@ import React from "~icons/devicon/react";
 import Svelte from "~icons/devicon/svelte";
 import TailwindCSS from "~icons/devicon/tailwindcss";
 import TypeScript from "~icons/devicon/typescript";
+import Linux from "~icons/devicon/linux";
+import Docker from "~icons/devicon/docker";
+import Git from "~icons/devicon/git";
 
 export default function Home() {
   return (
@@ -53,6 +56,9 @@ export default function Home() {
               <Svelte className="basis-8 h-8 shrink-0 w-8" />
               <Python className="basis-8 h-8 shrink-0 w-8" />
               <NodeJS className="basis-8 h-8 shrink-0 w-8" />
+              <Linux className="basis-8 h-8 shrink-0 w-8" />
+              <Docker className="basis-8 h-8 shrink-0 w-8" />
+              <Git className="basis-8 h-8 shrink-0 w-8" />
             </div>
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
@@ -81,14 +87,42 @@ export default function Home() {
         </div>
         <TypographyH2>Featured</TypographyH2>
         <TypographyH3>MyFit</TypographyH3>
-        {/* FireShip CSS grid with lots of images */}
-        <Image
-          src="/MicrocycleVolumeDistributionChart.webp"
-          width={240}
-          height={186}
-          alt="chart"
-          className="m-4 mx-auto"
-        />
+        <ScrollArea className="h-72">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 place-items-center min-w-96">
+            <Image
+              src="/MicrocycleVolumeDistributionChart.webp"
+              alt="Microcycle Volume Distribution Chart"
+              width={240}
+              height={240}
+            />
+            <Image
+              src="/ViewMesocycle.png"
+              alt="View Mesocycle"
+              width={240}
+              height={480}
+              className="row-span-2"
+            />
+            <Image
+              src="/MicrocycleVolumeDistributionChart.webp"
+              alt="Microcycle Volume Distribution Chart"
+              width={240}
+              height={240}
+            />
+            <Image
+              src="/MicrocycleVolumeDistributionChart.webp"
+              alt="Microcycle Volume Distribution Chart"
+              width={240}
+              height={240}
+            />
+            <Image
+              src="/MicrocycleVolumeDistributionChart.webp"
+              alt="Microcycle Volume Distribution Chart"
+              width={240}
+              height={240}
+            />
+          </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
       </div>
     </>
   );
