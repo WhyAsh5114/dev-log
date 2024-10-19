@@ -9,12 +9,14 @@ import { TypographyH1 } from "@/components/ui/typographyH1";
 import { TypographyH2 } from "@/components/ui/typographyH2";
 import { TypographyH3 } from "@/components/ui/typographyH3";
 import { TypographyP } from "@/components/ui/typographyP";
-import Image from "next/image";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import LinkedIn from "~icons/mdi/linkedin";
 
+import Docker from "~icons/devicon/docker";
+import Git from "~icons/devicon/git";
 import JavaScript from "~icons/devicon/javascript";
+import Linux from "~icons/devicon/linux";
 import NextJS from "~icons/devicon/nextjs";
 import NodeJS from "~icons/devicon/nodejs";
 import PostgreSQL from "~icons/devicon/postgresql";
@@ -24,10 +26,7 @@ import React from "~icons/devicon/react";
 import Svelte from "~icons/devicon/svelte";
 import TailwindCSS from "~icons/devicon/tailwindcss";
 import TypeScript from "~icons/devicon/typescript";
-import Linux from "~icons/devicon/linux";
-import Docker from "~icons/devicon/docker";
-import Git from "~icons/devicon/git";
-import { cn } from "@/lib/utils";
+import ProjectImages from "./components/ProjectImages";
 
 export default function Home() {
   return (
@@ -88,8 +87,8 @@ export default function Home() {
         </div>
         <TypographyH2>Featured</TypographyH2>
         <TypographyH3>MyFit</TypographyH3>
-        <ScrollArea className="h-72 border rounded-md mt-2">
-          <Images />
+        <ScrollArea className="h-72 border rounded-md mt-2 shadow-sm">
+          <ProjectImages />
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
         <TypographyP>
@@ -101,61 +100,5 @@ export default function Home() {
         </TypographyP>
       </div>
     </>
-  );
-}
-
-function Images() {
-  function generateAltText(filename: string) {
-    const nameWithoutExtension = filename
-      .replace(/^\//, "")
-      .replace(/\.[^/.]+$/, "");
-    const readableText = nameWithoutExtension.replace(
-      /([a-z])([A-Z])/g,
-      "$1 $2"
-    );
-    return readableText;
-  }
-
-  function parseRowCol(spanString?: string) {
-    let rows = 1;
-    let cols = 1;
-    if (!spanString) return { rows, cols };
-
-    const rowMatch = spanString.match(/row-span-(\d+)/);
-    const colMatch = spanString.match(/col-span-(\d+)/);
-
-    if (rowMatch) {
-      rows = parseInt(rowMatch[1], 10);
-    }
-    if (colMatch) {
-      cols = parseInt(colMatch[1], 10);
-    }
-
-    return { rows, cols };
-  }
-
-  const images: { filename: string; className?: string }[] = [
-    { filename: "/ViewMesocycle.webp", className: "row-span-2" },
-    { filename: "/AddExercise.webp", className: "row-span-3" },
-    { filename: "/ExerciseHistory.webp", className: "row-span-3" },
-    { filename: "/MuscleGroupVolumeDistributionChart.webp" },
-    { filename: "/MicrocycleVolumeDistributionChart.webp" },
-    { filename: "/SetIncreaseAmount.webp" },
-    { filename: "/WorkoutExercise.webp" },
-  ];
-
-  return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 justify-center min-w-96 p-2">
-      {images.map(({ filename, className }, idx) => (
-        <Image
-          key={idx}
-          src={filename}
-          alt={generateAltText(filename)}
-          width={parseRowCol(className).cols * 240}
-          height={parseRowCol(className).rows * 240}
-          className={cn("rounded-md border", className)}
-        />
-      ))}
-    </div>
   );
 }
