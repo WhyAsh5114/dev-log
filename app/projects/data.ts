@@ -48,12 +48,34 @@ export const allProjects: Project[] = [
     link: "https://skill-swap-ebon.vercel.app",
   },
   {
+    name: "Python Runtime Comparer",
+    repoName: "Python-Runtime-Comparer",
+    description:
+      "Compares the runtime and memory consumption of different programs across identical inputs and outputs.",
+    text: `This tool compares the runtime of different programs across identical inputs and outputs, and visualizes 
+          the runtime over varying input sizes using matplotlib. It uses statistical analysis to identify tests 
+          that consistently result in worst or best case scenarios. Additionally, the tool features a user-friendly 
+          GUI that allows you to select multiple solver files, input files, and output files for comparison.`,
+    techStack: ["Python", "Kivy"],
+  },
+  {
+    name: "Agnel Polytechnic Website",
+    repoName: "Agnel-Polytechnic-Vashi",
+    description:
+      "Created a college website for my diploma college: Agnel Polytechnic.",
+    text: `Static website with college info, prerendered for quick CDN delivery with a contact us form.
+            Optimized images, hero icons, good web metrics with a focus on accessibility, appropriate contract,
+            and speed.`,
+    techStack: ["TypeScript", "JavaScript", "Svelte"],
+    link: "https://apv.ac.in",
+  },
+  {
     name: "Cryptocurrencies Handbook",
     description:
       "React and Next.js web app for searching commonly used cryptocurrencies.",
     text: `A web app built with React and Next which allows you to search for commonly used cryptocurrencies 
           and get a simple description along with some tags, a logo, and the website link.`,
-    techStack: ["TypeScript", "React", "NextJS"],
+    techStack: ["JavaScript", "React", "NextJS"],
     link: "https://next-cryptocurrencies-handbook.vercel.app",
     repoName: "next-cryptocurrencies-handbook",
   },
