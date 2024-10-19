@@ -50,7 +50,7 @@ export default function TechStack({ techStack }: PropsType) {
     : allTechnologies;
 
   return (
-    <ScrollArea className="w-full rounded-xl border sm:col-span-2 shadow-sm">
+    <ScrollArea className="rounded-xl border sm:col-span-2 shadow-sm">
       <div className="flex gap-4 p-4 justify-around">
         {mappedTechnologies.map((technology) => {
           return cloneElement(technology.icon, {
