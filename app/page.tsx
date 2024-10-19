@@ -55,7 +55,7 @@ export default function Home() {
           </Link>
         </div>
         <TypographyH2>Featured</TypographyH2>
-        <ProjectComponent project={allProjects[0]} />
+        <ProjectComponent headingLevel="h3" project={allProjects[0]} />
       </div>
     </>
   );
