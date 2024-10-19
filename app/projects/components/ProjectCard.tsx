@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           <TechStack techStack={project.techStack} />
         </CardContent>
         <CardFooter className="justify-end gap-4">
-          <Link href={`https://github.com/WhyAsh5114/${project.name}`}>
+          <Link href={`https://github.com/WhyAsh5114/${project.repoName}`}>
             <GitHub className="h-6 w-6" />
           </Link>
           {project.link && (

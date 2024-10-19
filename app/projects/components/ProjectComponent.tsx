@@ -29,7 +29,7 @@ export default function ProjectComponent({ project, headingLevel }: PropsType) {
         >
           <span className="mr-auto">{project.name}</span>
           <GitHubStars repoName={project.repoName} />
-          <Link href={`https://github.com/WhyAsh5114/${project.name}`}>
+          <Link href={`https://github.com/WhyAsh5114/${project.repoName}`}>
             <GitHub className="h-8 w-8" />
           </Link>
           {project.link && (
