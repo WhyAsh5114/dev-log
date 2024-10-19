@@ -44,7 +44,14 @@ function calculateRowSpan(
 }
 
 export default function ProjectImages({ projectName }: PropsType) {
-  const imageFiles = readdirSync(`public/projects/${projectName}/dark`);
+  const modeBasedScreenshotsAvailable = readdirSync(
+    `public/projects/${projectName}`
+  ).includes("dark");
+  const imageFiles = readdirSync(
+    `public/projects/${projectName}${
+      modeBasedScreenshotsAvailable ? `/dark` : ""
+    }`
+  );
 
   const images = calculateRowSpan(
     imageFiles.map((imageFile) => ({
