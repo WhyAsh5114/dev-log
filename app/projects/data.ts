@@ -48,6 +48,21 @@ export const allProjects: Project[] = [
     link: "https://skill-swap-ebon.vercel.app",
   },
   {
+    name: "Dev Log (this)",
+    repoName: "dev-log",
+    description:
+      "My minimalistic developer portfolio optimized for loading speed and SEO.",
+    text: `Built with Next.js and the Shadcn/ui component library, my developer portfolio 
+          emphasizes optimal loading speed and SEO. Utilized React's features like partial 
+          prerendering and static parameters to boost performance. Implementing React Server 
+          Components (RSCs) allows for minimal client-side JavaScript, ensuring a lightweight 
+          and efficient user experience. Additionally, the Suspense API is used for handling 
+          asynchronous data fetching, enhancing the loading experience while maintaining a 
+          minimal JavaScript load.`,
+    techStack: ["TypeScript", "NextJS", "React", "TailwindCSS"],
+    link: "https://dev-log-whyash5114.vercel.app",
+  },
+  {
     name: "Python Runtime Comparer",
     repoName: "Python-Runtime-Comparer",
     description:
@@ -66,7 +81,7 @@ export const allProjects: Project[] = [
     text: `Static website with college info, prerendered for quick CDN delivery with a contact us form.
             Optimized images, hero icons, good web metrics with a focus on accessibility, appropriate contract,
             and speed.`,
-    techStack: ["TypeScript", "JavaScript", "Svelte"],
+    techStack: ["TypeScript", "JavaScript", "Svelte", "TailwindCSS"],
     link: "https://apv.ac.in",
   },
   {
@@ -75,7 +90,7 @@ export const allProjects: Project[] = [
       "React and Next.js web app for searching commonly used cryptocurrencies.",
     text: `A web app built with React and Next which allows you to search for commonly used cryptocurrencies 
           and get a simple description along with some tags, a logo, and the website link.`,
-    techStack: ["JavaScript", "React", "NextJS"],
+    techStack: ["JavaScript", "React", "NextJS", "TailwindCSS"],
     link: "https://next-cryptocurrencies-handbook.vercel.app",
     repoName: "next-cryptocurrencies-handbook",
   },
