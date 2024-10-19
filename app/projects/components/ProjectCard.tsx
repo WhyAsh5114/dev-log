@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
+import { ChevronRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import TechStack from "../../components/TechStack";
@@ -34,7 +34,10 @@ export default function ProjectCard({ project }: { project: Project }) {
             </Link>
           )}
           <Button size="sm" asChild>
-            <Link href={`/projects/${project.name}`}>View more</Link>
+            <Link href={`/projects/${project.name}`}>
+              View more
+              <ChevronRight />
+            </Link>
           </Button>
         </CardFooter>
       </Card>
