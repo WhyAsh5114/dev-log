@@ -59,7 +59,7 @@ export default function Home() {
           {allProjects
             .filter(({ featured }) => featured)
             .map((project) => (
-              <div>
+              <div key={project.name}>
                 <ProjectComponent headingLevel="h3" project={project} />
               </div>
             ))}

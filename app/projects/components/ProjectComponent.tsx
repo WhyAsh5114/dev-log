@@ -4,12 +4,11 @@ import TechStack from "@/app/components/TechStack";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { TypographyH1 } from "@/components/ui/typographyH1";
 import { TypographyH3 } from "@/components/ui/typographyH3";
-import { TypographyP } from "@/components/ui/typographyP";
+import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import { Project } from "../data";
-import { cn } from "@/lib/utils";
 
 type PropsType = {
   headingLevel: "h1" | "h3";
@@ -44,7 +43,7 @@ export default function ProjectComponent({ project, headingLevel }: PropsType) {
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
       <TechStack techStack={project.techStack} />
-      <TypographyP>{project.text}</TypographyP>
+      <p className="leading-relaxed mt-2 px-1.5">{project.text}</p>
     </>
   );
 }

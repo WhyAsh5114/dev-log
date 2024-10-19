@@ -66,7 +66,7 @@ export const allProjects: Project[] = [
     link: "https://skill-swap-ebon.vercel.app",
     featured: true,
   },
-  // TODO: add hr-tech and web-streaming-platform
+  // TODO: add hr-tech and web-streaming-platform, AND WORK IS ALSO LEFT
   {
     name: "Python Runtime Comparer",
     repoName: "Python-Runtime-Comparer",
