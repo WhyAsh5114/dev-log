@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const metadata: Metadata = {
   title: "Dev Log",
@@ -25,20 +26,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body
-        className={cn(
-          inter.className,
-          "min-h-screen min-w-full overflow-y-auto overflow-x-hidden"
-        )}
-      >
+      <body className={cn(inter.className)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main className="max-w-screen-sm mx-auto pt-8 p-4">{children}</main>
+          <ScrollArea className="h-screen min-w-full overflow-y-auto">
+            <Header />
+            <main className="max-w-screen-sm mx-auto pt-8 p-4">{children}</main>
+          </ScrollArea>
         </ThemeProvider>
       </body>
     </html>
