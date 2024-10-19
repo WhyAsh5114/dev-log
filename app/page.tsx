@@ -29,7 +29,7 @@ export default function Home() {
           Svelte.
         </TypographyP>
 
-        <div className="grid sm:grid-cols-2 gap-1.5 my-8">
+        <div className="grid md:grid-cols-2 gap-1.5 my-8">
           <TechStack />
           <Link href="https://github.com/WhyAsh5114">
             <Card>

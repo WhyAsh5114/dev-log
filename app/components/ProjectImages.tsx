@@ -69,7 +69,7 @@ export default function ProjectImages({ projectName }: PropsType) {
 
   if (!modeBasedScreenshotsAvailable) {
     return (
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 justify-center min-w-96 p-2">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-1 justify-center min-w-96 p-2">
         {images.map(({ filename, className }, idx) => (
           <Image
             key={`${idx}`}
@@ -85,7 +85,7 @@ export default function ProjectImages({ projectName }: PropsType) {
   }
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 justify-center min-w-96 p-2">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-1 justify-center min-w-96 p-2">
       {images.map(({ filename, className }) => (
         <>
           <Image

@@ -35,7 +35,7 @@ export default function RootLayout({
         >
           <ScrollArea className="h-screen min-w-full overflow-y-auto">
             <Header />
-            <main className="max-w-screen-sm mx-auto pt-8 p-4">{children}</main>
+            <main className="max-w-screen-md mx-auto pt-8 p-4">{children}</main>
           </ScrollArea>
         </ThemeProvider>
       </body>
@@ -51,7 +51,7 @@ function Header() {
   ];
 
   return (
-    <header className="sticky top-0 flex items-center p-2 bg-background/75 backdrop-blur-md max-w-screen-sm mx-auto z-50">
+    <header className="sticky top-0 flex items-center p-2 bg-background/75 backdrop-blur-md max-w-screen-md mx-auto z-50">
       {links.map(({ href, text }) => (
         <Button key={text} className="font-semibold" variant="link" asChild>
           <Link href={href}>{text}</Link>
