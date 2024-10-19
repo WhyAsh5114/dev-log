@@ -7,7 +7,8 @@ type PropsType = {
 };
 
 export default async function Page(props: PropsType) {
-  const { projectName } = await props.params;
+  const params = await props.params;
+  const projectName = decodeURIComponent(params.projectName);
   const project = allProjects.find((p) => p.name === projectName);
   if (!project) notFound();
 
