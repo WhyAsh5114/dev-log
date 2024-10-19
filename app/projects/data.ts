@@ -51,7 +51,7 @@ export const allProjects: Project[] = [
     name: "Python Runtime Comparer",
     repoName: "Python-Runtime-Comparer",
     description:
-      "Compares the runtime and memory consumption of different programs across identical inputs and outputs.",
+      "Runtime simulator for sorting algorithms with graph visualizations across input size.",
     text: `This tool compares the runtime of different programs across identical inputs and outputs, and visualizes 
           the runtime over varying input sizes using matplotlib. It uses statistical analysis to identify tests 
           that consistently result in worst or best case scenarios. Additionally, the tool features a user-friendly 
