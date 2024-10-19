@@ -13,6 +13,7 @@ import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import LinkedIn from "~icons/mdi/linkedin";
+import GitHubStars from "./components/GitHubStars";
 import ProjectImages from "./components/ProjectImages";
 import TechStack from "./components/TechStack";
 
@@ -60,6 +61,7 @@ export default function Home() {
         <TypographyH3>
           <div className="flex items-center gap-4">
             <span className="mr-auto">MyFit</span>
+            <GitHubStars repoName="MyFit" />
             <Link href="https://github.com/WhyAsh5114/MyFit">
               <GitHub />
             </Link>
