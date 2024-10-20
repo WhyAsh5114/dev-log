@@ -17,6 +17,7 @@ import TypeScript from "~icons/devicon/typescript";
 import Playwright from "~icons/devicon/playwright";
 import GithubActions from "~icons/devicon/githubactions";
 import Kivy from "~icons/file-icons/kivy";
+import MongoDB from "~icons/devicon/mongodb";
 
 const allTechnologies = [
   { name: "TypeScript", icon: <TypeScript /> },
@@ -30,6 +31,7 @@ const allTechnologies = [
   { name: "Playwright", icon: <Playwright /> },
   { name: "GitHub Actions", icon: <GithubActions /> },
   { name: "Svelte", icon: <Svelte /> },
+  { name: "MongoDB", icon: <MongoDB /> },
   { name: "Python", icon: <Python /> },
   { name: "NodeJS", icon: <NodeJS /> },
   { name: "Linux", icon: <Linux /> },
