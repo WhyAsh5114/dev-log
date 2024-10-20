@@ -15,9 +15,13 @@ import TailwindCSS from "~icons/devicon/tailwindcss";
 import TRPC from "~icons/devicon/trpc";
 import TypeScript from "~icons/devicon/typescript";
 import Playwright from "~icons/devicon/playwright";
+import Pandas from "~icons/devicon/pandas";
 import GithubActions from "~icons/devicon/githubactions";
 import Kivy from "~icons/file-icons/kivy";
 import MongoDB from "~icons/devicon/mongodb";
+import ShadcnUI from "~icons/simple-icons/shadcnui";
+import DaisyUI from "~icons/logos/daisyui-icon";
+import NumPy from "~icons/devicon/numpy";
 
 const allTechnologies = [
   { name: "TypeScript", icon: <TypeScript /> },
@@ -32,12 +36,16 @@ const allTechnologies = [
   { name: "GitHub Actions", icon: <GithubActions /> },
   { name: "Svelte", icon: <Svelte /> },
   { name: "MongoDB", icon: <MongoDB /> },
+  { name: "ShadcnUI", icon: <ShadcnUI /> },
+  { name: "DaisyUI", icon: <DaisyUI /> },
   { name: "Python", icon: <Python /> },
   { name: "NodeJS", icon: <NodeJS /> },
   { name: "Linux", icon: <Linux /> },
   { name: "Docker", icon: <Docker /> },
   { name: "Git", icon: <Git /> },
   { name: "Kivy", icon: <Kivy /> },
+  { name: "Pandas", icon: <Pandas /> },
+  { name: "NumPy", icon: <NumPy /> },
 ] as const;
 
 export type Technology = (typeof allTechnologies)[number]["name"];

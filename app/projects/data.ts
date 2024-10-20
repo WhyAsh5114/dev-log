@@ -29,6 +29,7 @@ export const allProjects: Project[] = [
       "tRPC",
       "Playwright",
       "TailwindCSS",
+      "ShadcnUI",
       "Docker",
       "GitHub Actions",
     ],
@@ -47,7 +48,7 @@ export const allProjects: Project[] = [
           and efficient user experience. Additionally, the Suspense API is used for handling 
           asynchronous data fetching, enhancing the loading experience while maintaining a 
           minimal JavaScript load.`,
-    techStack: ["TypeScript", "NextJS", "React", "TailwindCSS"],
+    techStack: ["TypeScript", "NextJS", "React", "TailwindCSS", "ShadcnUI"],
     link: "https://dev-log-whyash5114.vercel.app",
     featured: true,
   },
@@ -62,7 +63,14 @@ export const allProjects: Project[] = [
           chatting and file sharing, making collaboration seamless. Built using modern technologies 
           like NextJS and React for a dynamic frontend, and Prisma for efficient database management, 
           Skill Swap aims to create a community-driven experience for learning and skill development.`,
-    techStack: ["TypeScript", "React", "NextJS", "PostgreSQL", "Prisma"],
+    techStack: [
+      "TypeScript",
+      "React",
+      "NextJS",
+      "ShadcnUI",
+      "PostgreSQL",
+      "Prisma",
+    ],
     link: "https://skill-swap-ebon.vercel.app",
     featured: true,
   },
@@ -78,7 +86,13 @@ export const allProjects: Project[] = [
           communication, GitHub API integration for tracking actions within the HR system, and a robust 
           employee expense management module. Built with TypeScript for type safety, TailwindCSS for fast 
           UI development, and Svelte for reactive, efficient user interfaces.`,
-    techStack: ["TypeScript", "JavaScript", "Svelte", "TailwindCSS"],
+    techStack: [
+      "TypeScript",
+      "JavaScript",
+      "Svelte",
+      "TailwindCSS",
+      "ShadcnUI",
+    ],
   },
   {
     name: "TrackMate",
@@ -95,7 +109,7 @@ export const allProjects: Project[] = [
           tracking. Cross-platform compatibility will be a priority, supporting various web browsers and 
           devices for improved accessibility. Finally, historical attendance data will be maintained for 
           future reference or auditing purposes.`,
-    techStack: ["TypeScript", "Svelte", "MongoDB", "TailwindCSS"],
+    techStack: ["TypeScript", "Svelte", "MongoDB", "TailwindCSS", "DaisyUI"],
     link: "https://attendance-tracking-system-nine.vercel.app/",
   },
   {
@@ -117,7 +131,7 @@ export const allProjects: Project[] = [
     text: `Static website with college info, prerendered for quick CDN delivery with a contact us form.
             Optimized images, hero icons, good web metrics with a focus on accessibility, appropriate contract,
             and speed.`,
-    techStack: ["TypeScript", "JavaScript", "Svelte", "TailwindCSS"],
+    techStack: ["TypeScript", "JavaScript", "Svelte", "TailwindCSS", "DaisyUI"],
     link: "https://apv.ac.in",
   },
   {
