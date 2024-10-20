@@ -66,7 +66,20 @@ export const allProjects: Project[] = [
     link: "https://skill-swap-ebon.vercel.app",
     featured: true,
   },
-  // TODO: add hr-tech, and web-streaming-platform, AND WORK IS ALSO LEFT
+  {
+    name: "HR Tech",
+    repoName: "hr-tech",
+    description:
+      "Streamline HR tasks like resume filtering, auto-responses with Llama API, action monitoring via GitHub API, and expense management.",
+    text: `Welcome to the HR Tech Management System! This project is designed to streamline various 
+          HR tasks such as resume filtering, automatic response generation via the Llama API, monitoring 
+          actions through the GitHub API, and managing employee expenses. Key features include resume 
+          filtering to find top candidates, automated response generation using the Llama API for efficient 
+          communication, GitHub API integration for tracking actions within the HR system, and a robust 
+          employee expense management module. Built with TypeScript for type safety, TailwindCSS for fast 
+          UI development, and Svelte for reactive, efficient user interfaces.`,
+    techStack: ["TypeScript", "JavaScript", "Svelte", "TailwindCSS"],
+  },
   {
     name: "TrackMate",
     repoName: "attendance-tracking-system",
