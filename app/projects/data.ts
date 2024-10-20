@@ -66,7 +66,25 @@ export const allProjects: Project[] = [
     link: "https://skill-swap-ebon.vercel.app",
     featured: true,
   },
-  // TODO: add hr-tech and web-streaming-platform, AND WORK IS ALSO LEFT
+  // TODO: add hr-tech, and web-streaming-platform, AND WORK IS ALSO LEFT
+  {
+    name: "TrackMate",
+    repoName: "attendance-tracking-system",
+    description:
+      "Attendance system utilizing QR codes for seamless tracking of student or attendee presence.",
+    text: `The system will automatically generate unique QR codes every second for a duration of 10 seconds. 
+          To prevent proxy attendance, the web app will operate offline while scanning these QR codes. 
+          Attendance reports will include detailed data such as dates, times, and attendees. The system 
+          can be easily integrated with existing student management systems or databases. Security measures 
+          will be implemented to prevent fraudulent QR code scans. Additionally, the system is designed to 
+          scale efficiently, accommodating large numbers of attendees without compromising performance. The 
+          user interface will be intuitive for both administrators and attendees, ensuring smooth attendance 
+          tracking. Cross-platform compatibility will be a priority, supporting various web browsers and 
+          devices for improved accessibility. Finally, historical attendance data will be maintained for 
+          future reference or auditing purposes.`,
+    techStack: ["TypeScript", "Svelte", "MongoDB", "TailwindCSS"],
+    link: "https://attendance-tracking-system-nine.vercel.app/",
+  },
   {
     name: "Python Runtime Comparer",
     repoName: "Python-Runtime-Comparer",
