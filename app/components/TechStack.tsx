@@ -1,11 +1,21 @@
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { cloneElement } from "react";
 import Docker from "~icons/devicon/docker";
 import Git from "~icons/devicon/git";
+import GithubActions from "~icons/devicon/githubactions";
 import JavaScript from "~icons/devicon/javascript";
 import Linux from "~icons/devicon/linux";
+import MongoDB from "~icons/devicon/mongodb";
 import NextJS from "~icons/devicon/nextjs";
 import NodeJS from "~icons/devicon/nodejs";
+import NumPy from "~icons/devicon/numpy";
+import Pandas from "~icons/devicon/pandas";
+import Playwright from "~icons/devicon/playwright";
 import PostgreSQL from "~icons/devicon/postgresql";
 import Prisma from "~icons/devicon/prisma";
 import Python from "~icons/devicon/python";
@@ -14,14 +24,9 @@ import Svelte from "~icons/devicon/svelte";
 import TailwindCSS from "~icons/devicon/tailwindcss";
 import TRPC from "~icons/devicon/trpc";
 import TypeScript from "~icons/devicon/typescript";
-import Playwright from "~icons/devicon/playwright";
-import Pandas from "~icons/devicon/pandas";
-import GithubActions from "~icons/devicon/githubactions";
 import Kivy from "~icons/file-icons/kivy";
-import MongoDB from "~icons/devicon/mongodb";
-import ShadcnUI from "~icons/simple-icons/shadcnui";
 import DaisyUI from "~icons/logos/daisyui-icon";
-import NumPy from "~icons/devicon/numpy";
+import ShadcnUI from "~icons/simple-icons/shadcnui";
 
 const allTechnologies = [
   { name: "TypeScript", icon: <TypeScript /> },
@@ -64,12 +69,19 @@ export default function TechStack({ techStack }: PropsType) {
   return (
     <ScrollArea className="rounded-xl border md:col-span-2 shadow-sm">
       <div className="flex gap-4 p-4 justify-around">
-        {mappedTechnologies.map((technology) => {
-          return cloneElement(technology.icon, {
-            key: technology.name,
-            className: "basis-8 shrink-0 h-8 w-8",
-          });
-        })}
+        {mappedTechnologies.map((technology) => (
+          <Popover key={technology.name}>
+            <PopoverTrigger>
+              {cloneElement(technology.icon, {
+                key: technology.name,
+                className: "basis-8 shrink-0 h-8 w-8",
+              })}
+            </PopoverTrigger>
+            <PopoverContent className="w-fit text-sm p-2" side="top">
+              {technology.name}
+            </PopoverContent>
+          </Popover>
+        ))}
       </div>
       <ScrollBar orientation="horizontal" />
     </ScrollArea>
