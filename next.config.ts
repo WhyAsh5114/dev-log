@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import Icons from "unplugin-icons/webpack";
 
 const nextConfig: NextConfig = {
+  output: "export",
   webpack(config) {
     config.plugins.push(
       Icons({
