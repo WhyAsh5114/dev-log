@@ -1,33 +1,22 @@
-# Shadcn/UI Project Template
+# WhyAsh5114's dev-log
 
 ## About
-Tired of reconfiguring [shadcn/ui](https://github.com/shadcn/ui) every single time you want to create a project with themes and the Inter font? This repository provides a pre-configured setup, so you can skip the repetitive configuration steps and start building your project right away.
-
-## Features
-- Pre-configured **shadcn/ui** components
-- Integrated **themes** for easy customization
-- **Inter font** included by default
-- Ready-to-use template for new projects
-
-## Usage
-1. Clone the repository.
-2. Install dependencies with your package manager of choice.
-3. Start building with the provided UI components and theming support.
+My personal developer portfolio website.
 
 ## Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/WhyAsh5114/dev-log
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd <project-folder>
+   cd dev-log
    ```
 
 3. Install dependencies:
    ```bash
-   npm install
+   npm ci --force
    ```
 
 4. Run the project:
