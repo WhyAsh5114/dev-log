@@ -25,11 +25,17 @@ export default function ProjectCard({ project }: { project: Project }) {
           <TechStack techStack={project.techStack} />
         </CardContent>
         <CardFooter className="justify-end gap-4">
-          <Link href={`https://github.com/WhyAsh5114/${project.repoName}`}>
+          <Link
+            href={`https://github.com/WhyAsh5114/${project.repoName}`}
+            aria-label={`${project.name} GitHub link`}
+          >
             <GitHub className="h-6 w-6" />
           </Link>
           {project.link && (
-            <Link href={project.link}>
+            <Link
+              href={project.link}
+              aria-label={`${project.name} hosted link`}
+            >
               <ExternalLink />
             </Link>
           )}

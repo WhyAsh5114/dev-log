@@ -86,10 +86,10 @@ export default function ProjectImages({ projectName }: PropsType) {
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-1 justify-center min-w-96 p-2">
-      {images.map(({ filename, className }) => (
+      {images.map(({ filename, className }, idx) => (
         <>
           <Image
-            key={`${filename}-dark`}
+            key={`${filename}-${idx}-dark`}
             src={`/projects/${projectName}/dark/${filename}`}
             alt={generateAltText(filename)}
             width={parseRowCol(className).cols * 240}
@@ -97,7 +97,7 @@ export default function ProjectImages({ projectName }: PropsType) {
             className={cn("rounded-md border hidden dark:block", className)}
           />
           <Image
-            key={`${filename}-light`}
+            key={`${filename}-${idx}-light`}
             src={`/projects/${projectName}/light/${filename}`}
             alt={generateAltText(filename)}
             width={parseRowCol(className).cols * 240}

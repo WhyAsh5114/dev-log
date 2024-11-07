@@ -28,11 +28,17 @@ export default function ProjectComponent({ project, headingLevel }: PropsType) {
         >
           <span className="mr-auto">{project.name}</span>
           <GitHubStars repoName={project.repoName} />
-          <Link href={`https://github.com/WhyAsh5114/${project.repoName}`}>
+          <Link
+            href={`https://github.com/WhyAsh5114/${project.repoName}`}
+            aria-label={`${project.name} GitHub link`}
+          >
             <GitHub className="h-8 w-8" />
           </Link>
           {project.link && (
-            <Link href={project.link}>
+            <Link
+              href={project.link}
+              aria-label={`${project.name} hosted link`}
+            >
               <ExternalLink />
             </Link>
           )}
