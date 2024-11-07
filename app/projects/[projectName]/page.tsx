@@ -19,6 +19,6 @@ export async function generateStaticParams() {
   const projectNames = allProjects.map(({ name }) => name);
 
   return projectNames.map((name) => ({
-    projectName: name,
+    projectName: encodeURI(name),
   }));
 }

@@ -71,7 +71,7 @@ export default function TechStack({ techStack }: PropsType) {
       <div className="flex gap-4 p-4 justify-around">
         {mappedTechnologies.map((technology) => (
           <Popover key={technology.name}>
-            <PopoverTrigger>
+            <PopoverTrigger aria-label={technology.name}>
               {cloneElement(technology.icon, {
                 key: technology.name,
                 className: "basis-8 shrink-0 h-8 w-8",
