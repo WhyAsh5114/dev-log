@@ -4,12 +4,15 @@ import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export default function GitHubStars({ repoName }: { repoName: string }) {
+export default function GitHubStars({ repoLink }: { repoLink: string }) {
   const [stars, setStars] = useState<number | undefined>();
+
+  const parts = repoLink.split("/");
+  const repoPath = `${parts[3]}/${parts[4]}`;
+
   useEffect(() => {
-    fetch(`https://api.github.com/repos/WhyAsh5114/${repoName}`).then(
-      (response) =>
-        response.json().then((body) => setStars(body.stargazers_count))
+    fetch(`https://api.github.com/repos/${repoPath}`).then((response) =>
+      response.json().then((body) => setStars(body.stargazers_count))
     );
   });
 

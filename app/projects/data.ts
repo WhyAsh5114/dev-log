@@ -2,7 +2,7 @@ import { Technology } from "../components/TechStack";
 
 export type Project = {
   name: string;
-  repoName: string;
+  repoLink: string;
   description: string;
   text: string;
   techStack: Technology[];
@@ -13,7 +13,7 @@ export type Project = {
 export const allProjects: Project[] = [
   {
     name: "MyFit",
-    repoName: "MyFit",
+    repoLink: "https://github.com/WhyAsh5114/MyFit",
     description:
       "Open-source workout tracker inspired by the RP Hypertrophy App.",
     text: `A web-based workout tracking application designed to help users track
@@ -38,7 +38,7 @@ export const allProjects: Project[] = [
   },
   {
     name: "Dev Log (this)",
-    repoName: "dev-log",
+    repoLink: "https://github.com/WhyAsh5114/dev-log",
     description:
       "My minimalistic developer portfolio optimized for loading speed and SEO.",
     text: `Built with Next.js and the Shadcn/ui component library, my developer portfolio 
@@ -53,8 +53,35 @@ export const allProjects: Project[] = [
     featured: true,
   },
   {
+    name: "EcoLyf",
+    repoLink: "https://github.com/sundaram123krishnan/EcoLyf",
+    description: `Web application designed to track and reduce carbon footprints by monitoring daily activities.`,
+    text: `Built in 24-hours at Technovate 2.0.
+          Ecolyf is an innovative application created to help users track and reduce their 
+          carbon footprints by monitoring daily activities and providing AI-driven 
+          suggestions for sustainable living. With features like daily carbon tracking, 
+          users can log activities to see their environmental impact, while personalized, 
+          AI-based suggestions offer actionable tips to reduce emissions. The app also 
+          includes an Eco-Score feature, allowing users to visualize their eco-friendliness 
+          progress with a measurable score, along with data visualization tools to track 
+          improvements over time. Built on a modern tech stack, Ecolyf utilizes Prisma for 
+          database management, PostgreSQL for data storage of user activities and eco-scores, 
+          Svelte for a responsive frontend experience, and TypeScript to ensure robust and 
+          maintainable code.`,
+    techStack: [
+      "TypeScript",
+      "Svelte",
+      "TailwindCSS",
+      "ShadcnUI",
+      "PostgreSQL",
+      "Prisma",
+    ],
+    link: "https://eco-lyf.vercel.app/",
+    featured: true,
+  },
+  {
     name: "Skill Swap",
-    repoName: "skill-swap",
+    repoLink: "https://github.com/WhyAsh5114/skill-swap",
     description: `Social platform where users connect, chat, and exchange skills, 
                   with file sharing.`,
     text: `Skill Swap is a social media platform designed to facilitate skill exchange between 
@@ -76,10 +103,11 @@ export const allProjects: Project[] = [
   },
   {
     name: "HR Tech",
-    repoName: "hr-tech",
+    repoLink: "https://github.com/WhyAsh5114/hr-tech",
     description:
       "Streamline HR tasks like resume filtering, auto-responses with Llama API, action monitoring via GitHub API, and expense management.",
-    text: `Welcome to the HR Tech Management System! This project is designed to streamline various 
+    text: `Built in 24-hours at INNOV8 2.0.
+          Welcome to the HR Tech Management System! This project is designed to streamline various 
           HR tasks such as resume filtering, automatic response generation via the Llama API, monitoring 
           actions through the GitHub API, and managing employee expenses. Key features include resume 
           filtering to find top candidates, automated response generation using the Llama API for efficient 
@@ -96,10 +124,11 @@ export const allProjects: Project[] = [
   },
   {
     name: "TrackMate",
-    repoName: "attendance-tracking-system",
+    repoLink: "https://github.com/WhyAsh5114/attendance-tracking-system",
     description:
       "Attendance system utilizing QR codes for seamless tracking of student or attendee presence.",
-    text: `The system will automatically generate unique QR codes every second for a duration of 10 seconds. 
+    text: `Built in 24-hours and won first prize 🥇 at Technothon 2k24.
+          The system will automatically generate unique QR codes every second for a duration of 10 seconds. 
           To prevent proxy attendance, the web app will operate offline while scanning these QR codes. 
           Attendance reports will include detailed data such as dates, times, and attendees. The system 
           can be easily integrated with existing student management systems or databases. Security measures 
@@ -114,7 +143,7 @@ export const allProjects: Project[] = [
   },
   {
     name: "Python Runtime Comparer",
-    repoName: "Python-Runtime-Comparer",
+    repoLink: "https://github.com/WhyAsh5114/Python-Runtime-Comparer",
     description:
       "Runtime simulator for sorting algorithms with graph visualizations across input size.",
     text: `This tool compares the runtime of different programs across identical inputs and outputs, and visualizes 
@@ -125,7 +154,7 @@ export const allProjects: Project[] = [
   },
   {
     name: "Agnel Polytechnic Website",
-    repoName: "Agnel-Polytechnic-Vashi",
+    repoLink: "https://github.com/WhyAsh5114/Agnel-Polytechnic-Vashi",
     description:
       "Created a college website for my diploma college: Agnel Polytechnic.",
     text: `Static website with college info, prerendered for quick CDN delivery with a contact us form.
@@ -142,11 +171,11 @@ export const allProjects: Project[] = [
           and get a simple description along with some tags, a logo, and the website link.`,
     techStack: ["JavaScript", "React", "NextJS", "TailwindCSS"],
     link: "https://next-cryptocurrencies-handbook.vercel.app",
-    repoName: "next-cryptocurrencies-handbook",
+    repoLink: "https://github.com/WhyAsh5114/next-cryptocurrencies-handbook",
   },
   {
     name: "DOTA 2 Rampage Finder",
-    repoName: "Dota2-Rampage-Finder",
+    repoLink: "https://github.com/WhyAsh5114/Dota2-Rampage-Finder",
     description: `A Python desktop app using Kivy to find past game IDs with rampages.`,
     text: `A Reddit user wanted to find their last games in which they achieved a rampage (an in game achievement), 
           unfortunately this data wasn't directly available in the game-client, so I tried to help them by 

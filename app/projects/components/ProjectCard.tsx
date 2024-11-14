@@ -26,7 +26,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </CardContent>
         <CardFooter className="justify-end gap-4">
           <Link
-            href={`https://github.com/WhyAsh5114/${project.repoName}`}
+            href={project.repoLink}
             aria-label={`${project.name} GitHub link`}
           >
             <GitHub className="h-6 w-6" />
