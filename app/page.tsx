@@ -19,6 +19,7 @@ export default function Home() {
     <>
       <div className="flex flex-col">
         <TypographyH1>Hi, I&apos;m WhyAsh5114 👋</TypographyH1>
+        <span className="font-semibold mt-2">Mumbai, India 📌</span>
         <TypographyP>
           I&apos;m a passionate full-stack web developer, who likes to build
           quality open-source web apps for everyone!
