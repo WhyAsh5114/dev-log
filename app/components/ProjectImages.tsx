@@ -52,9 +52,6 @@ export default function ProjectImages({ projectName }: PropsType) {
       modeBasedScreenshotsAvailable ? `/dark` : ""
     }`
   );
-  console.log(`public/projectImages/${projectName}${
-      modeBasedScreenshotsAvailable ? `/dark` : ""
-    }`);
 
   const images = calculateRowSpan(
     imageFiles.map((imageFile) => ({
