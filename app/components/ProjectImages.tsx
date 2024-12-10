@@ -45,18 +45,21 @@ function calculateRowSpan(
 
 export default function ProjectImages({ projectName }: PropsType) {
   const modeBasedScreenshotsAvailable = readdirSync(
-    `public/projects/${projectName}`
+    `public/projectImages/${projectName}`
   ).includes("dark");
   const imageFiles = readdirSync(
-    `public/projects/${projectName}${
+    `public/projectImages/${projectName}${
       modeBasedScreenshotsAvailable ? `/dark` : ""
     }`
   );
+  console.log(`public/projectImages/${projectName}${
+      modeBasedScreenshotsAvailable ? `/dark` : ""
+    }`);
 
   const images = calculateRowSpan(
     imageFiles.map((imageFile) => ({
       ...(sizeOf(
-        `public/projects/${projectName}${
+        `public/projectImages/${projectName}${
           modeBasedScreenshotsAvailable ? `/dark/` : "/"
         }${imageFile}`
       ) as {
@@ -73,7 +76,7 @@ export default function ProjectImages({ projectName }: PropsType) {
         {images.map(({ filename, className }, idx) => (
           <Image
             key={`${idx}`}
-            src={`/projects/${projectName}/${filename}`}
+            src={`/projectImages/${projectName}/${filename}`}
             alt={generateAltText(filename)}
             width={parseRowCol(className).cols * 240}
             height={parseRowCol(className).rows * 240}
@@ -90,7 +93,7 @@ export default function ProjectImages({ projectName }: PropsType) {
         <>
           <Image
             key={`${filename}-${idx}-dark`}
-            src={`/projects/${projectName}/dark/${filename}`}
+            src={`/projectImages/${projectName}/dark/${filename}`}
             alt={generateAltText(filename)}
             width={parseRowCol(className).cols * 240}
             height={parseRowCol(className).rows * 240}
@@ -98,7 +101,7 @@ export default function ProjectImages({ projectName }: PropsType) {
           />
           <Image
             key={`${filename}-${idx}-light`}
-            src={`/projects/${projectName}/light/${filename}`}
+            src={`/projectImages/${projectName}/light/${filename}`}
             alt={generateAltText(filename)}
             width={parseRowCol(className).cols * 240}
             height={parseRowCol(className).rows * 240}
