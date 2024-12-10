@@ -1,12 +1,14 @@
 import { ModeToggle } from "@/components/ModeToggle";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const metadata: Metadata = {
   title: "Dev Log",
@@ -25,7 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <meta
+          name="google-site-verification"
+          content="u_zN6Y2wbUyB1EKRpOAyRuQzAgmwAke2RtY1QFuagz0"
+        />
+      </head>
       <body className={cn(inter.className)}>
         <ThemeProvider
           attribute="class"
@@ -37,7 +44,9 @@ export default function RootLayout({
             <Header />
             <main className="max-w-screen-md mx-auto pt-8 p-4">{children}</main>
           </ScrollArea>
+          <SpeedInsights />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
