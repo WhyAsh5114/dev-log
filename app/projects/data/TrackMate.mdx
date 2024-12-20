@@ -1,0 +1,74 @@
+---
+name: "TrackMate"
+repoLink: "https://github.com/WhyAsh5114/attendance-tracking-system"
+description: "Attendance system utilizing QR codes for seamless tracking of student or attendee presence."
+techStack: ["TypeScript", "Svelte", "MongoDB", "TailwindCSS", "DaisyUI"]
+link: "https://attendance-tracking-system-nine.vercel.app/"
+---
+
+# QR-Based Attendance System
+
+A web-based attendance system utilizing QR codes for seamless tracking of student or attendee presence. This application is built with Svelte for the frontend, TypeScript for type safety, and MongoDB for data storage.
+
+## Features
+
+- **QR Code Generation**: Automatically generate unique QR codes for 10seconds, per second each qr code.
+- **Offline Mode**: While scanning qr code, the web app will be offline, so that no proxy attendance is avoided.
+- **Attendance Reports**: Generate detailed reports on attendance data, including dates, times, and attendees.
+- **Integration**: Easily integrate with existing student management systems or databases.
+- **Security**: Implement security measures to prevent fraudulent QR code scanning.
+- **Scalability**: Scale the system to accommodate large numbers of attendees without performance degradation.
+- **User-Friendly Interface**: Intuitive interface for both administrators and attendees to facilitate smooth attendance tracking.
+- **Cross-Platform Compatibility**: Ensure compatibility with various web browsers and devices for accessibility.
+- **Historical Data**: Maintain a historical record of attendance for future reference or auditing purposes.
+
+## Technologies Used
+
+- **Frontend**: Svelte, TypeScript
+- **Backend**: Sveltekit, Auth-js
+- **Database**: MongoDB
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine
+- MongoDB installed and running
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/WhyAsh5114/attendance-tracking-system.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd qr-attendance-system
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Set up environment variables:
+
+   - Create a `.env` file in the root directory.
+   - Define environment variables such as MongoDB connection URI, secret keys, etc.
+
+5. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+6. Navigate to `http://localhost:5173` in your web browser to access the application.
+
+## Usage
+
+1. **Administrator Dashboard**: Log in as an administrator to generate QR codes, view attendance reports, and manage settings.
+2. **Student/Attendee Interface**: Scan QR codes with a mobile device to register attendance.
