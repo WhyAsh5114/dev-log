@@ -1,5 +1,5 @@
+import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
 
 export function TypographyH3({
   children,
@@ -10,7 +10,7 @@ export function TypographyH3({
 }) {
   return (
     <h3
-      className={twMerge(
+      className={cn(
         "mt-4 scroll-m-20 text-2xl font-semibold tracking-tight",
         className
       )}
