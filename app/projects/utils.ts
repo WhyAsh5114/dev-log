@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import { Technology } from "../components/TechStack";
 
 export type ProjectMetadata = {
+  displayName: string;
   name: string;
   repoLink: string;
   description: string;
