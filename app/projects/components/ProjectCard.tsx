@@ -11,7 +11,7 @@ import { ChevronRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import TechStack from "../../components/TechStack";
-import { Project } from "../data";
+import { Project } from "../utils";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (

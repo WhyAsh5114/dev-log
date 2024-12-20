@@ -1,6 +1,6 @@
 import { Technology } from "../components/TechStack";
 
-export type Project = {
+type Project = {
   name: string;
   repoLink: string;
   description: string;

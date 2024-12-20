@@ -5,14 +5,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { TypographyH1 } from "@/components/ui/typographyH1";
-import { TypographyH2 } from "@/components/ui/typographyH2";
 import { TypographyP } from "@/components/ui/typographyP";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import LinkedIn from "~icons/mdi/linkedin";
 import TechStack from "./components/TechStack";
-import ProjectComponent from "./projects/components/ProjectComponent";
-import { allProjects } from "./projects/data";
 
 export default function Home() {
   return (
@@ -55,8 +52,6 @@ export default function Home() {
             </Card>
           </Link>
         </div>
-        <TypographyH2>Highlight</TypographyH2>
-        <ProjectComponent headingLevel="h3" project={allProjects[0]} />
       </div>
     </>
   );
