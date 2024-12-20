@@ -31,6 +31,7 @@ import DaisyUI from "~icons/logos/daisyui-icon";
 import ShadcnUI from "~icons/simple-icons/shadcnui";
 import Algorand from "~icons/token/algorand";
 import CSS from "~icons/vscode-icons/file-type-css";
+import NPM from "~icons/vscode-icons/file-type-npm";
 
 const allTechnologies = [
   { name: "TypeScript", icon: <TypeScript /> },
@@ -59,6 +60,7 @@ const allTechnologies = [
   { name: "HTML", icon: <HTML /> },
   { name: "CSS", icon: <CSS /> },
   { name: "Algorand", icon: <Algorand /> },
+  { name: "NPM", icon: <NPM /> },
 ] as const;
 
 export type Technology = (typeof allTechnologies)[number]["name"];
