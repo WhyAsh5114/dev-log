@@ -42,7 +42,9 @@ export default function RootLayout({
         >
           <ScrollArea className="h-screen min-w-full overflow-y-auto">
             <Header />
-            <main className="max-w-screen-md mx-auto pt-8 p-4">{children}</main>
+            <main className="max-w-screen-md mx-auto pt-8 p-4 w-screen">
+              {children}
+            </main>
           </ScrollArea>
           <SpeedInsights />
         </ThemeProvider>
