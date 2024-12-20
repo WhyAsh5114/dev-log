@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
-import { allProjects } from "../data";
-import ProjectComponent from "../components/ProjectComponent";
+import { getProjects } from "../utils";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import ProjectImages from "@/app/components/ProjectImages";
+import TechStack from "@/app/components/TechStack";
 
 type PropsType = {
   params: Promise<{ projectName: string }>;
@@ -9,16 +11,27 @@ type PropsType = {
 export default async function Page(props: PropsType) {
   const params = await props.params;
   const projectName = decodeURIComponent(params.projectName);
-  const project = allProjects.find((p) => p.name === projectName);
+
+  const project = getProjects().find(
+    ({ metadata }) => metadata.name === projectName
+  );
   if (!project) notFound();
 
-  return <ProjectComponent project={project} headingLevel="h1" />;
+  return (
+    <article className="prose dark:prose-invert max-w-none prose-img:m-0">
+      <MDXRemote
+        source={project.content}
+        components={{ ProjectImages, TechStack }}
+        options={{ scope: project.metadata }}
+      />
+    </article>
+  );
 }
 
 export async function generateStaticParams() {
-  const projectNames = allProjects.map(({ name }) => name);
+  const projects = getProjects();
 
-  return projectNames.map((name) => ({
-    projectName: name,
+  return projects.map(({ metadata }) => ({
+    projectName: metadata.name,
   }));
 }
