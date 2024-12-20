@@ -4,7 +4,7 @@ import Image from "next/image";
 import sizeOf from "image-size";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
-type PropsType = { projectName: string };
+type PropsType = { projectName: string; className?: string };
 type ImageDimensions = {
   filename: string;
   width: number;
@@ -103,9 +103,11 @@ function AllImages({ projectName }: PropsType) {
   ));
 }
 
-export default function ProjectImages({ projectName }: PropsType) {
+export default function ProjectImages({ projectName, className }: PropsType) {
   return (
-    <ScrollArea className="h-72 border rounded-md my-2 shadow-sm">
+    <ScrollArea
+      className={cn("h-72 border rounded-md my-2 shadow-sm", className)}
+    >
       <div className="grid grid-cols-2 md:grid-cols-3 gap-1 min-w-96 p-2">
         <AllImages projectName={projectName} />
       </div>
