@@ -2,7 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { Technology } from "../components/TechStack";
 
-export type Project = {
+export type ProjectMetadata = {
   name: string;
   repoLink: string;
   description: string;
@@ -21,7 +21,7 @@ export function getProjects() {
   return projectFiles.map((filename) => {
     const raw = fs.readFileSync(`${dir}/${filename}`, "utf-8");
     const { data, content } = matter(raw);
-    const metadata = data as Project;
+    const metadata = data as ProjectMetadata;
     return { metadata, content };
   });
 }

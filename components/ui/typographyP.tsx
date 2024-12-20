@@ -1,5 +1,16 @@
 import { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
-export function TypographyP({ children }: { children: ReactNode }) {
-  return <p className="leading-7 [&:not(:first-child)]:mt-6">{children}</p>;
+export function TypographyP({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <p className={twMerge("leading-7 [&:not(:first-child)]:mt-6", className)}>
+      {children}
+    </p>
+  );
 }

@@ -11,36 +11,40 @@ import { ChevronRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import TechStack from "../../components/TechStack";
-import { Project } from "../utils";
+import { ProjectMetadata } from "../utils";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  metadata,
+}: {
+  metadata: ProjectMetadata;
+}) {
   return (
     <>
       <Card>
         <CardHeader>
-          <CardTitle>{project.name}</CardTitle>
-          <CardDescription>{project.description}</CardDescription>
+          <CardTitle>{metadata.name}</CardTitle>
+          <CardDescription>{metadata.description}</CardDescription>
         </CardHeader>
         <CardContent className="grid">
-          <TechStack techStack={project.techStack} />
+          <TechStack techStack={metadata.techStack} />
         </CardContent>
         <CardFooter className="justify-end gap-4">
           <Link
-            href={project.repoLink}
-            aria-label={`${project.name} GitHub link`}
+            href={metadata.repoLink}
+            aria-label={`${metadata.name} GitHub link`}
           >
             <GitHub className="h-6 w-6" />
           </Link>
-          {project.link && (
+          {metadata.link && (
             <Link
-              href={project.link}
-              aria-label={`${project.name} hosted link`}
+              href={metadata.link}
+              aria-label={`${metadata.name} hosted link`}
             >
               <ExternalLink />
             </Link>
           )}
           <Button size="sm" asChild>
-            <Link href={`/projects/${project.name}`}>
+            <Link href={`/projects/${metadata.name}`}>
               View more
               <ChevronRight />
             </Link>

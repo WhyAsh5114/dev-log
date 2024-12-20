@@ -14,7 +14,7 @@ export default function Projects() {
         {getProjects()
           .filter(({ metadata }) => metadata.featured)
           .map(({ metadata }) => (
-            <ProjectCard key={metadata.name} project={metadata} />
+            <ProjectCard key={metadata.name} metadata={metadata} />
           ))}
       </div>
 
@@ -24,7 +24,7 @@ export default function Projects() {
         {getProjects()
           .filter(({ metadata }) => !metadata.featured)
           .map(({ metadata }) => (
-            <ProjectCard key={metadata.name} project={metadata} />
+            <ProjectCard key={metadata.name} metadata={metadata} />
           ))}
       </div>
     </>
