@@ -22,7 +22,7 @@ export default function ProjectCard({
     <>
       <Card>
         <CardHeader>
-          <CardTitle>{metadata.name}</CardTitle>
+          <CardTitle>{metadata.displayName}</CardTitle>
           <CardDescription>{metadata.description}</CardDescription>
         </CardHeader>
         <CardContent className="grid">
@@ -31,14 +31,14 @@ export default function ProjectCard({
         <CardFooter className="justify-end gap-4">
           <Link
             href={metadata.repoLink}
-            aria-label={`${metadata.name} GitHub link`}
+            aria-label={`${metadata.displayName} GitHub link`}
           >
             <GitHub className="h-6 w-6" />
           </Link>
           {metadata.link && (
             <Link
               href={metadata.link}
-              aria-label={`${metadata.name} hosted link`}
+              aria-label={`${metadata.displayName} hosted link`}
             >
               <ExternalLink />
             </Link>

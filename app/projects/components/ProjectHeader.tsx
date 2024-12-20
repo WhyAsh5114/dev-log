@@ -15,14 +15,14 @@ export default function ProjectHeader({
 }) {
   return (
     <>
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col md:flex-row items-center gap-2">
         <div className="flex flex-col mr-auto">
-          <TypographyH3 className="mt-0">{metadata.name}</TypographyH3>
+          <TypographyH3 className="mt-0">{metadata.displayName}</TypographyH3>
           <TypographyP className="!mt-0 text-sm text-muted-foreground">
             {metadata.description}
           </TypographyP>
         </div>
-        <div className="flex gap-2 md:gap-4 flex-col items-center md:flex-row">
+        <div className="flex gap-2 md:gap-4 items-center self-start md:self-auto">
           <GitHubStars repoLink={metadata.repoLink} />
           {metadata.link && (
             <Link href={metadata.link} aria-label="Hosted link">
@@ -35,7 +35,7 @@ export default function ProjectHeader({
         </div>
       </div>
 
-      <div className="mt-2" />
+      <div className="mt-2.5" />
       <ProjectImages projectName={metadata.name} />
       <TechStack techStack={metadata.techStack} />
     </>

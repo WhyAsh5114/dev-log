@@ -8,6 +8,8 @@ import { cloneElement } from "react";
 import Docker from "~icons/devicon/docker";
 import Git from "~icons/devicon/git";
 import GithubActions from "~icons/devicon/githubactions";
+import HTML from "~icons/devicon/html5";
+import Java from "~icons/devicon/java";
 import JavaScript from "~icons/devicon/javascript";
 import Linux from "~icons/devicon/linux";
 import MongoDB from "~icons/devicon/mongodb";
@@ -27,6 +29,9 @@ import TypeScript from "~icons/devicon/typescript";
 import Kivy from "~icons/file-icons/kivy";
 import DaisyUI from "~icons/logos/daisyui-icon";
 import ShadcnUI from "~icons/simple-icons/shadcnui";
+import Algorand from "~icons/token/algorand";
+import CSS from "~icons/vscode-icons/file-type-css";
+import NPM from "~icons/vscode-icons/file-type-npm";
 
 const allTechnologies = [
   { name: "TypeScript", icon: <TypeScript /> },
@@ -51,6 +56,11 @@ const allTechnologies = [
   { name: "Kivy", icon: <Kivy /> },
   { name: "Pandas", icon: <Pandas /> },
   { name: "NumPy", icon: <NumPy /> },
+  { name: "Java", icon: <Java /> },
+  { name: "HTML", icon: <HTML /> },
+  { name: "CSS", icon: <CSS /> },
+  { name: "Algorand", icon: <Algorand /> },
+  { name: "NPM", icon: <NPM /> },
 ] as const;
 
 export type Technology = (typeof allTechnologies)[number]["name"];
