@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { readdirSync } from "fs";
 import Image from "next/image";
 import sizeOf from "image-size";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 type PropsType = { projectName: string };
 type ImageDimensions = {
@@ -43,7 +44,7 @@ function calculateRowSpan(
   }));
 }
 
-export default function ProjectImages({ projectName }: PropsType) {
+function AllImages({ projectName }: PropsType) {
   const modeBasedScreenshotsAvailable = readdirSync(
     `public/projectImages/${projectName}`
   ).includes("dark");
@@ -68,44 +69,47 @@ export default function ProjectImages({ projectName }: PropsType) {
   );
 
   if (!modeBasedScreenshotsAvailable) {
-    return (
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-1 justify-center min-w-96 p-2">
-        {images.map(({ filename, className }, idx) => (
-          <Image
-            key={`${idx}`}
-            src={`/projectImages/${projectName}/${filename}`}
-            alt={generateAltText(filename)}
-            width={parseRowCol(className).cols * 240}
-            height={parseRowCol(className).rows * 240}
-            className={cn("rounded-md border", className)}
-          />
-        ))}
-      </div>
-    );
+    return images.map(({ filename, className }, idx) => (
+      <Image
+        key={`${idx}`}
+        src={`/projectImages/${projectName}/${filename}`}
+        alt={generateAltText(filename)}
+        width={parseRowCol(className).cols * 240}
+        height={parseRowCol(className).rows * 240}
+        className={cn("rounded-md border", className)}
+      />
+    ));
   }
 
+  return images.map(({ filename, className }, idx) => (
+    <>
+      <Image
+        key={`${filename}-${idx}-dark`}
+        src={`/projectImages/${projectName}/dark/${filename}`}
+        alt={generateAltText(filename)}
+        width={parseRowCol(className).cols * 240}
+        height={parseRowCol(className).rows * 240}
+        className={cn("rounded-md border hidden dark:block", className)}
+      />
+      <Image
+        key={`${filename}-${idx}-light`}
+        src={`/projectImages/${projectName}/light/${filename}`}
+        alt={generateAltText(filename)}
+        width={parseRowCol(className).cols * 240}
+        height={parseRowCol(className).rows * 240}
+        className={cn("rounded-md border dark:hidden", className)}
+      />
+    </>
+  ));
+}
+
+export default function ProjectImages({ projectName }: PropsType) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-1 justify-center min-w-96 p-2">
-      {images.map(({ filename, className }, idx) => (
-        <>
-          <Image
-            key={`${filename}-${idx}-dark`}
-            src={`/projectImages/${projectName}/dark/${filename}`}
-            alt={generateAltText(filename)}
-            width={parseRowCol(className).cols * 240}
-            height={parseRowCol(className).rows * 240}
-            className={cn("rounded-md border hidden dark:block", className)}
-          />
-          <Image
-            key={`${filename}-${idx}-light`}
-            src={`/projectImages/${projectName}/light/${filename}`}
-            alt={generateAltText(filename)}
-            width={parseRowCol(className).cols * 240}
-            height={parseRowCol(className).rows * 240}
-            className={cn("rounded-md border dark:hidden", className)}
-          />
-        </>
-      ))}
-    </div>
+    <ScrollArea className="h-72 border rounded-md my-2 shadow-sm">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-1 min-w-96 p-2">
+        <AllImages projectName={projectName} />
+      </div>
+      <ScrollBar orientation="horizontal" />
+    </ScrollArea>
   );
 }
