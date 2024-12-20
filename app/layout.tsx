@@ -1,13 +1,11 @@
-import { ModeToggle } from "@/components/ModeToggle";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link";
+import { Navbar } from "./components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -41,7 +39,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ScrollArea className="h-screen min-w-full overflow-y-auto">
-            <Header />
+            <Navbar />
             <main className="max-w-screen-md mx-auto pt-8 p-4 w-screen">
               {children}
             </main>
@@ -51,24 +49,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  );
-}
-
-function Header() {
-  const links: { text: string; href: string }[] = [
-    { text: "Home", href: "/" },
-    { text: "Projects", href: "/projects" },
-    { text: "Work", href: "/work" },
-  ];
-
-  return (
-    <header className="sticky top-0 flex items-center p-2 bg-background/75 backdrop-blur-md max-w-screen-md mx-auto z-50">
-      {links.map(({ href, text }) => (
-        <Button key={text} className="font-semibold" variant="link" asChild>
-          <Link href={href}>{text}</Link>
-        </Button>
-      ))}
-      <ModeToggle />
-    </header>
   );
 }
