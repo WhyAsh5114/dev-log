@@ -41,7 +41,7 @@ export function BlogPostCard({
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="ml-auto" asChild>
+        <Button className="ml-auto" size="sm" asChild>
           <Link href={`/blog/${encodeURIComponent(metadata.name)}`}>
             View
             <ChevronRight />

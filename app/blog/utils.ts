@@ -6,6 +6,7 @@ export type BlogPostMetadata = {
   name: string;
   date: Date;
   tags: string[];
+  category?: string
 };
 
 export function getBlogPosts() {
@@ -13,10 +14,12 @@ export function getBlogPosts() {
 
   const blogFiles = fs.readdirSync(dir).filter((name) => name.endsWith(".mdx"));
 
-  return blogFiles.map((filename) => {
-    const raw = fs.readFileSync(`${dir}/${filename}`, "utf-8");
-    const { data, content } = matter(raw);
-    const metadata = data as BlogPostMetadata;
-    return { metadata, content };
-  });
+  return blogFiles
+    .map((filename) => {
+      const raw = fs.readFileSync(`${dir}/${filename}`, "utf-8");
+      const { data, content } = matter(raw);
+      const metadata = data as BlogPostMetadata;
+      return { metadata, content };
+    })
+    .sort((a, b) => b.metadata.date.getTime() - a.metadata.date.getTime());
 }
