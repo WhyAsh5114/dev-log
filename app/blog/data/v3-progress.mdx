@@ -1,0 +1,31 @@
+---
+displayName: Update on the progress of v3
+name: v3-progress
+date: 2024-06-16
+tags: ["MyFit", "Updates", "Development", "v3"]
+category: MyFit
+---
+
+The app now gets 4000+ views every week 🥳. Thanks, all!
+
+Now that my exams are over and I have almost an entire month of holidays, I'm dedicating nearly the entire day to v3. I'm learning new things and implementing features every day, which feels great! I'm almost done with the foundational work on exercises and mesocycles and will begin working on workouts very soon. Most of the tech stack is now fixed, and I doubt I'll have to rewrite anything for at least the next few months.
+
+<div className="border">
+  ![v3 sneak peek](/blogImages/v3_sneakPeek.webp)
+</div>
+*v3 sneak peek*
+
+Some of the new and requested features that I've implemented are:
+
+- Drag and drop for exercises
+- Exercise search list where you can add an exercise with one click
+- Ability to change the exercise split of an ongoing mesocycle without losing progress
+- Actual and meaningful analytics
+
+For the tech people who are interested (these decisions don't really affect the actual end user experience directly, mostly just UI stuff and some speed improvements), here are some of the major changes:
+
+- tRPC instead of REST API for type-safe database queries
+- shadcn-svelte with Svelte 5 for UI components
+- Prisma with Neon PostgreSQL for efficient joins and type safety
+
+Now that the basics are in place, I can soon start work on the progression algorithms. I just need to write some tests to make sure things don't break later on when I add more features. That's about it for this blog post. I'll try to post once every month to give updates on v3 and cool upcoming stuff. Happy lifting!
