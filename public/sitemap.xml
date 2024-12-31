@@ -86,11 +86,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev-log-whyash5114.vercel.app/blog/sveltekit-prerendered-pwa</loc>
-    <lastmod>2024-12-31T12:04:34+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://dev-log-whyash5114.vercel.app/blog/playwright-vs-cypress</loc>
     <lastmod>2024-12-31T12:04:34+01:00</lastmod>
     <priority>0.8</priority>
