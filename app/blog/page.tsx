@@ -17,7 +17,7 @@ export default function Page() {
   const sortedCategories = Object.keys(groupedPosts).sort((a, b) => {
     if (a === "Uncategorized") return -1;
     if (b === "Uncategorized") return 1;
-    return a.localeCompare(b);
+    return b.localeCompare(a);
   });
 
   return (

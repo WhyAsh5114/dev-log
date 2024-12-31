@@ -1,0 +1,87 @@
+---
+displayName: "SvelteKit Prerendered PWA"
+name: "sveltekit-prerendered-pwa"
+tags: ["sveltekit", "pwa", "vite-pwa", "offline-web-apps"]
+date: 2024-12-31
+category: "Tech"
+---
+
+Making offline first apps is a great idea, or so I thought; it makes your app feel snappy and responsive. But how do 
+you make a Progressive Web App (PWA) with SvelteKit? Well, it's just `npm i` some packages and go right? Not quite.
+
+I'll try to save hours of debugging and monkey-patching for y'all and tell you exactly how to make a SvelteKit PWA
+with the optimal performance using `@sveltejs/adapter-static` and `vite-plugin-pwa`.
+
+## The main problem
+
+There's a specific bug when using `load()` functions along with prerendering and the static-adapter that I spent 
+hours trying to fix, it occurs primarily due to `@vite-pwa/sveltekit` not being able to figure out how to cache 
+the returned data from the `load()`, typically stored in:
+```
+.svelte-kit/output/prerendered/dependencies/{page-route}/__data.json
+```
+This causes the app to break when offline and navigating to a page that depends on that data.
+
+## The fix
+
+1. To fix this, you need to manipulate the PWA config in `vite.config.ts` and the custom `service-worker` file.
+After setting up your basic PWA with the following guide [here](https://vite-pwa-org.netlify.app/frameworks/sveltekit.html),
+you need to add the following to your `vite.config.ts`:
+```typescript
+export default defineConfig({
+  plugins: [
+    sveltekit(),
+    SvelteKitPWA({
+      /* other config */
+      injectManifest: {
+        globPatterns: [
+          'client/**/*.{js,css,ico,png,svg,webp,webmanifest,ttf,woff,woff2}',
+          'prerendered/**/*.{html,json}'
+        ],
+      }
+    })
+  ],
+});
+```
+
+2. Notice the `prerendered/**/*.{html,json}` in the `globPatterns` array, this tells `vite-plugin-pwa` to cache the
+prerendered data (typically in the form of `__data.json` files) so that the app can work offline. This should have
+been enough, but for some reason you need this weird hack in your `service-worker.ts`:
+
+```typescript
+/// <reference lib="WebWorker" />
+/// <reference types="@sveltejs/kit" />
+
+import { cleanupOutdatedCaches, precacheAndRoute } from 'workbox-precaching';
+import { registerRoute } from 'workbox-routing';
+import { StaleWhileRevalidate } from 'workbox-strategies';
+declare let self: ServiceWorkerGlobalScope;
+
+const manifest = self.__WB_MANIFEST;
+
+manifest.forEach((entry) => {
+	if (typeof entry === 'object' && entry.url.endsWith('__data.json')) {
+		entry.url = entry.url.replace(/^prerendered\/dependencies\//, '');
+	}
+});
+
+cleanupOutdatedCaches();
+precacheAndRoute(manifest, { ignoreURLParametersMatching: [/.*/] });
+
+self.addEventListener('message', (event) => {
+	if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting();
+});
+
+registerRoute(/.*/, new StaleWhileRevalidate());
+```
+
+This hack is necessary because the `__data.json` files are stored in the `prerendered/dependencies/` folder, and the
+service worker's default behaviour incorrectly configures their URLs. This hack manually alters the URLs so that the
+service worker can cache them correctly.
+
+## Conclusion
+
+This is a weird bug that I hope gets fixed soon, but until then, this is the best way to make a SvelteKit PWA with
+prerendering and optimal performance. I discovered this when making an offline web app as a demo for my
+[@prisma-idb/idb-client-generator](https://github.com/prisma-idb/idb-client-generator) package. The demo website's
+GitHub is available [here](https://github.com/prisma-idb/pidb-kanban-example) if you need a reference.
