@@ -27,7 +27,7 @@ This causes the app to break when offline and navigating to a page that depends 
 1. To fix this, you need to manipulate the PWA config in `vite.config.ts` and the custom `service-worker` file.
 After setting up your basic PWA with the following guide [here](https://vite-pwa-org.netlify.app/frameworks/sveltekit.html),
 you need to add the following to your `vite.config.ts`:
-```typescript
+```js
 export default defineConfig({
   plugins: [
     sveltekit(),

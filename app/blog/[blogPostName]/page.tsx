@@ -1,6 +1,7 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import { getBlogPosts } from "../utils";
+import rehypeStarryNight from "rehype-starry-night";
 import BlogPostHeader from "../components/BlogPostHeader";
 
 type PropsType = {
@@ -22,7 +23,10 @@ export default async function Page(props: PropsType) {
       <article className="prose dark:prose-invert max-w-none prose-img:m-0 my-8">
         <MDXRemote
           source={blogPost.content}
-          options={{ scope: blogPost.metadata }}
+          options={{
+            scope: blogPost.metadata,
+            mdxOptions: { rehypePlugins: [rehypeStarryNight] },
+          }}
         />
       </article>
     </>
