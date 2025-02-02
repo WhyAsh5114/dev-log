@@ -14,6 +14,29 @@ export default function Page() {
       <Timeline
         data={[
           {
+            title: "Jan 2025",
+            content: (
+              <div className="grid grid-cols-1 gap-2">
+                <p>
+                  Started an internship as a full-stack developer at Yardstick.
+                  Built scalable apps and SaaS platforms with NextJS, React, and
+                  Prisma following the latest web-standards.
+                </p>
+                <div className="grid grid-cols-2 gap-4 place-items-center">
+                  <Image
+                    src="/timelineImages/Yardstick.webp"
+                    alt="Yardstick company logo"
+                    width={56}
+                    height={56}
+                  />
+                  <div className="w-full">
+                    <TechStack techStack={["NextJS", "React", "Prisma"]} />
+                  </div>
+                </div>
+              </div>
+            ),
+          },
+          {
             title: "Dec 2024",
             content: (
               <div className="grid grid-cols-1 gap-2">
@@ -101,7 +124,7 @@ export default function Page() {
                 </p>
                 <div className="grid grid-cols-2 gap-4 place-items-center">
                   <Image
-                    src="https://raw.githubusercontent.com/WhyAsh5114/MyFit/refs/heads/v2/static/favicon.png"
+                    src="/timelineImages/myfit.png"
                     alt="MyFit V2 logo"
                     width={64}
                     height={64}
@@ -124,7 +147,7 @@ export default function Page() {
                 </p>
                 <div className="grid grid-cols-2 gap-4 place-items-center">
                   <Image
-                    src="https://anandchemiceutics.in/wp-content/uploads/2023/01/cropped-Aanand-Chemiceutics-logo-cc-e1672822819496-215x79.png"
+                    src="/timelineImages/anand-chemiceutics.webp"
                     alt="Anand Chemiceutics logo"
                     className="mt-2 -mb-1"
                     width={128}
@@ -171,7 +194,7 @@ export default function Page() {
                 <div className="grid grid-cols-2 gap-4 place-items-center">
                   <Image
                     alt="Juppiter AI Labs Logo"
-                    src="https://jupiterailabs.com/wp-content/uploads/2021/10/new-logo.jpeg.jpg"
+                    src="/timelineImages/juppiter-ai-labs.jpg"
                     width={200}
                     height={56}
                   />
@@ -202,15 +225,15 @@ export default function Page() {
                 <Image
                   width={64}
                   height={64}
-                  src="https://apv.ac.in/apv_logo.webp"
+                  src="/timelineImages/agnel.webp"
                   alt="Agnel Polytechnic Logo"
                 />
                 <p>Finished secondary school from Sanjivani International.</p>
                 <Image
                   width={64}
                   height={64}
-                  src="https://img.youtube.com/vi/-_SxxvSvi0o/hqdefault.jpg"
-                  alt="Agnel Polytechnic Logo"
+                  src="/timelineImages/sanjivani.jpg"
+                  alt="Sanjivani International School Logo"
                 />
               </div>
             ),

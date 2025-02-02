@@ -12,6 +12,22 @@ export type Work = {
 
 export const allWork: Work[] = [
   {
+    role: "Full Stack Intern",
+    organization: "Yardstick",
+    startDate: "January 2025",
+    endDate: "Current",
+    location: "Remote",
+    tasks: [
+      `Developed an AI-driven workflow automation platform using Next.js, optimizing for scalability, performance, and
+        low latency to support a large user base`,
+      `Implemented modern web technologies, including React Server Components (RSCs), Suspense-based data
+        fetching, and lazy loading, improving SEO and achieving high Lighthouse scores`,
+      `Integrated Stripe for secure payments and Prisma for efficient database management, designing a RESTful,
+        scalable, and high-performance API`,
+    ],
+    techStack: ["NextJS", "React", "Prisma"],
+  },
+  {
     role: "Data Engineering Intern",
     organization: "Anand Chemiceutics",
     startDate: "May 2023",
