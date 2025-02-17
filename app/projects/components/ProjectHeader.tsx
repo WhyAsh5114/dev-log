@@ -7,6 +7,7 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { ProjectMetadata } from "../utils";
+import { HackathonCard } from "@/app/components/HackathonCard";
 
 export default function ProjectHeader({
   metadata,
@@ -36,6 +37,7 @@ export default function ProjectHeader({
       </div>
 
       <div className="mt-2.5" />
+      {metadata.hackathon && <HackathonCard metadata={metadata.hackathon} />}
       <ProjectImages projectName={metadata.name} />
       <TechStack techStack={metadata.techStack} />
     </>

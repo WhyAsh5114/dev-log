@@ -10,6 +10,14 @@ export type ProjectMetadata = {
   techStack: Technology[];
   link?: string;
   featured?: boolean;
+  hackathon?: {
+    name: string;
+    collegeName: string;
+    hackathonWebsite: string;
+    location: string;
+    placed: string | null;
+    duration: 24;
+  };
 };
 
 export function getProjects() {

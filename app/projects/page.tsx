@@ -19,10 +19,20 @@ export default function Projects() {
       </div>
 
       <div className="my-6"></div>
+      <TypographyH2>Hackathons</TypographyH2>
+      <div className="grid md:grid-cols-2 mt-4 gap-2">
+        {getProjects()
+          .filter(({ metadata }) => metadata.hackathon)
+          .map(({ metadata }) => (
+            <ProjectCard key={metadata.name} metadata={metadata} />
+          ))}
+      </div>
+
+      <div className="my-6"></div>
       <TypographyH2>Others</TypographyH2>
       <div className="grid md:grid-cols-2 mt-4 gap-2">
         {getProjects()
-          .filter(({ metadata }) => !metadata.featured)
+          .filter(({ metadata }) => !metadata.featured && !metadata.hackathon)
           .map(({ metadata }) => (
             <ProjectCard key={metadata.name} metadata={metadata} />
           ))}
