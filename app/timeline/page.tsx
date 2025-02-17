@@ -14,6 +14,19 @@ export default function Page() {
       <Timeline
         data={[
           {
+            title: "Feb 2025",
+            content: (
+              <div className="grid grid-cols-1 gap-2">
+                <span className="text-lg font-semibold">Err_404 6.0</span>
+                <p>
+                  Built a pose detection and yoga guidance app with Mediapipe,
+                  ElevenLabs AI for voice guidance, and ar.js
+                </p>
+                <MiniProjectShowcase projectName="yoga-sense" />
+              </div>
+            ),
+          },
+          {
             title: "Jan 2025",
             content: (
               <div className="grid grid-cols-1 gap-2">
