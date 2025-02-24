@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && tsx scripts/generateRss.ts",
     "start": "next start",
     "lint": "next lint"
   },
@@ -58,6 +58,7 @@
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^5.0.0",
     "tailwindcss": "^4.0.8",
+    "tsx": "^4.19.3",
     "typescript": "^5",
     "unplugin-icons": "^22.1.0"
   }
