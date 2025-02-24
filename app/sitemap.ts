@@ -3,6 +3,8 @@ import path from "path";
 import { MetadataRoute } from "next";
 import matter from "gray-matter";
 
+export const dynamic = "force-static";
+
 const getLastModified = (relativePath: string) => {
   const filePath = path.join(process.cwd(), relativePath);
   try {
