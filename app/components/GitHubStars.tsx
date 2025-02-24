@@ -21,7 +21,7 @@ export default function GitHubStars({ repoLink }: { repoLink: string }) {
   }
 
   return (
-    <Badge className="gap-1">
+    <Badge className="gap-1 w-14 justify-center">
       {stars} <Star className="h-4 w-4" />
     </Badge>
   );
