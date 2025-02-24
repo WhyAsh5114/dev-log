@@ -1,0 +1,96 @@
+---
+displayName: "FitSnap"
+name: "FitSnap"
+repoLink: "https://github.com/jaykerkar0405/FitSnap"
+description: "AI powered clothing size prediction along with overlays to try out clothes virtually using AR tech."
+techStack: [
+  "TypeScript",
+  "NextJS",
+  "React",
+  "ShadcnUI",
+  "Prisma",
+  "Python",
+  "NumPy",
+  "MediaPipe",
+  "OpenCV"
+]
+hackathon: {
+  name: "HackX 3.0",
+  hackathonWebsite: "https://hackx.live/",
+  collegeName: "Narsee Monjee Institute of Management Studies (NMIMS), Navi Mumbai",
+  location: "Navi Mumbai, Maharashtra",
+  placed: "🥇 1st",
+  duration: 24
+}
+---
+
+# FitSnap - Personalized Virtual Wardrobe
+
+FitSnap is an AI-powered application that not only predicts your shoulder width, chest, and waist measurements based on your height but also offers a unique social experience. Engage with a Tinder-like interface to swipe right on outfits you love from other users and virtually try them on by overlaying the selected clothing onto your photo.
+
+## Features
+
+- **Accurate Measurement Predictions**: Utilizes advanced AI models to estimate key body measurements.
+- **Personalized Size Recommendations**: Suggests optimal clothing sizes tailored to your body profile.
+- **Social Outfit Discovery**: Explore and like outfits from other users with an intuitive swipe interface.
+- **Virtual Try-On**: Overlay liked outfits onto your photo using cutting-edge image processing techniques.
+
+## Virtual Try-On Technology
+
+FitSnap's virtual try-on feature employs a combination of advanced technologies:
+
+1. **Clothing Segmentation with U2NET**: Segments clothing items from images to isolate them for overlay.
+2. **Pose Estimation with MediaPipe**: Detects and aligns body joints to ensure accurate placement of clothing.
+3. **Image Processing with OpenCV**: Overlays segmented clothing onto user photos, adjusting for pose and alignment.
+
+## Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/jaykerkar0405/FitSnap.git
+   ```
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd FitSnap
+   ```
+3. **Install Dependencies**:
+   - For the backend:
+     ```bash
+     cd backend
+     pip install -r requirements.txt
+     ```
+   - For the frontend:
+     ```bash
+     cd frontend
+     npm install
+     ```
+
+## Usage
+
+1. **Start the Backend Server**:
+   ```bash
+   cd backend
+   python app.py
+   ```
+2. **Launch the Frontend Application**:
+   ```bash
+   cd frontend
+   npm start
+   ```
+3. **Access the Application**:
+   Open your browser and navigate to `http://localhost:3000` to use FitSnap.
+
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. **Fork the Repository**: Click on the 'Fork' button at the top right of this page.
+2. **Create a New Branch**: Use `git checkout -b feature-branch-name`.
+3. **Make Your Changes**: Implement your feature or fix.
+4. **Commit Changes**: Use `git commit -m 'Description of your changes'`.
+5. **Push to Your Fork**: Use `git push origin feature-branch-name`.
+6. **Submit a Pull Request**: Navigate to the original repository and click on 'New Pull Request'.
+
+## Acknowledgements
+
+Special thanks to the contributors: [Sundaram Krishnan](https://github.com/sundaram123krishnan), [Yash Kolekar](https://github.com/WhyAsh5114), [Aayush Nair](https://github.com/kryyo1441), [Jay Kerkar](https://github.com/jaykerkar0405).

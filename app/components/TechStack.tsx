@@ -16,6 +16,7 @@ import MongoDB from "~icons/devicon/mongodb";
 import NextJS from "~icons/devicon/nextjs";
 import NodeJS from "~icons/devicon/nodejs";
 import NumPy from "~icons/devicon/numpy";
+import OpenCV from "~icons/devicon/opencv";
 import Pandas from "~icons/devicon/pandas";
 import Playwright from "~icons/devicon/playwright";
 import PostgreSQL from "~icons/devicon/postgresql";
@@ -28,6 +29,7 @@ import TRPC from "~icons/devicon/trpc";
 import TypeScript from "~icons/devicon/typescript";
 import Kivy from "~icons/file-icons/kivy";
 import DaisyUI from "~icons/logos/daisyui-icon";
+import MediaPipe from "~icons/simple-icons/mediapipe";
 import ShadcnUI from "~icons/simple-icons/shadcnui";
 import Algorand from "~icons/token/algorand";
 import CSS from "~icons/vscode-icons/file-type-css";
@@ -61,6 +63,8 @@ const allTechnologies = [
   { name: "CSS", icon: <CSS /> },
   { name: "Algorand", icon: <Algorand /> },
   { name: "NPM", icon: <NPM /> },
+  { name: "MediaPipe", icon: <MediaPipe /> },
+  { name: "OpenCV", icon: <OpenCV /> },
 ] as const;
 
 export type Technology = (typeof allTechnologies)[number]["name"];
