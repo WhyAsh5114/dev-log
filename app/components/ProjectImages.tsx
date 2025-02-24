@@ -106,7 +106,7 @@ function AllImages({ projectName }: PropsType) {
 export default function ProjectImages({ projectName, className }: PropsType) {
   return (
     <ScrollArea
-      className={cn("h-72 border rounded-md my-2 shadow-sm", className)}
+      className={cn("h-72 border rounded-md my-2 shadow-xs", className)}
     >
       <div className="grid grid-cols-2 md:grid-cols-3 gap-1 min-w-96 p-2">
         <AllImages projectName={projectName} />

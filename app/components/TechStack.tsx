@@ -77,7 +77,7 @@ export default function TechStack({ techStack }: PropsType) {
     : allTechnologies;
 
   return (
-    <ScrollArea className="rounded-xl border md:col-span-2 shadow-sm">
+    <ScrollArea className="rounded-xl border md:col-span-2 shadow-xs">
       <div className="flex gap-4 p-4 justify-around">
         {mappedTechnologies.map((technology) => (
           <Popover key={technology.name}>

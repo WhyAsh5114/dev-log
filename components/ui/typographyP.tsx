@@ -9,7 +9,7 @@ export function TypographyP({
   className?: string;
 }) {
   return (
-    <p className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}>
+    <p className={cn("leading-7 not-first:mt-6", className)}>
       {children}
     </p>
   );

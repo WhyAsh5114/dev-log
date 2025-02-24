@@ -17,7 +17,7 @@ export function Navbar() {
   const isMobile = useIsMobile();
 
   return (
-    <header className="sticky top-0 flex items-center p-2 bg-background/75 backdrop-blur-md max-w-screen-md mx-auto z-50">
+    <header className="sticky top-0 flex items-center p-2 bg-background/75 backdrop-blur-md max-w-(--breakpoint-md) mx-auto z-50">
       {isMobile ? (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

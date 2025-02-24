@@ -23,7 +23,7 @@ export default function Page() {
       <TypographyH1>Blog</TypographyH1>
       {sortedCategories.map((category) => (
         <div key={category}>
-          <TypographyH2 className="!mt-6">{category}</TypographyH2>
+          <TypographyH2 className="mt-6!">{category}</TypographyH2>
           <div className="grid mt-4 md:grid-cols-2 gap-2">
             {groupedPosts[category].map((post) => (
               <BlogPostCard key={post.metadata.name} blogPost={post} />

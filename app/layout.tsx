@@ -40,7 +40,7 @@ export default function RootLayout({
         >
           <ScrollArea className="h-screen min-w-full overflow-y-auto">
             <Navbar />
-            <main className="max-w-screen-md mx-auto pt-8 p-4 w-screen">
+            <main className="max-w-(--breakpoint-md) mx-auto pt-8 p-4 w-screen">
               {children}
             </main>
           </ScrollArea>

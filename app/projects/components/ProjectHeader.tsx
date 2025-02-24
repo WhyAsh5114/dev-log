@@ -19,7 +19,7 @@ export default function ProjectHeader({
       <div className="flex flex-col md:flex-row items-center gap-2">
         <div className="flex flex-col mr-auto">
           <TypographyH3 className="mt-0">{metadata.displayName}</TypographyH3>
-          <TypographyP className="!mt-0 text-sm text-muted-foreground">
+          <TypographyP className="mt-0! text-sm text-muted-foreground">
             {metadata.description}
           </TypographyP>
         </div>
