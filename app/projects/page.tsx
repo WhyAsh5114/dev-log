@@ -23,6 +23,12 @@ export default function Projects() {
       <div className="grid md:grid-cols-2 mt-4 gap-2">
         {getProjects()
           .filter(({ metadata }) => metadata.hackathon)
+          .sort((a, b) => {
+            if (b.metadata.hackathon?.placed === null) return -1;
+            if (a.metadata.hackathon?.placed === null) return 1;
+            if (a.metadata.hackathon!.placed < b.metadata.hackathon!.placed) return -1;
+            return 0;
+          })
           .map(({ metadata }) => (
             <ProjectCard key={metadata.name} metadata={metadata} />
           ))}

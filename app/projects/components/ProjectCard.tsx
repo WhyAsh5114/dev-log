@@ -22,7 +22,10 @@ export default function ProjectCard({
     <>
       <Card>
         <CardHeader>
-          <CardTitle>{metadata.displayName}</CardTitle>
+          <div className="flex justify-between items-center">
+            <CardTitle>{metadata.displayName}</CardTitle>
+            <span className="pr-4 font-bold">{metadata.hackathon?.placed?.slice(0, 2)}</span>
+          </div>
           <CardDescription>{metadata.description}</CardDescription>
         </CardHeader>
         <CardContent className="grid">
