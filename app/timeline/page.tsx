@@ -14,6 +14,20 @@ export default function Page() {
       <Timeline
         data={[
           {
+            title: "Apr 2025",
+            content: (
+              <div className="grid grid-cols-1 gap-2">
+                <span className="text-lg font-semibold">HackByte 3.0</span>
+                <p>
+                  Built an advanced fitness app integrating real-time pose
+                  detection with voice feedback, macro tracking with barcode
+                  scanning, and AI-powered workout programs.
+                </p>
+                <MiniProjectShowcase projectName="rep-wise" />
+              </div>
+            ),
+          },
+          {
             title: "Feb 2025",
             content: (
               <div className="grid grid-cols-1 gap-2">
