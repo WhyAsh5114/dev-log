@@ -16,12 +16,12 @@ My personal developer portfolio website.
 
 3. Install dependencies:
    ```bash
-   npm ci --force
+   pnpm ci --force
    ```
 
 4. Run the project:
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 ## License
