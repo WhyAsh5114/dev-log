@@ -1,0 +1,46 @@
+---
+displayName: When I broke prod
+name: when-i-broke-prod
+date: 2025-05-30
+tags: ["Mistakes", "Story", "Learning"]
+category: Tech
+description: "A story about how I accidentally broke production and what I learned from it."
+---
+
+So this is embarrassing, but I accidentally broke production, and not in a way I expected.
+
+I was working on v4, I knew I should use a different database, which I was doing, on a different platform too. But at one point, I needed to use the
+OpenFoodFacts database, which was quite huge, so I thought the other services only offer upto 0.5 GB of storage, so instead I can just use the same
+platform as v3, which was CockroachDB cloud. It used to have a really generous free tier (I got really lucky, they stopped offering it) so I thought 
+it would be fine.
+
+In hindsight, I didn't even need to use CockroachDB, at the end of the day, I just needed about 40 MB of storage, which is nothing. I could have used
+Vercel Postgres, Neon, or anything else, but I didn't. I just thought it would be fine. I can be lazy, right?
+
+So I created a **SEPARATE** database for v4, and started working on it. "That should be fine", I said to myself. I pushed the new schema, tested it
+out with some models and the new simplified 40 MB data, and it was fine. I just needed to drop some columns to prevent redundancy...
+
+So apparently, when you drop columns in CockroachDB from the prisma CLI, using `prisma db push`, it takes a while, like a few minutes, I thought that's
+just some latency, so I just waited. I queued up a game of a MOBA, and chilled. I saw a small notification on my Desktop about a mail, saying 50% Request
+Units used, and I thought "Oh, that's fine, just 50% is chill, it's the end of the month anyways".
+
+I got back into the game, it was a tough one, I was playing with friends too, so I was focused on that. After I was done, I saw my Desktop, dismissed the
+older notification, and saw a new one: "100% Request Units used, your database cannot be connected to". I was like "What? How? I just dropped a few columns, 
+it shouldn't be that much!". I opened the database dashboard, and saw that it was unavailable. I was like "Oh no, this is bad, I need to fix this". I panicked.
+
+I immediately put up a notice and a redirect on the app, trying to cope with the situation, that "Yeah, I messed up, should be fine in 3 days, when a new month starts". I was
+so embarrassed, I had to tell my friends who were using the app, that I broke it. I was so ashamed, I didn't even want to look at the codebase.
+Then I thought maybe I can just download the backups, restore it on a different platform, and then just use that. I tried to do that, but the backups were
+not that easy to download, I tried setting up cloud buckets, adding connections, but nothing worked. I was so frustrated, I just wanted to cry.
+
+I was about to give up, but then I just, gave my debit card details to CockroachDB, yeah, I really wanted to avoid that, but I had no choice. MyFit
+was gaining some traction again, got over 97+ stars on GitHub, and I didn't want to let my users down. I just added it, and saw that I didn't really need
+to pay anything unless it crosses 15$ of credits, which was fine, I only used up about 10$, I got about 5$ of headroom for just a few days. I was relieved, but still
+embarrassed. I had to tell my users that I messed up, and I did. I apologized, but luckily I fixed it in a few hours, and everything was back to normal.
+
+I learned a lot from this experience, and I hope you do too. Here are some of the key takeaways:
+1. **Don't be lazy**: I should have used a different platform, or better yet, go local. I was just being lazy, and it cost me a lot of time and effort.
+2. **Don't ignore mails**: I should have paid attention to the notification, it was a warning that I ignored. I thought it was just some latency, but it was actually a warning that I was about to hit the limit.
+3. **Don't panic**: I panicked when I saw the read-only message, but I should have just taken a deep breath and thought about the solution. I could have avoided a lot of stress if I had just calmed down.
+
+
