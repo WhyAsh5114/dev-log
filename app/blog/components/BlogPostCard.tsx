@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { BlogPostMetadata } from "../utils";
 
