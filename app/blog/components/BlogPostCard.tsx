@@ -18,7 +18,7 @@ export function BlogPostCard({
 }: {
   blogPost: { metadata: BlogPostMetadata; content: string };
 }) {
-  const { metadata, content } = blogPost;
+  const { metadata } = blogPost;
 
   return (
     <Card>
@@ -30,7 +30,7 @@ export function BlogPostCard({
       </CardHeader>
       <CardContent>
         <div className="mb-4 line-clamp-2 prose dark:prose-invert prose-sm">
-          <MDXRemote source={content} />
+          {metadata.description}
         </div>
         <div className="flex flex-wrap gap-1">
           {metadata.tags.map((tag) => (

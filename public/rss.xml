@@ -4,61 +4,112 @@
         <description><![CDATA[Latest articles from my blog]]></description>
         <link>https://dev-log-whyash5114.vercel.app</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 24 Feb 2025 13:26:06 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 29 May 2025 20:35:09 GMT</lastBuildDate>
         <atom:link href="https://dev-log-whyash5114.vercel.app" rel="self" type="application/rss+xml"/>
         <language><![CDATA[en]]></language>
         <item>
+            <title><![CDATA[when-i-broke-prod]]></title>
+            <description><![CDATA[A story about how I accidentally broke production and what I learned from it.]]></description>
+            <link>https://dev-log-whyash5114.vercel.app/blog/when-i-broke-prod</link>
+            <guid isPermaLink="true">https://dev-log-whyash5114.vercel.app/blog/when-i-broke-prod</guid>
+            <category><![CDATA[Mistakes]]></category>
+            <category><![CDATA[Story]]></category>
+            <category><![CDATA[Learning]]></category>
+            <pubDate>Fri, 30 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[v3-stable-release]]></title>
+            <description><![CDATA[Announcing the stable release of MyFit V3 with new features and migration details.]]></description>
             <link>https://dev-log-whyash5114.vercel.app/blog/v3-stable-release</link>
             <guid isPermaLink="true">https://dev-log-whyash5114.vercel.app/blog/v3-stable-release</guid>
+            <category><![CDATA[MyFit]]></category>
+            <category><![CDATA[Release]]></category>
+            <category><![CDATA[v3]]></category>
             <pubDate>Thu, 17 Oct 2024 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[suboptimal]]></title>
+            <description><![CDATA[The lessons learned while building MyFit v3 and the updates on the project.]]></description>
             <link>https://dev-log-whyash5114.vercel.app/blog/suboptimal</link>
             <guid isPermaLink="true">https://dev-log-whyash5114.vercel.app/blog/suboptimal</guid>
+            <category><![CDATA[Lessons]]></category>
+            <category><![CDATA[MyFit]]></category>
+            <category><![CDATA[Updates]]></category>
             <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[v3-progress]]></title>
+            <description><![CDATA[Updates on the MyFit v3 development and the progress made so far.]]></description>
             <link>https://dev-log-whyash5114.vercel.app/blog/v3-progress</link>
             <guid isPermaLink="true">https://dev-log-whyash5114.vercel.app/blog/v3-progress</guid>
+            <category><![CDATA[MyFit]]></category>
+            <category><![CDATA[Updates]]></category>
+            <category><![CDATA[Development]]></category>
+            <category><![CDATA[v3]]></category>
             <pubDate>Sun, 16 Jun 2024 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[v3-delay]]></title>
+            <description><![CDATA[Updates on the MyFit v3 development and the reasons for the delay.]]></description>
             <link>https://dev-log-whyash5114.vercel.app/blog/v3-delay</link>
             <guid isPermaLink="true">https://dev-log-whyash5114.vercel.app/blog/v3-delay</guid>
+            <category><![CDATA[MyFit]]></category>
+            <category><![CDATA[Updates]]></category>
+            <category><![CDATA[Development]]></category>
+            <category><![CDATA[v3]]></category>
             <pubDate>Fri, 03 May 2024 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[v3-notice]]></title>
+            <description><![CDATA[Announcement of MyFit v3 development and the features to expect.]]></description>
             <link>https://dev-log-whyash5114.vercel.app/blog/v3-notice</link>
             <guid isPermaLink="true">https://dev-log-whyash5114.vercel.app/blog/v3-notice</guid>
+            <category><![CDATA[MyFit]]></category>
+            <category><![CDATA[Updates]]></category>
+            <category><![CDATA[Development]]></category>
+            <category><![CDATA[v3]]></category>
             <pubDate>Wed, 27 Dec 2023 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[v3-beta-release]]></title>
+            <description><![CDATA[Updates on the MyFit v3 beta release and the journey of building it.]]></description>
             <link>https://dev-log-whyash5114.vercel.app/blog/v3-beta-release</link>
             <guid isPermaLink="true">https://dev-log-whyash5114.vercel.app/blog/v3-beta-release</guid>
+            <category><![CDATA[MyFit]]></category>
+            <category><![CDATA[Updates]]></category>
+            <category><![CDATA[Development]]></category>
+            <category><![CDATA[v3]]></category>
             <pubDate>Sat, 30 Sep 2023 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[playwright-vs-cypress]]></title>
+            <description><![CDATA[A comparison between Playwright and Cypress, two popular testing frameworks.]]></description>
             <link>https://dev-log-whyash5114.vercel.app/blog/playwright-vs-cypress</link>
             <guid isPermaLink="true">https://dev-log-whyash5114.vercel.app/blog/playwright-vs-cypress</guid>
+            <category><![CDATA[Testing]]></category>
+            <category><![CDATA[Comparison]]></category>
+            <category><![CDATA[Frameworks]]></category>
             <pubDate>Mon, 25 Jul 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[my-first-internship]]></title>
+            <description><![CDATA[My first internship experience as a Blockchain Intern at a freelancing company.]]></description>
             <link>https://dev-log-whyash5114.vercel.app/blog/my-first-internship</link>
             <guid isPermaLink="true">https://dev-log-whyash5114.vercel.app/blog/my-first-internship</guid>
+            <category><![CDATA[Internship]]></category>
+            <category><![CDATA[Experience]]></category>
+            <category><![CDATA[Job]]></category>
             <pubDate>Mon, 11 Jul 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[switching-to-react]]></title>
+            <description><![CDATA[How I switched from Svelte to React and what I learned from it.]]></description>
             <link>https://dev-log-whyash5114.vercel.app/blog/switching-to-react</link>
             <guid isPermaLink="true">https://dev-log-whyash5114.vercel.app/blog/switching-to-react</guid>
+            <category><![CDATA[JS]]></category>
+            <category><![CDATA[Frameworks]]></category>
+            <category><![CDATA[React]]></category>
+            <category><![CDATA[Svelte]]></category>
             <pubDate>Sun, 19 Jun 2022 00:00:00 GMT</pubDate>
         </item>
     </channel>

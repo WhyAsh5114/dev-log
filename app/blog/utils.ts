@@ -6,7 +6,8 @@ export type BlogPostMetadata = {
   name: string;
   date: Date;
   tags: string[];
-  category?: string
+  description: string;
+  category: string
 };
 
 export function getBlogPosts() {

@@ -15,34 +15,34 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(@types/react@19.1.6)(react@19.1.0)
       '@next/mdx':
-        specifier: ^15.1.2
+        specifier: ^15.3.3
         version: 15.3.3(@mdx-js/loader@3.1.0(acorn@8.14.1))(@mdx-js/react@3.1.0(@types/react@19.1.6)(react@19.1.0))
       '@radix-ui/react-checkbox':
-        specifier: ^1.1.2
+        specifier: ^1.3.2
         version: 1.3.2(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-dialog':
-        specifier: ^1.1.2
+        specifier: ^1.1.14
         version: 1.1.14(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-dropdown-menu':
-        specifier: ^2.1.2
+        specifier: ^2.1.15
         version: 2.1.15(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-icons':
-        specifier: ^1.3.0
+        specifier: ^1.3.2
         version: 1.3.2(react@19.1.0)
       '@radix-ui/react-popover':
-        specifier: ^1.1.2
+        specifier: ^1.1.14
         version: 1.1.14(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-scroll-area':
-        specifier: ^1.2.0
+        specifier: ^1.2.9
         version: 1.2.9(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-separator':
-        specifier: ^1.1.0
+        specifier: ^1.1.7
         version: 1.1.7(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-slot':
-        specifier: ^1.1.2
+        specifier: ^1.2.3
         version: 1.2.3(@types/react@19.1.6)(react@19.1.0)
       '@tabler/icons-react':
-        specifier: ^3.26.0
+        specifier: ^3.33.0
         version: 3.33.0(react@19.1.0)
       '@types/canvas-confetti':
         specifier: ^1.9.0
@@ -51,22 +51,22 @@ importers:
         specifier: ^2.0.13
         version: 2.0.13
       '@vercel/analytics':
-        specifier: ^1.4.1
+        specifier: ^1.5.0
         version: 1.5.0(next@15.3.3(@babel/core@7.27.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
       '@vercel/speed-insights':
-        specifier: ^1.1.0
+        specifier: ^1.2.0
         version: 1.2.0(next@15.3.3(@babel/core@7.27.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
       canvas-confetti:
         specifier: ^1.9.3
         version: 1.9.3
       class-variance-authority:
-        specifier: ^0.7.0
+        specifier: ^0.7.1
         version: 0.7.1
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
       framer-motion:
-        specifier: ^12.4.7
+        specifier: ^12.15.0
         version: 12.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       gray-matter:
         specifier: ^4.0.3
@@ -75,19 +75,19 @@ importers:
         specifier: ^0.475.0
         version: 0.475.0(react@19.1.0)
       next:
-        specifier: ^15.0.0-rc.1
+        specifier: ^15.3.3
         version: 15.3.3(@babel/core@7.27.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       next-mdx-remote:
         specifier: ^5.0.0
         version: 5.0.0(@types/react@19.1.6)(acorn@8.14.1)(react@19.1.0)
       next-themes:
-        specifier: ^0.4.3
+        specifier: ^0.4.6
         version: 0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
-        specifier: ^19.0.0
+        specifier: ^19.1.0
         version: 19.1.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
       rehype-starry-night:
         specifier: ^2.2.0
@@ -96,14 +96,14 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2
       tailwind-merge:
-        specifier: ^2.5.5
+        specifier: ^2.6.0
         version: 2.6.0
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@4.1.8)
     devDependencies:
       '@iconify/json':
-        specifier: ^2.2.269
+        specifier: ^2.2.342
         version: 2.2.342
       '@svgr/core':
         specifier: ^8.1.0
@@ -112,49 +112,49 @@ importers:
         specifier: ^8.1.0
         version: 8.1.0(@svgr/core@8.1.0(typescript@5.8.3))
       '@tailwindcss/postcss':
-        specifier: ^4.0.8
+        specifier: ^4.1.8
         version: 4.1.8
       '@tailwindcss/typography':
-        specifier: ^0.5.15
+        specifier: ^0.5.16
         version: 0.5.16(tailwindcss@4.1.8)
       '@types/node':
-        specifier: ^22.9.0
+        specifier: ^22.15.24
         version: 22.15.24
       '@types/react':
-        specifier: ^19
+        specifier: ^19.1.6
         version: 19.1.6
       '@types/react-dom':
-        specifier: ^19
+        specifier: ^19.1.5
         version: 19.1.5(@types/react@19.1.6)
       '@types/rss':
         specifier: ^0.0.32
         version: 0.0.32
       eslint:
-        specifier: ^9
+        specifier: ^9.27.0
         version: 9.27.0(jiti@2.4.2)
       eslint-config-next:
-        specifier: ^15.0.0
+        specifier: ^15.3.3
         version: 15.3.3(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3)
       image-size:
-        specifier: ^1.1.1
+        specifier: ^1.2.1
         version: 1.2.1
       postcss:
-        specifier: ^8
+        specifier: ^8.5.4
         version: 8.5.4
       remark-frontmatter:
         specifier: ^5.0.0
         version: 5.0.0
       remark-mdx-frontmatter:
-        specifier: ^5.0.0
+        specifier: ^5.1.0
         version: 5.1.0
       tailwindcss:
-        specifier: ^4.0.8
+        specifier: ^4.1.8
         version: 4.1.8
       tsx:
-        specifier: ^4.19.3
+        specifier: ^4.19.4
         version: 4.19.4
       typescript:
-        specifier: ^5
+        specifier: ^5.8.3
         version: 5.8.3
       unplugin-icons:
         specifier: ^22.1.0

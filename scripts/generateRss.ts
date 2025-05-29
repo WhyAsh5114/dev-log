@@ -18,7 +18,8 @@ function getPosts() {
         title: data.name,
         date: data.date as Date,
         slug: file.replace(/\.mdx$/, ""),
-        tags: data.description,
+        tags: data.tags,
+        description: data.description
       };
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // Sort by date
@@ -38,7 +39,7 @@ function generateRSS() {
     feed.item({
       title: post.title,
       url: `${siteUrl}/blog/${post.slug}`,
-      description: "",
+      description: post.description,
       date: new Date(post.date),
       categories: post.tags,
     });
