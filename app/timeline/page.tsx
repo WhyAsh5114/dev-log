@@ -14,6 +14,19 @@ export default function Page() {
       <Timeline
         data={[
           {
+            title: "Jun 2025",
+            content: (
+              <div className="grid grid-cols-1 gap-2">
+                <span className="text-lg font-semibold">Warpspeed 2025</span>
+                <p>
+                  Another iteration on the AI powered fitness app with a touch
+                  of agentic AI and RAG-enhanced knowledge.
+                </p>
+                <MiniProjectShowcase projectName="fit-wise" />
+              </div>
+            ),
+          },
+          {
             title: "Apr 2025",
             content: (
               <div className="grid grid-cols-1 gap-2">
