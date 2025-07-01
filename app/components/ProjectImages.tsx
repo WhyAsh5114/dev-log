@@ -3,6 +3,7 @@ import { readdirSync } from "fs";
 import Image from "next/image";
 import sizeOf from "image-size";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { ClickableImage } from "@/app/components/ClickableImage";
 
 type PropsType = { projectName: string; className?: string };
 type ImageDimensions = {
@@ -70,32 +71,35 @@ function AllImages({ projectName }: PropsType) {
 
   if (!modeBasedScreenshotsAvailable) {
     return images.map(({ filename, className }, idx) => (
-      <Image
+      <ClickableImage
         key={`${idx}`}
         src={`/projectImages/${projectName}/${filename}`}
         alt={generateAltText(filename)}
         width={parseRowCol(className).cols * 240}
         height={parseRowCol(className).rows * 240}
-        className={cn("rounded-md border", className)}
+        projectName={projectName}
+        className={className}
       />
     ));
   }
 
   return images.map(({ filename, className }, idx) => (
     <div className="contents" key={`${filename}-${idx}`}>
-      <Image
+      <ClickableImage
         src={`/projectImages/${projectName}/dark/${filename}`}
         alt={generateAltText(filename)}
         width={parseRowCol(className).cols * 240}
         height={parseRowCol(className).rows * 240}
-        className={cn("rounded-md border hidden dark:block", className)}
+        projectName={projectName}
+        className={cn("hidden dark:block", className)}
       />
-      <Image
+      <ClickableImage
         src={`/projectImages/${projectName}/light/${filename}`}
         alt={generateAltText(filename)}
         width={parseRowCol(className).cols * 240}
         height={parseRowCol(className).rows * 240}
-        className={cn("rounded-md border dark:hidden", className)}
+        projectName={projectName}
+        className={cn("dark:hidden", className)}
       />
     </div>
   ));

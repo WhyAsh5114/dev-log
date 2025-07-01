@@ -6,6 +6,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Navbar } from "./components/Navbar";
+import { ImageViewerProvider } from "@/components/ImageViewerContext";
+import { ImageViewer } from "@/components/ImageViewer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -32,20 +34,23 @@ export default function RootLayout({
         />
       </head>
       <body className={cn(inter.className)}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ScrollArea className="h-screen min-w-full overflow-y-auto">
-            <Navbar />
-            <main className="max-w-(--breakpoint-md) mx-auto pt-8 p-4 w-screen">
-              {children}
-            </main>
-          </ScrollArea>
-          <SpeedInsights />
-        </ThemeProvider>
+        <ImageViewerProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ScrollArea className="h-screen min-w-full overflow-y-auto">
+              <Navbar />
+              <main className="max-w-(--breakpoint-md) mx-auto pt-8 p-4 w-screen">
+                {children}
+              </main>
+            </ScrollArea>
+            <SpeedInsights />
+          </ThemeProvider>
+          <ImageViewer />
+        </ImageViewerProvider>
         <Analytics />
       </body>
     </html>
