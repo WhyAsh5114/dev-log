@@ -82,9 +82,8 @@ function AllImages({ projectName }: PropsType) {
   }
 
   return images.map(({ filename, className }, idx) => (
-    <>
+    <div className="contents" key={`${filename}-${idx}`}>
       <Image
-        key={`${filename}-${idx}-dark`}
         src={`/projectImages/${projectName}/dark/${filename}`}
         alt={generateAltText(filename)}
         width={parseRowCol(className).cols * 240}
@@ -92,14 +91,13 @@ function AllImages({ projectName }: PropsType) {
         className={cn("rounded-md border hidden dark:block", className)}
       />
       <Image
-        key={`${filename}-${idx}-light`}
         src={`/projectImages/${projectName}/light/${filename}`}
         alt={generateAltText(filename)}
         width={parseRowCol(className).cols * 240}
         height={parseRowCol(className).rows * 240}
         className={cn("rounded-md border dark:hidden", className)}
       />
-    </>
+    </div>
   ));
 }
 
