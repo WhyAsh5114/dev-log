@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import { Technology } from "../components/TechStack";
+import { getHackathonByName } from "../hackathons/utils";
 
 export type ProjectMetadata = {
   displayName: string;
@@ -11,6 +12,16 @@ export type ProjectMetadata = {
   link?: string;
   featured?: boolean;
   hackathonName?: string;
+};
+
+export type HackathonBasicMetadata = {
+  displayName: string;
+  name: string;
+  collegeName: string;
+  hackathonWebsite: string;
+  location: string;
+  placed: string | null;
+  duration: number;
 };
 
 export function getProjects() {
@@ -35,24 +46,17 @@ export function getProjectByName(name: string) {
 
 export function getProjectHackathonInfo(metadata: ProjectMetadata) {
   if (metadata.hackathonName) {
-    try {
-      // Dynamic import to avoid circular dependencies
-      const { getHackathonByName } = require("../hackathons/utils");
-      const hackathon = getHackathonByName(metadata.hackathonName);
-      if (hackathon) {
-        // Convert hackathon metadata to legacy format for backward compatibility
-        return {
-          name: hackathon.metadata.displayName,
-          collegeName: hackathon.metadata.collegeName,
-          hackathonWebsite: hackathon.metadata.hackathonWebsite,
-          location: hackathon.metadata.location,
-          placed: hackathon.metadata.placed,
-          duration: hackathon.metadata.duration,
-        };
-      }
-    } catch (error) {
-      // If hackathon utils are not available, return null
-      console.warn(`Could not load hackathon data for: ${metadata.hackathonName}`);
+    const hackathon = getHackathonByName(metadata.hackathonName);
+    if (hackathon) {
+      return {
+        name: hackathon.metadata.name,
+        displayName: hackathon.metadata.displayName,
+        collegeName: hackathon.metadata.collegeName,
+        hackathonWebsite: hackathon.metadata.hackathonWebsite,
+        location: hackathon.metadata.location,
+        placed: hackathon.metadata.placed,
+        duration: hackathon.metadata.duration,
+      };
     }
   }
 

@@ -43,11 +43,6 @@ export function HackathonHeader({ metadata }: { metadata: HackathonMetadata }) {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2">
-            <Badge variant="secondary" className="text-sm whitespace-nowrap">
-              <Star className="h-4 w-4 mr-2" />
-              {calculateOverallRating()}/5
-            </Badge>
-            
             {metadata.placed && (
               <Badge
                 variant={getPlacementBadgeVariant(metadata.placed)}
@@ -58,14 +53,19 @@ export function HackathonHeader({ metadata }: { metadata: HackathonMetadata }) {
               </Badge>
             )}
 
+            <Badge variant="secondary" className="text-sm whitespace-nowrap">
+              <Star className="h-4 w-4 mr-2" />
+              {calculateOverallRating()}/5
+            </Badge>
+
             <Button asChild variant="outline">
               <Link
                 href={metadata.hackathonWebsite}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Visit Hackathon
-                <ExternalLink className="h-4 w-4 ml-2" />
+                Visit page
+                <ExternalLink className="h-4 w-4" />
               </Link>
             </Button>
           </div>

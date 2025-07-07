@@ -1,24 +1,23 @@
 import { Card } from "@/components/ui/card";
 import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
-import { ProjectMetadata } from "../projects/utils";
+import { HackathonBasicMetadata } from "../projects/utils";
 import { ConfettiDemo } from "./ConfettiComponent";
 
 export function HackathonCard({
   metadata,
 }: {
-  metadata: NonNullable<ProjectMetadata["hackathon"]>;
+  metadata: HackathonBasicMetadata;
 }) {
   return (
     <Card className="p-4 mt-2 space-y-2 w-full flex">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-px grow">
         <div className="flex flex-col col-span-2 truncate">
-          <h3 className="font-semibold text-lg flex items-center gap-2">
-            {metadata.name}{" "}
-            <Link href={metadata.hackathonWebsite}>
-              <SquareArrowOutUpRight size={16} />
-            </Link>
-          </h3>
+          <Link href={`/hackathons/${metadata.name}`} className="underline">
+            <h3 className="font-semibold text-lg flex items-center gap-2">
+              {metadata.displayName} <SquareArrowOutUpRight size={16} />
+            </h3>
+          </Link>
           <p className="text-sm truncate text-muted-foreground">
             🎓 {metadata.collegeName}
           </p>
