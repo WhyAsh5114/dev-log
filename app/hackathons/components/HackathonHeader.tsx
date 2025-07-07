@@ -9,6 +9,7 @@ import {
   MapPin,
   Trophy,
   Users,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 import { HackathonMetadata } from "../utils";
@@ -28,6 +29,12 @@ export function HackathonHeader({ metadata }: { metadata: HackathonMetadata }) {
     return "secondary";
   };
 
+  const calculateOverallRating = () => {
+    const { food, swag, stay, mentorship } = metadata.ratings;
+    const average = (food + swag + stay + mentorship) / 4;
+    return Math.round(average * 10) / 10;
+  };
+
   return (
     <>
       <div className="space-y-4">
@@ -37,6 +44,11 @@ export function HackathonHeader({ metadata }: { metadata: HackathonMetadata }) {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2">
+            <Badge variant="secondary" className="text-sm whitespace-nowrap">
+              <Star className="h-4 w-4 mr-2" />
+              {calculateOverallRating()}/5
+            </Badge>
+            
             {metadata.placed && (
               <Badge
                 variant={getPlacementBadgeVariant(metadata.placed)}
@@ -128,8 +140,6 @@ export function HackathonHeader({ metadata }: { metadata: HackathonMetadata }) {
           </CardContent>
         </Card>
       </div>
-
-      <HackathonImages hackathonName={metadata.name} />
     </>
   );
 }

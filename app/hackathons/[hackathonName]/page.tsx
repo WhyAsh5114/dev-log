@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import { getHackathonByName, getHackathons } from "../utils";
 import { HackathonHeader } from "../components/HackathonHeader";
+import { HackathonRatings } from "../components/HackathonRatings";
 import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeStarryNight from "rehype-starry-night";
+import HackathonImages from "../components/HackathonImages";
 
 type Props = {
   params: Promise<{ hackathonName: string }>;
@@ -43,7 +45,9 @@ export default async function HackathonPage({ params }: Props) {
   return (
     <div className="container mx-auto p-4 space-y-6">
       <HackathonHeader metadata={hackathon.metadata} />
-      
+      <HackathonRatings metadata={hackathon.metadata} />
+      <HackathonImages hackathonName={hackathon.metadata.name} />
+
       <article className="prose dark:prose-invert max-w-none prose-img:m-0 my-8">
         <MDXRemote
           source={hackathon.content}

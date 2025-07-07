@@ -15,6 +15,7 @@ import {
   Users,
   Clock,
   MapPin,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 import { HackathonMetadata } from "../utils";
@@ -39,20 +40,34 @@ export function HackathonCard({
     return "secondary";
   };
 
+  const calculateOverallRating = () => {
+    const { food, swag, stay, mentorship } = metadata.ratings;
+    const average = (food + swag + stay + mentorship) / 4;
+    return Math.round(average * 10) / 10;
+  };
+
   return (
     <Card className="h-full flex flex-col">
       <CardHeader>
         <div className="flex justify-between items-start">
-          <CardTitle className="text-lg">{metadata.displayName}</CardTitle>
-          {metadata.placed && (
-            <Badge
-              variant={getPlacementBadgeVariant(metadata.placed)}
-              className="ml-2"
-            >
-              <Trophy className="h-3 w-3 mr-1" />
-              {metadata.placed}
-            </Badge>
-          )}
+          <div className="space-y-1">
+            <CardTitle className="text-lg">{metadata.displayName}</CardTitle>
+            <div className="flex items-center gap-2">
+              <Badge variant="secondary" className="text-xs">
+                <Star className="h-3 w-3 mr-1" />
+                {calculateOverallRating()}/5
+              </Badge>
+              {metadata.placed && (
+                <Badge
+                  variant={getPlacementBadgeVariant(metadata.placed)}
+                  className="text-xs"
+                >
+                  <Trophy className="h-3 w-3 mr-1" />
+                  {metadata.placed}
+                </Badge>
+              )}
+            </div>
+          </div>
         </div>
         <div className="space-y-1 text-muted-foreground">
           <div className="flex items-center gap-2 text-sm">

@@ -36,17 +36,10 @@ function AllImages({ hackathonName }: PropsType) {
   ));
 }
 
-export default function HackathonImages({
-  hackathonName,
-  className,
-}: PropsType) {
+export default function HackathonImages({ hackathonName }: PropsType) {
   return (
-    <ScrollArea
-      className={cn("h-72 border rounded-md my-2 shadow-xs", className)}
-    >
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-1 min-w-96 p-2">
-        <AllImages hackathonName={hackathonName} />
-      </div>
-    </ScrollArea>
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-1 min-w-96 py-2">
+      <AllImages hackathonName={hackathonName} />
+    </div>
   );
 }
