@@ -1,7 +1,5 @@
 import { ClickableImage } from "@/app/components/ClickableImage";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { cn } from "@/lib/utils";
-import { readdirSync } from "fs";
+import { existsSync, readdirSync } from "fs";
 import sizeOf from "image-size";
 
 type PropsType = { hackathonName: string; className?: string };
@@ -15,7 +13,10 @@ function generateAltText(filename: string) {
 }
 
 function AllImages({ hackathonName }: PropsType) {
-  const imageFiles = readdirSync(`public/hackathonImages/${hackathonName}`);
+  const imageFiles = existsSync(`public/hackathonImages/${hackathonName}`)
+    ? readdirSync(`public/hackathonImages/${hackathonName}`)
+    : [];
+    
   const images = imageFiles.map((imageFile) => ({
     ...(sizeOf(`public/hackathonImages/${hackathonName}/${imageFile}`) as {
       width: number;
@@ -23,6 +24,14 @@ function AllImages({ hackathonName }: PropsType) {
     }),
     filename: imageFile,
   }));
+
+  if (images.length === 0) {
+    return (
+      <div className="col-span-full text-center text-muted-foreground py-8 border rounded-lg">
+        Whoops. forgot to take any pics
+      </div>
+    );
+  }
 
   return images.map(({ filename, width, height }, idx) => (
     <ClickableImage

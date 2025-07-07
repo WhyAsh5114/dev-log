@@ -49,27 +49,23 @@ export function HackathonCard({
   return (
     <Card className="h-full flex flex-col">
       <CardHeader>
-        <div className="flex justify-between items-start">
-          <div className="space-y-1">
-            <CardTitle className="text-lg">{metadata.displayName}</CardTitle>
-            <div className="flex items-center gap-2">
-              <Badge variant="secondary" className="text-xs">
-                <Star className="h-3 w-3 mr-1" />
-                {calculateOverallRating()}/5
-              </Badge>
-              {metadata.placed && (
-                <Badge
-                  variant={getPlacementBadgeVariant(metadata.placed)}
-                  className="text-xs"
-                >
-                  <Trophy className="h-3 w-3 mr-1" />
-                  {metadata.placed}
-                </Badge>
-              )}
-            </div>
-          </div>
+        <div className="flex justify-between items-center">
+          <CardTitle className="text-lg">{metadata.displayName}</CardTitle>
+          {metadata.placed && (
+            <Badge
+              variant={getPlacementBadgeVariant(metadata.placed)}
+              className="text-xs"
+            >
+              <Trophy className="h-3 w-3 mr-1" />
+              {metadata.placed}
+            </Badge>
+          )}
         </div>
         <div className="space-y-1 text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm">
+            <Star className="h-4 w-4" />
+            <span>Rating: {calculateOverallRating()}/5</span>
+          </div>
           <div className="flex items-center gap-2 text-sm">
             <MapPin className="h-4 w-4" />
             <span>{metadata.location}</span>
@@ -87,9 +83,7 @@ export function HackathonCard({
             <div className="text-xs font-medium truncate">
               🎓 {metadata.collegeName}
             </div>
-            <div className="text-xs">
-              📅 {formatDate(metadata.date)}
-            </div>
+            <div className="text-xs">📅 {formatDate(metadata.date)}</div>
           </div>
         </div>
       </CardContent>

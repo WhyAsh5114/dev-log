@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { HackathonMetadata } from "../utils";
-import HackathonImages from "./HackathonImages";
 
 export function HackathonHeader({ metadata }: { metadata: HackathonMetadata }) {
   const formatDate = (date: Date) => {
