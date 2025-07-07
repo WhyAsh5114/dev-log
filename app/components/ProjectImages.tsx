@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { readdirSync } from "fs";
-import Image from "next/image";
 import sizeOf from "image-size";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { ClickableImage } from "@/app/components/ClickableImage";
@@ -77,7 +76,7 @@ function AllImages({ projectName }: PropsType) {
         alt={generateAltText(filename)}
         width={parseRowCol(className).cols * 240}
         height={parseRowCol(className).rows * 240}
-        projectName={projectName}
+        title={projectName}
         className={className}
       />
     ));
@@ -90,7 +89,7 @@ function AllImages({ projectName }: PropsType) {
         alt={generateAltText(filename)}
         width={parseRowCol(className).cols * 240}
         height={parseRowCol(className).rows * 240}
-        projectName={projectName}
+        title={projectName}
         className={cn("hidden dark:block", className)}
       />
       <ClickableImage
@@ -98,7 +97,7 @@ function AllImages({ projectName }: PropsType) {
         alt={generateAltText(filename)}
         width={parseRowCol(className).cols * 240}
         height={parseRowCol(className).rows * 240}
-        projectName={projectName}
+        title={projectName}
         className={cn("dark:hidden", className)}
       />
     </div>

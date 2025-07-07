@@ -9,11 +9,11 @@ interface ClickableImageProps {
   alt: string;
   width: number;
   height: number;
-  projectName: string;
+  title: string;
   className?: string;
 }
 
-export function ClickableImage({ src, alt, width, height, projectName, className }: ClickableImageProps) {
+export function ClickableImage({ src, alt, width, height, title, className }: ClickableImageProps) {
   const { openViewer } = useImageViewer();
 
   return (
@@ -23,7 +23,7 @@ export function ClickableImage({ src, alt, width, height, projectName, className
       width={width}
       height={height}
       className={cn("rounded-md border cursor-pointer hover:opacity-80 transition-opacity", className)}
-      onClick={() => openViewer(src, alt, projectName)}
+      onClick={() => openViewer(src, alt, title)}
     />
   );
 }

@@ -6,7 +6,7 @@ import { TypographyP } from "@/components/ui/typographyP";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
-import { ProjectMetadata } from "../utils";
+import { ProjectMetadata, getProjectHackathonInfo } from "../utils";
 import { HackathonCard } from "@/app/components/HackathonCard";
 
 export default function ProjectHeader({
@@ -14,6 +14,8 @@ export default function ProjectHeader({
 }: {
   metadata: ProjectMetadata;
 }) {
+  const hackathonInfo = getProjectHackathonInfo(metadata);
+
   return (
     <>
       <div className="flex flex-col md:flex-row items-center gap-2">
@@ -37,7 +39,7 @@ export default function ProjectHeader({
       </div>
 
       <div className="mt-2.5" />
-      {metadata.hackathon && <HackathonCard metadata={metadata.hackathon} />}
+      {hackathonInfo && <HackathonCard metadata={hackathonInfo} />}
       <ProjectImages projectName={metadata.name} />
       <TechStack techStack={metadata.techStack} />
     </>

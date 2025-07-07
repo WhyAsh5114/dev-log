@@ -43,6 +43,7 @@ function LinkButtons({ className }: { className?: string }) {
   const links: { text: string; href: string }[] = [
     { text: "Home", href: "/" },
     { text: "Projects", href: "/projects" },
+    { text: "Hackathons", href: "/hackathons" },
     { text: "Work", href: "/work" },
     { text: "Blog", href: "/blog" },
     { text: "Timeline", href: "/timeline" },

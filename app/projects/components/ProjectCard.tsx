@@ -11,20 +11,22 @@ import { ChevronRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import GitHub from "~icons/mdi/github";
 import TechStack from "../../components/TechStack";
-import { ProjectMetadata } from "../utils";
+import { ProjectMetadata, getProjectHackathonInfo } from "../utils";
 
 export default function ProjectCard({
   metadata,
 }: {
   metadata: ProjectMetadata;
 }) {
+  const hackathonInfo = getProjectHackathonInfo(metadata);
+
   return (
     <>
       <Card>
         <CardHeader>
           <div className="flex justify-between items-center">
             <CardTitle>{metadata.displayName}</CardTitle>
-            <span className="pr-4 font-bold">{metadata.hackathon?.placed?.slice(0, 2)}</span>
+            <span className="pr-4 font-bold">{hackathonInfo?.placed?.slice(0, 2)}</span>
           </div>
           <CardDescription>{metadata.description}</CardDescription>
         </CardHeader>

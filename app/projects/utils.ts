@@ -10,14 +10,7 @@ export type ProjectMetadata = {
   techStack: Technology[];
   link?: string;
   featured?: boolean;
-  hackathon?: {
-    name: string;
-    collegeName: string;
-    hackathonWebsite: string;
-    location: string;
-    placed: string | null;
-    duration: 24;
-  };
+  hackathonName?: string;
 };
 
 export function getProjects() {
@@ -33,4 +26,35 @@ export function getProjects() {
     const metadata = data as ProjectMetadata;
     return { metadata, content };
   });
+}
+
+export function getProjectByName(name: string) {
+  const projects = getProjects();
+  return projects.find((project) => project.metadata.name === name);
+}
+
+export function getProjectHackathonInfo(metadata: ProjectMetadata) {
+  if (metadata.hackathonName) {
+    try {
+      // Dynamic import to avoid circular dependencies
+      const { getHackathonByName } = require("../hackathons/utils");
+      const hackathon = getHackathonByName(metadata.hackathonName);
+      if (hackathon) {
+        // Convert hackathon metadata to legacy format for backward compatibility
+        return {
+          name: hackathon.metadata.displayName,
+          collegeName: hackathon.metadata.collegeName,
+          hackathonWebsite: hackathon.metadata.hackathonWebsite,
+          location: hackathon.metadata.location,
+          placed: hackathon.metadata.placed,
+          duration: hackathon.metadata.duration,
+        };
+      }
+    } catch (error) {
+      // If hackathon utils are not available, return null
+      console.warn(`Could not load hackathon data for: ${metadata.hackathonName}`);
+    }
+  }
+
+  return null;
 }
