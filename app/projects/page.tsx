@@ -25,7 +25,12 @@ export default function Projects() {
         {getProjects()
           .filter(({ metadata }) => metadata.hackathonName)
           .map(({ metadata }) => {
-            const hackathon = getHackathonByName(metadata.hackathonName!)!;
+            const hackathon = getHackathonByName(metadata.hackathonName!);
+            if (!hackathon) {
+              throw new Error(
+                `Hackathon not found: ${metadata.hackathonName}, for project: ${metadata.name}`
+              );
+            }
             return {
               metadata: {
                 ...metadata,

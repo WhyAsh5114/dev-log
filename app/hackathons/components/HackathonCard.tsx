@@ -3,19 +3,17 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import {
   ChevronRight,
-  ExternalLink,
-  Trophy,
-  Users,
   Clock,
+  ExternalLink,
   MapPin,
   Star,
+  Trophy,
 } from "lucide-react";
 import Link from "next/link";
 import { HackathonMetadata } from "../utils";

@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import { getHackathons } from "./utils";
 import { HackathonCard } from "./components/HackathonCard";
 import { TypographyH1 } from "@/components/ui/typographyH1";

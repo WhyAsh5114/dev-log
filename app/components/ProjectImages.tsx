@@ -3,6 +3,7 @@ import { readdirSync } from "fs";
 import sizeOf from "image-size";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { ClickableImage } from "@/app/components/ClickableImage";
+import createLayout from "justified-layout";
 
 type PropsType = { projectName: string; className?: string };
 type ImageDimensions = {
@@ -19,28 +20,23 @@ function generateAltText(filename: string) {
   return readableText;
 }
 
-function parseRowCol(spanString?: string) {
-  let rows = 1;
-  let cols = 1;
-  if (!spanString) return { rows, cols };
+function createJustifiedLayout(
+  images: ImageDimensions[],
+  containerWidth: number = 718
+) {
+  const layout = createLayout(
+    images.map(({ width, height }) => ({ width, height })),
+    {
+      containerWidth,
+      containerPadding: 0,
+      boxSpacing: 4,
+      targetRowHeight: 300,
+    }
+  );
 
-  const rowMatch = spanString.match(/row-span-(\d+)/);
-  const colMatch = spanString.match(/col-span-(\d+)/);
-
-  if (rowMatch) rows = parseInt(rowMatch[1], 10);
-  if (colMatch) cols = parseInt(colMatch[1], 10);
-
-  return { rows, cols };
-}
-
-function calculateRowSpan(
-  images: ImageDimensions[]
-): { filename: string; className: string }[] {
-  const aspectRatios = images.map(({ width, height }) => height / width);
-  const minAspectRatio = Math.min(...aspectRatios);
-  return aspectRatios.map((aspectRatio, ratioIdx) => ({
-    className: `row-span-${Math.ceil(aspectRatio / minAspectRatio)}`,
-    filename: images[ratioIdx].filename,
+  return layout.boxes.map((box, index) => ({
+    ...box,
+    filename: images[index].filename,
   }));
 }
 
@@ -54,64 +50,104 @@ function AllImages({ projectName }: PropsType) {
     }`
   );
 
-  const images = calculateRowSpan(
-    imageFiles.map((imageFile) => ({
-      ...(sizeOf(
-        `public/projectImages/${projectName}${
-          modeBasedScreenshotsAvailable ? `/dark/` : "/"
-        }${imageFile}`
-      ) as {
-        width: number;
-        height: number;
-      }),
-      filename: imageFile,
-    }))
-  );
+  const images: ImageDimensions[] = imageFiles.map((imageFile) => ({
+    ...(sizeOf(
+      `public/projectImages/${projectName}${
+        modeBasedScreenshotsAvailable ? `/dark/` : "/"
+      }${imageFile}`
+    ) as {
+      width: number;
+      height: number;
+    }),
+    filename: imageFile,
+  }));
+
+  const layoutBoxes = createJustifiedLayout(images);
 
   if (!modeBasedScreenshotsAvailable) {
-    return images.map(({ filename, className }, idx) => (
-      <ClickableImage
-        key={`${idx}`}
-        src={`/projectImages/${projectName}/${filename}`}
-        alt={generateAltText(filename)}
-        width={parseRowCol(className).cols * 240}
-        height={parseRowCol(className).rows * 240}
-        title={projectName}
-        className={className}
-      />
-    ));
+    return (
+      <div
+        className="relative"
+        style={{
+          width: `${Math.max(
+            ...layoutBoxes.map((box) => box.left + box.width)
+          )}px`,
+          height: `${Math.max(
+            ...layoutBoxes.map((box) => box.top + box.height)
+          )}px`,
+        }}
+      >
+        {layoutBoxes.map((box, idx) => (
+          <div
+            key={`${idx}`}
+            className="absolute"
+            style={{
+              left: `${box.left}px`,
+              top: `${box.top}px`,
+            }}
+          >
+            <ClickableImage
+              src={`/projectImages/${projectName}/${box.filename}`}
+              alt={generateAltText(box.filename)}
+              width={box.width}
+              height={box.height}
+              title={projectName}
+            />
+          </div>
+        ))}
+      </div>
+    );
   }
 
-  return images.map(({ filename, className }, idx) => (
-    <div className="contents" key={`${filename}-${idx}`}>
-      <ClickableImage
-        src={`/projectImages/${projectName}/dark/${filename}`}
-        alt={generateAltText(filename)}
-        width={parseRowCol(className).cols * 240}
-        height={parseRowCol(className).rows * 240}
-        title={projectName}
-        className={cn("hidden dark:block", className)}
-      />
-      <ClickableImage
-        src={`/projectImages/${projectName}/light/${filename}`}
-        alt={generateAltText(filename)}
-        width={parseRowCol(className).cols * 240}
-        height={parseRowCol(className).rows * 240}
-        title={projectName}
-        className={cn("dark:hidden", className)}
-      />
+  return (
+    <div
+      className="relative"
+      style={{
+        width: `${Math.max(
+          ...layoutBoxes.map((box) => box.left + box.width)
+        )}px`,
+        height: `${Math.max(
+          ...layoutBoxes.map((box) => box.top + box.height)
+        )}px`,
+      }}
+    >
+      {layoutBoxes.map((box, idx) => (
+        <div
+          key={`${box.filename}-${idx}`}
+          className="absolute"
+          style={{
+            left: `${box.left}px`,
+            top: `${box.top}px`,
+          }}
+        >
+          <ClickableImage
+            src={`/projectImages/${projectName}/dark/${box.filename}`}
+            alt={generateAltText(box.filename)}
+            width={box.width}
+            height={box.height}
+            title={projectName}
+            className="hidden dark:block"
+          />
+          <ClickableImage
+            src={`/projectImages/${projectName}/light/${box.filename}`}
+            alt={generateAltText(box.filename)}
+            width={box.width}
+            height={box.height}
+            title={projectName}
+            className="dark:hidden"
+          />
+        </div>
+      ))}
     </div>
-  ));
+  );
 }
 
 export default function ProjectImages({ projectName, className }: PropsType) {
   return (
     <ScrollArea
-      className={cn("h-72 border rounded-md my-2 shadow-xs", className)}
+      className={cn("h-72 border p-2 rounded-md my-2 shadow-xs", className)}
     >
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-1 min-w-96 p-2">
-        <AllImages projectName={projectName} />
-      </div>
+      <AllImages projectName={projectName} />
       <ScrollBar orientation="horizontal" />
     </ScrollArea>
   );
