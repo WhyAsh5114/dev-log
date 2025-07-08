@@ -50,6 +50,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/hackathons`,
+      lastModified: getLastModified("app/hackathons/page.tsx"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 
   const blogPosts: MetadataRoute.Sitemap = fs
@@ -85,5 +91,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       };
     });
 
-  return [...sitemapArray, ...blogPosts, ...projectPages];
+  const hackathonPages: MetadataRoute.Sitemap = fs
+    .readdirSync(path.join(process.cwd(), "app/hackathons/data"))
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => {
+      const filePath = path.join(process.cwd(), "app/hackathons/data", file);
+      const fileContents = fs.readFileSync(filePath, "utf8");
+      const { data } = matter(fileContents);
+      return {
+        url: `${BASE_URL}/hackathons/${data.name}`,
+        lastModified: fs.statSync(filePath).mtime,
+        changeFrequency: "yearly",
+        priority: 0.6,
+      };
+    });
+
+  return [...sitemapArray, ...blogPosts, ...projectPages, ...hackathonPages];
 }
