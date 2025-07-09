@@ -75,7 +75,7 @@ export function HackathonCard({
         </div>
       </CardHeader>
 
-      <CardContent className="flex-grow">
+      <CardContent className="flex-grow max-w-72">
         <div className="space-y-3">
           <div className="space-y-1">
             <div className="text-xs font-medium truncate">

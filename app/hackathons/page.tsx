@@ -10,14 +10,14 @@ export default function HackathonsPage() {
   );
 
   return (
-    <div className="container mx-auto p-4 space-y-6">
+    <>
       <TypographyH1>Hackathons</TypographyH1>
 
-      <div className="grid gap-2 md:grid-cols-2">
+      <div className="grid gap-2 md:grid-cols-2 mt-4">
         {sortedHackathons.map((hackathon) => (
           <HackathonCard key={hackathon.metadata.name} hackathon={hackathon} />
         ))}
       </div>
-    </div>
+    </>
   );
 }
