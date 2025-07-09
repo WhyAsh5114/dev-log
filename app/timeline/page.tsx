@@ -44,6 +44,13 @@ export default function Page() {
             title: "Feb 2025",
             content: (
               <div className="grid grid-cols-1 gap-2">
+                <span className="text-lg font-semibold">HackHounds 3.O</span>
+                <p>
+                  Developed a decentralized payment system using blockchain
+                  technology, enabling secure and fast transactions with a
+                  user-friendly interface.
+                </p>
+                <MiniProjectShowcase projectName="BlockPay" />
                 <span className="text-lg font-semibold">HackX 3.0</span>
                 <p>
                   Built a modern outfit sharing platform with AI powered size

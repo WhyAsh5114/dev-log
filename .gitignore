@@ -37,6 +37,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+pnpm-workspace.yaml
 
 # typescript
 *.tsbuildinfo

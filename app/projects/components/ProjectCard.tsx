@@ -22,18 +22,20 @@ export default function ProjectCard({
 
   return (
     <>
-      <Card>
+      <Card className="flex flex-col">
         <CardHeader>
           <div className="flex justify-between items-center">
             <CardTitle>{metadata.displayName}</CardTitle>
-            <span className="pr-4 font-bold">{hackathonInfo?.placed?.slice(0, 2)}</span>
+            <span className="pr-4 font-bold">
+              {hackathonInfo?.placed?.slice(0, 2)}
+            </span>
           </div>
           <CardDescription>{metadata.description}</CardDescription>
         </CardHeader>
         <CardContent className="grid">
           <TechStack techStack={metadata.techStack} />
         </CardContent>
-        <CardFooter className="justify-end gap-4">
+        <CardFooter className="justify-end gap-4 mt-auto">
           <Link
             href={metadata.repoLink}
             aria-label={`${metadata.displayName} GitHub link`}

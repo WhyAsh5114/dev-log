@@ -1,0 +1,42 @@
+---
+displayName: "BlockPay"
+name: "BlockPay"
+repoLink: "http://github.com/Crew-object-Object/BlockPay"
+description: Hassle-free cross-border payments.
+techStack: [
+  "TypeScript",
+  "React",
+  "TailwindCSS",
+  "ShadcnUI",
+  "NextJS",
+  "Prisma",
+  "PostgreSQL"
+]
+hackathonName: "hackhounds-3-0"
+---
+
+# BlockPay
+
+BlockPay is a streamlined solution for simplifying cross-border payments. It leverages blockchain technology to offer fast, 
+low-cost, and transparent transactions without reliance on traditional banking infrastructure.  
+
+## Key Features
+- **Instant Transactions** – Faster settlements compared to traditional remittance services.  
+- **Low Fees** – Eliminates high conversion and transfer fees.  
+- **Multi-Currency Support** – Enables seamless transactions across different fiat and cryptocurrencies.  
+- **Decentralized & Secure** – Uses smart contracts to ensure trustless and tamper-proof transactions.  
+- **Compliance & KYC Integration** – Facilitates regulatory compliance while preserving user privacy.  
+
+BlockPay empowers individuals and businesses to send and receive payments globally with minimal friction.
+
+## Challenges Faced
+
+One of the biggest challenges we encountered was the lack of 1-to-1 fiat-pegged tokens on testnets. Since stablecoins like 
+USDC and USDT are crucial for cross-border payments, their absence or unreliable availability on test networks made testing 
+real-world scenarios difficult.  
+
+To work around this, we had to map the testnet tokens to real ones, which introduced inconsistencies when simulating real-world 
+liquidity and exchange rates. This also made it harder to validate transaction flows under realistic conditions.  
+
+Ensuring a smooth user experience despite these limitations required additional effort in designing fallback mechanisms 
+and adaptable smart contracts.
